@@ -1,0 +1,23 @@
+{
+  "display": {
+    "background": "minecraft:textures/block/stone.png",
+    "icon": {
+      "item": "minecraft:wooden_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.mining_1.title"
+    },
+    "description": {
+      "translate": "advancements.mining_1.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "mining_1": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

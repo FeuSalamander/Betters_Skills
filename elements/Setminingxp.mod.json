@@ -1,0 +1,11 @@
+{
+  "_fv": 24,
+  "_type": "command",
+  "definition": {
+    "commandName": "setminingxp",
+    "permissionLevel": "3",
+    "onCommandExecuted": {
+      "name": "Setminingxpprocedure"
+    }
+  }
+}

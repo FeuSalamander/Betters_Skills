@@ -1,0 +1,12 @@
+{
+  "_fv": 24,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "NUMPAD5",
+    "keyBindingName": "Open the Skill Menu",
+    "keyBindingCategoryKey": "gameplay",
+    "onKeyReleased": {
+      "name": "SkillsMenuOnKeyReleased"
+    }
+  }
+}

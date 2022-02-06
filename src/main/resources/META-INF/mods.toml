@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="better_skills"
+version="1.0.0"
+displayName="Better Skills"
+credits="Made by FeuSalamander"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/better-skills"
+logoFile="logo.png"
+authors="FeuSalamander"
+description='''
+add skills to your game
+'''
+
+[[dependencies.better_skills]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

@@ -1,0 +1,453 @@
+{
+  "id_map": {},
+  "mod_elements": [
+    {
+      "name": "Skills",
+      "type": "gui",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "skills"
+    },
+    {
+      "name": "SkillsMenuOnKeyReleased",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "skills_menu_on_key_released",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SkillsMenu",
+      "type": "keybind",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "skills_menu"
+    },
+    {
+      "name": "Addminingxp",
+      "type": "command",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "addminingxp",
+      "path": "~/commands"
+    },
+    {
+      "name": "AddminingxpCommandExecuted",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "addminingxp_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "cmdparams",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/commands"
+    },
+    {
+      "name": "Setminingxp",
+      "type": "command",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "setminingxp",
+      "path": "~/commands"
+    },
+    {
+      "name": "Setminingxpprocedure",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "setminingxpprocedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "cmdparams",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/commands"
+    },
+    {
+      "name": "Miningxp",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "miningxp",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Mining1",
+      "type": "achievement",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_1",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining2",
+      "type": "achievement",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_2",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining3",
+      "type": "achievement",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_3",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining4",
+      "type": "achievement",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_4",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining5",
+      "type": "achievement",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_5",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining6",
+      "type": "achievement",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_6",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining7",
+      "type": "achievement",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_7",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining8",
+      "type": "achievement",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_8",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining9",
+      "type": "achievement",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_9",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining10",
+      "type": "achievement",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_10",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining11",
+      "type": "achievement",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_11",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining12",
+      "type": "achievement",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_12",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining13",
+      "type": "achievement",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_13",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining14",
+      "type": "achievement",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_14",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining15",
+      "type": "achievement",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_15",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining16",
+      "type": "achievement",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_16",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining17",
+      "type": "achievement",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_17",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining18",
+      "type": "achievement",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_18",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining19",
+      "type": "achievement",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_19",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Mining20",
+      "type": "achievement",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_20",
+      "path": "~/advancementMining"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "CombatXP",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "MiningXP",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "MiningLvL",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    }
+  ],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "advancements.mining_6.title": "Mining 6",
+      "advancements.mining_8.descr": "reach 4425 xp",
+      "advancements.mining_18.descr": "reach 222425 xp",
+      "advancements.mining_3.descr": "reach 375 xp",
+      "advancements.mining_11.descr": "reach 14925 xp",
+      "advancements.mining_13.descr": "Reach 32425 xp",
+      "advancements.mining_16.title": "Mining 16",
+      "advancements.mining_1.title": "Mining 1",
+      "advancements.mining_16.descr": "reach 97425 xp",
+      "advancements.mining_3.title": "Mining 3",
+      "advancements.mining_13.title": "Mining 13",
+      "advancements.mining_15.descr": "reach 67425 xp",
+      "advancements.mining_12.title": "Mining 12",
+      "advancements.mining_18.title": "Mining 18",
+      "advancements.mining_8.title": "Mining 8",
+      "advancements.mining_1.descr": "reach 50 xp",
+      "advancements.mining_20.descr": "reach 522425 xp",
+      "advancements.mining_15.title": "Mining 15",
+      "advancements.mining_20.title": "Mining 20",
+      "advancements.mining_6.descr": "reach 1925 xp",
+      "advancements.mining_10.descr": "reach 9925 xp",
+      "advancements.mining_12.descr": "reach 22425 xp",
+      "advancements.mining_10.title": "Mining 10",
+      "advancements.mining_9.descr": "reach 9425 xp",
+      "advancements.mining_17.descr": "reach 147425 xp",
+      "key.better_skills.skills_menu": "Open the Skill Menu",
+      "advancements.mining_5.title": "Mining 5",
+      "advancements.mining_17.title": "Mining 17",
+      "advancements.mining_4.descr": "reach 675 xp",
+      "advancements.mining_9.title": "Mining 9",
+      "advancements.mining_19.title": "Mining 19",
+      "advancements.mining_4.title": "Mining 4",
+      "advancements.mining_5.descr": "reach 1175 xp",
+      "advancements.mining_7.descr": "reach 2925 xp",
+      "advancements.mining_14.title": "Mining 14",
+      "advancements.mining_2.title": "Mining 2",
+      "advancements.mining_11.title": "Mining 11",
+      "advancements.mining_19.descr": "reach 322425 xp",
+      "advancements.mining_2.descr": "reach 175 xp",
+      "advancements.mining_14.descr": "Reach 47425 xp",
+      "advancements.mining_7.title": "Mining 7"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "commands",
+        "children": []
+      },
+      {
+        "name": "advancementMining",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "better_skills",
+    "modName": "Better Skills",
+    "version": "1.0.0",
+    "description": "add skills to your game",
+    "author": "FeuSalamander",
+    "websiteURL": "https://www.curseforge.com/minecraft/mc-mods/better-skills",
+    "license": "All Rights Reserved",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "modPicture": "wooden_pick",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "credits": "Made by FeuSalamander",
+    "modElementsPackage": "net.feusalamander.betterskills",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202100351610
+}
