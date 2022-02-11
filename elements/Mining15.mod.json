@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "Mining 15",
-    "achievementDescription": "reach 67425 xp",
+    "achievementDescription": "reach 67425 xp, haste 3",
     "achievementIcon": {
       "value": "Items.GOLDEN_PICKAXE"
     },

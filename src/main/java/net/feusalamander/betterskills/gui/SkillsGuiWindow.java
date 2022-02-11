@@ -59,6 +59,9 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("better_skills:textures/wooden_pick.png"));
 		this.blit(ms, this.guiLeft + 6, this.guiTop + 16, 0, 0, 32, 32, 32, 32);
 
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("better_skills:textures/wooden_sword.png"));
+		this.blit(ms, this.guiLeft + 121, this.guiTop + 15, 0, 0, 32, 32, 32, 32);
+
 		RenderSystem.disableBlend();
 	}
 
@@ -83,6 +86,11 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 		this.font.drawString(ms, "" + ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP) + "", 6, 59, -12829636);
 		this.font.drawString(ms, "Total xp:", 6, 48, -12829636);
+		this.font.drawString(ms, "Combat " + ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatLvl) + "", 114, 7, -12829636);
+		this.font.drawString(ms, "Total xp:", 114, 48, -12829636);
+		this.font.drawString(ms, "" + ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP) + "", 114, 60, -12829636);
 	}
 
 	@Override

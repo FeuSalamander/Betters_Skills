@@ -2,17 +2,16 @@ package net.feusalamander.betterskills.procedures;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.event.TickEvent;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.potion.Effects;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
@@ -23,72 +22,48 @@ import java.util.Map;
 import java.util.Iterator;
 import java.util.HashMap;
 
-public class MiningxpProcedure {
+public class EffectsProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {
 		@SubscribeEvent
-		public static void onBlockBreak(BlockEvent.BreakEvent event) {
-			Entity entity = event.getPlayer();
-			IWorld world = event.getWorld();
-			Map<String, Object> dependencies = new HashMap<>();
-			dependencies.put("xpAmount", event.getExpToDrop());
-			dependencies.put("x", event.getPos().getX());
-			dependencies.put("y", event.getPos().getY());
-			dependencies.put("z", event.getPos().getZ());
-			dependencies.put("px", entity.getPosX());
-			dependencies.put("py", entity.getPosY());
-			dependencies.put("pz", entity.getPosZ());
-			dependencies.put("world", world);
-			dependencies.put("entity", entity);
-			dependencies.put("blockstate", event.getState());
-			dependencies.put("event", event);
-			executeProcedure(dependencies);
+		public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+			if (event.phase == TickEvent.Phase.END) {
+				Entity entity = event.player;
+				World world = entity.world;
+				double i = entity.getPosX();
+				double j = entity.getPosY();
+				double k = entity.getPosZ();
+				Map<String, Object> dependencies = new HashMap<>();
+				dependencies.put("x", i);
+				dependencies.put("y", j);
+				dependencies.put("z", k);
+				dependencies.put("world", world);
+				dependencies.put("entity", entity);
+				dependencies.put("event", event);
+				executeProcedure(dependencies);
+			}
 		}
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency world for procedure Miningxp!");
-			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency x for procedure Miningxp!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency y for procedure Miningxp!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency z for procedure Miningxp!");
-			return;
-		}
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency entity for procedure Miningxp!");
+				BetterSkillsMod.LOGGER.warn("Failed to load dependency entity for procedure Effects!");
 			return;
 		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
 		if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 522425) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 522425) {
 			{
 				double _setval = 20;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_20"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_20"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -99,17 +74,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 322425) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 322425) {
 			{
 				double _setval = 19;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_19"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_19"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -120,17 +95,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 222425) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 222425) {
 			{
 				double _setval = 18;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_18"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_18"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -141,17 +116,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 147425) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 147425) {
 			{
 				double _setval = 17;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_17"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_17"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -162,17 +137,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 97425) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 97425) {
 			{
 				double _setval = 16;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_16"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_16"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -183,17 +158,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 67425) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 67425) {
 			{
 				double _setval = 15;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_15"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_15"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -204,17 +179,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 47425) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 47425) {
 			{
 				double _setval = 14;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_14"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_14"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -225,17 +200,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 32425) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 32425) {
 			{
 				double _setval = 13;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_13"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_13"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -246,17 +221,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 22425) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 22425) {
 			{
 				double _setval = 12;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_12"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_12"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -267,17 +242,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 14925) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 14925) {
 			{
 				double _setval = 11;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_11"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_11"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -288,17 +263,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 9925) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 9925) {
 			{
 				double _setval = 10;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_10"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_10"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -309,17 +284,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 6425) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 6425) {
 			{
 				double _setval = 9;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_9"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_9"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -330,17 +305,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 4425) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 4425) {
 			{
 				double _setval = 8;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_8"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_8"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -351,17 +326,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 2925) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 2925) {
 			{
 				double _setval = 7;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_7"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_7"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -372,17 +347,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 1925) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 1925) {
 			{
 				double _setval = 6;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_6"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_6"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -393,17 +368,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 1175) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 1175) {
 			{
 				double _setval = 5;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_5"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_5"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -414,17 +389,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 675) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 675) {
 			{
 				double _setval = 4;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_4"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_4"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -435,17 +410,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 375) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 375) {
 			{
 				double _setval = 3;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_3"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_3"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -456,17 +431,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 175) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 175) {
 			{
 				double _setval = 2;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_2"));
+						.getAdvancement(new ResourceLocation("better_skills:combat_2"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -477,17 +452,17 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP >= 50) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP >= 50) {
 			{
 				double _setval = 1;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:mining_1"));
+						.getAdvancement(new ResourceLocation("better_skills:combat"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -498,170 +473,31 @@ public class MiningxpProcedure {
 				}
 			}
 		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP < 50) {
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP < 50) {
 			{
 				double _setval = 0;
 				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningLvL = _setval;
+					capability.CombatLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.STONE) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP + 1);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+1 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.GRANITE) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP + 1);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+1 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.DIORITE) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP + 1);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+1 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.COAL_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP + 3);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+3 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.IRON_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP + 5);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+5 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.REDSTONE_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP + 5);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+5 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.REDSTONE_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP + 5);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+5 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.GOLD_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP + 10);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+10 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.LAPIS_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP + 10);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+10 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.DIAMOND_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP + 25);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+25 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.EMERALD_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP + 50);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+50 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.ANCIENT_DEBRIS) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningXP + 50);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+50 mining xp"), (true));
-			}
+		if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningLvL >= 20) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 20, (int) 3, (false), (false)));
+		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningLvL >= 15) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 20, (int) 2, (false), (false)));
+		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningLvL >= 10) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 20, (int) 1, (false), (false)));
+		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).MiningLvL >= 5) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 20, (int) 0, (false), (false)));
 		}
 	}
 }

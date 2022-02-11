@@ -348,6 +348,325 @@
       "ids": {},
       "registry_name": "mining_20",
       "path": "~/advancementMining"
+    },
+    {
+      "name": "Effects",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "effects",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CombatXp",
+      "type": "procedure",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_xp",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Combat",
+      "type": "achievement",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat2",
+      "type": "achievement",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_2",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat3",
+      "type": "achievement",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_3",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat4",
+      "type": "achievement",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_4",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat5",
+      "type": "achievement",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_5",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat6",
+      "type": "achievement",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_6",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat7",
+      "type": "achievement",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_7",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat8",
+      "type": "achievement",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_8",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat9",
+      "type": "achievement",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_9",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat10",
+      "type": "achievement",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_10",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat11",
+      "type": "achievement",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_11",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat12",
+      "type": "achievement",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_12",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat13",
+      "type": "achievement",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_13",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat14",
+      "type": "achievement",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_14",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat15",
+      "type": "achievement",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_15",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat16",
+      "type": "achievement",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_16",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat17",
+      "type": "achievement",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_17",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat18",
+      "type": "achievement",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_18",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat19",
+      "type": "achievement",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_19",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Combat20",
+      "type": "achievement",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_20",
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Addcombatxp",
+      "type": "command",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "addcombatxp",
+      "path": "~/commands"
+    },
+    {
+      "name": "Addcombat",
+      "type": "procedure",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "addcombat",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "cmdparams",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/commands"
+    },
+    {
+      "name": "Setcombat",
+      "type": "command",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "setcombat",
+      "path": "~/commands"
+    },
+    {
+      "name": "SetcombatXp",
+      "type": "procedure",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "setcombat_xp",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "cmdparams",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/commands"
+    },
+    {
+      "name": "Damages",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "damages",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -367,53 +686,99 @@
       "name": "MiningLvL",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "0.0"
+    },
+    {
+      "name": "CombatLvl",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "advancements.mining_6.title": "Mining 6",
+      "advancements.combat_11.descr": "reach 14925 xp",
       "advancements.mining_8.descr": "reach 4425 xp",
       "advancements.mining_18.descr": "reach 222425 xp",
-      "advancements.mining_3.descr": "reach 375 xp",
       "advancements.mining_11.descr": "reach 14925 xp",
-      "advancements.mining_13.descr": "Reach 32425 xp",
-      "advancements.mining_16.title": "Mining 16",
+      "advancements.combat_18.descr": "reach 222425 xp",
+      "advancements.combat_4.descr": "reach 675 xp",
+      "advancements.combat.descr": "reach 50 xp",
+      "advancements.combat_14.title": "Combat 14",
       "advancements.mining_1.title": "Mining 1",
-      "advancements.mining_16.descr": "reach 97425 xp",
-      "advancements.mining_3.title": "Mining 3",
-      "advancements.mining_13.title": "Mining 13",
-      "advancements.mining_15.descr": "reach 67425 xp",
-      "advancements.mining_12.title": "Mining 12",
+      "advancements.mining_15.descr": "reach 67425 xp, haste 3",
+      "advancements.combat_18.title": "Combat 18",
       "advancements.mining_18.title": "Mining 18",
       "advancements.mining_8.title": "Mining 8",
+      "advancements.combat_7.title": "Combat 7",
       "advancements.mining_1.descr": "reach 50 xp",
-      "advancements.mining_20.descr": "reach 522425 xp",
+      "advancements.combat_7.descr": "reach 2925 xp",
+      "advancements.combat_4.title": "Combat 4",
       "advancements.mining_15.title": "Mining 15",
       "advancements.mining_20.title": "Mining 20",
-      "advancements.mining_6.descr": "reach 1925 xp",
-      "advancements.mining_10.descr": "reach 9925 xp",
-      "advancements.mining_12.descr": "reach 22425 xp",
+      "advancements.combat_15.descr": "reach 67425 xp",
       "advancements.mining_10.title": "Mining 10",
       "advancements.mining_9.descr": "reach 9425 xp",
+      "advancements.combat_12.descr": "reach 22425 xp",
+      "advancements.combat_15.title": "Combat 15",
+      "advancements.combat_20.title": "Combat 20",
       "advancements.mining_17.descr": "reach 147425 xp",
+      "advancements.combat_17.title": "Combat 17",
+      "advancements.mining_19.title": "Mining 19",
+      "advancements.combat.title": "Combat 1",
+      "advancements.mining_4.title": "Mining 4",
+      "advancements.combat_5.title": "Combat 5",
+      "advancements.mining_5.descr": "reach 1175 xp, haste 1",
+      "advancements.combat_19.descr": "reach 322425 xp",
+      "advancements.combat_3.descr": "reach 375 xp",
+      "advancements.mining_2.descr": "reach 175 xp",
+      "advancements.mining_14.descr": "Reach 47425 xp",
+      "advancements.mining_7.title": "Mining 7",
+      "advancements.combat_8.title": "Combat 8",
+      "advancements.combat_11.title": "Combat 11",
+      "advancements.mining_6.title": "Mining 6",
+      "advancements.combat_9.title": "Combat 9",
+      "advancements.mining_3.descr": "reach 375 xp",
+      "advancements.combat_6.descr": "reach 1925 xp",
+      "advancements.mining_13.descr": "Reach 32425 xp",
+      "advancements.mining_16.title": "Mining 16",
+      "advancements.combat_16.descr": "reach 97425 xp",
+      "advancements.combat_2.title": "Combat 2",
+      "advancements.combat_13.descr": "Reach 32425 xp",
+      "advancements.combat_9.descr": "reach 9425 xp",
+      "advancements.mining_16.descr": "reach 97425 xp",
+      "advancements.mining_3.title": "Mining 3",
+      "advancements.combat_12.title": "Combat 12",
+      "advancements.mining_13.title": "Mining 13",
+      "advancements.combat_2.descr": "reach 175 xp",
+      "advancements.mining_12.title": "Mining 12",
+      "advancements.mining_20.descr": "reach 522425 xp, haste 4",
+      "advancements.combat_10.descr": "reach 9925 xp",
+      "advancements.mining_6.descr": "reach 1925 xp",
+      "advancements.mining_10.descr": "reach 9925 xp, haste 2",
+      "advancements.combat_20.descr": "reach 522425 xp",
+      "advancements.mining_12.descr": "reach 22425 xp",
+      "advancements.combat_3.title": "Combat 3",
+      "advancements.combat_10.title": "Combat 10",
       "key.better_skills.skills_menu": "Open the Skill Menu",
+      "advancements.combat_13.title": "Combat 13",
       "advancements.mining_5.title": "Mining 5",
       "advancements.mining_17.title": "Mining 17",
+      "advancements.combat_17.descr": "reach 147425 xp",
       "advancements.mining_4.descr": "reach 675 xp",
+      "advancements.combat_5.descr": "reach 1175 xp",
+      "advancements.combat_6.title": "Combat 6",
       "advancements.mining_9.title": "Mining 9",
-      "advancements.mining_19.title": "Mining 19",
-      "advancements.mining_4.title": "Mining 4",
-      "advancements.mining_5.descr": "reach 1175 xp",
+      "advancements.combat_8.descr": "reach 4425 xp",
+      "advancements.combat_14.descr": "Reach 47425 xp",
+      "advancements.combat_19.title": "Combat 19",
       "advancements.mining_7.descr": "reach 2925 xp",
       "advancements.mining_14.title": "Mining 14",
       "advancements.mining_2.title": "Mining 2",
       "advancements.mining_11.title": "Mining 11",
-      "advancements.mining_19.descr": "reach 322425 xp",
-      "advancements.mining_2.descr": "reach 175 xp",
-      "advancements.mining_14.descr": "Reach 47425 xp",
-      "advancements.mining_7.title": "Mining 7"
+      "advancements.combat_16.title": "Combat 16",
+      "advancements.mining_19.descr": "reach 322425 xp"
     }
   },
   "foldersRoot": {
@@ -432,7 +797,7 @@
   "workspaceSettings": {
     "modid": "better_skills",
     "modName": "Better Skills",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "add skills to your game",
     "author": "FeuSalamander",
     "websiteURL": "https://www.curseforge.com/minecraft/mc-mods/better-skills",

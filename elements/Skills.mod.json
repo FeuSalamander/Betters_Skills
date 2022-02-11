@@ -58,14 +58,63 @@
           "x": 132,
           "y": 85
         }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "wooden_sword.png",
+          "use1Xscale": false,
+          "name": "wooden_sword.png",
+          "x": 247,
+          "y": 52
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Combat <VAR:CombatLvl>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Combat <VAR:CombatLvl>",
+          "x": 240,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Total xp:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Total xp:",
+          "x": 240,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:CombatXP>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:CombatXP>",
+          "x": 240,
+          "y": 97
+        }
       }
     ],
     "gridSettings": {
-      "sx": 18,
-      "sy": 18,
-      "ox": 11,
-      "oy": 15,
-      "snapOnGrid": true
+      "sx": 2,
+      "sy": 2,
+      "ox": 2,
+      "oy": 2,
+      "snapOnGrid": false
     }
   }
 }

@@ -1,13 +1,13 @@
 {
   "display": {
     "icon": {
-      "item": "minecraft:diamond_pickaxe"
+      "item": "minecraft:diamond_sword"
     },
     "title": {
-      "translate": "advancements.mining_20.title"
+      "translate": "advancements.combat_20.title"
     },
     "description": {
-      "translate": "advancements.mining_20.descr"
+      "translate": "advancements.combat_20.descr"
     },
     "frame": "challenge",
     "show_toast": true,
@@ -15,9 +15,9 @@
     "hidden": false
   },
   "criteria": {
-    "mining_20": {
+    "combat_20": {
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "better_skills:mining_19"
+  "parent": "better_skills:combat_19"
 }

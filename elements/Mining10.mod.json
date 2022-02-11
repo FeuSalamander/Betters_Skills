@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "Mining 10",
-    "achievementDescription": "reach 9925 xp",
+    "achievementDescription": "reach 9925 xp, haste 2",
     "achievementIcon": {
       "value": "Items.IRON_PICKAXE"
     },

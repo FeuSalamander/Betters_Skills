@@ -2,10 +2,10 @@
   "_fv": 24,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Mining 20",
-    "achievementDescription": "reach 522425 xp, haste 4",
+    "achievementName": "Combat 14",
+    "achievementDescription": "Reach 47425 xp",
     "achievementIcon": {
-      "value": "Items.DIAMOND_PICKAXE"
+      "value": "Items.IRON_SWORD"
     },
     "background": "Default",
     "disableDisplay": false,
@@ -16,9 +16,9 @@
     "rewardRecipes": [],
     "rewardFunction": "No function",
     "rewardXP": 0,
-    "achievementType": "challenge",
+    "achievementType": "task",
     "parent": {
-      "value": "CUSTOM:Mining19"
+      "value": "CUSTOM:Combat13"
     },
     "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"custom_trigger\" x=\"25\" y=\"43\"><next><block type=\"advancement_trigger\" deletable=\"false\"></block></next></block></xml>"
   }
