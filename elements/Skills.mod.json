@@ -107,6 +107,55 @@
           "x": 240,
           "y": 97
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Farming <VAR:FarmingLvL>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Farming <VAR:FarmingLvL>",
+          "x": 132,
+          "y": 119
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Total xp:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Total xp:",
+          "x": 132,
+          "y": 166
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:FarmingXP>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:FarmingXP>",
+          "x": 132,
+          "y": 178
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "wood_hoe.png",
+          "use1Xscale": false,
+          "name": "wood_hoe.png",
+          "x": 135,
+          "y": 132
+        }
       }
     ],
     "gridSettings": {

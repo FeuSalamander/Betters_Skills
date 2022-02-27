@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:wooden_hoe"
+    },
+    "title": {
+      "translate": "advancements.farming_2.title"
+    },
+    "description": {
+      "translate": "advancements.farming_2.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "farming_2": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "better_skills:farming_1"
+}

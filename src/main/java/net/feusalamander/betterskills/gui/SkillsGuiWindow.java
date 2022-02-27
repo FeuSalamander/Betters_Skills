@@ -62,6 +62,9 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("better_skills:textures/wooden_sword.png"));
 		this.blit(ms, this.guiLeft + 121, this.guiTop + 15, 0, 0, 32, 32, 32, 32);
 
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("better_skills:textures/wood_hoe.png"));
+		this.blit(ms, this.guiLeft + 9, this.guiTop + 95, 0, 0, 32, 32, 32, 32);
+
 		RenderSystem.disableBlend();
 	}
 
@@ -91,6 +94,11 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 		this.font.drawString(ms, "Total xp:", 114, 48, -12829636);
 		this.font.drawString(ms, "" + ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP) + "", 114, 60, -12829636);
+		this.font.drawString(ms, "Farming " + ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingLvL) + "", 6, 82, -12829636);
+		this.font.drawString(ms, "Total xp:", 6, 129, -12829636);
+		this.font.drawString(ms, "" + ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP) + "", 6, 141, -12829636);
 	}
 
 	@Override
