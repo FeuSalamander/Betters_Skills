@@ -947,6 +947,53 @@
           }
         ]
       }
+    },
+    {
+      "name": "Wateringcan",
+      "type": "tool",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wateringcan"
+    },
+    {
+      "name": "WateringcanRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 84,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wateringcan_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Wateringcancraft",
+      "type": "recipe",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wateringcancraft"
     }
   ],
   "variable_elements": [
@@ -1043,6 +1090,7 @@
       "advancements.mining_11.title": "Mining 11",
       "advancements.combat_16.title": "Combat 16",
       "advancements.mining_19.descr": "reach 322425 xp",
+      "item.better_skills.wateringcan": "Watering can",
       "advancements.mining_8.descr": "reach 4425 xp",
       "advancements.farming_4.descr": "reach 675 xp",
       "advancements.farming_16.descr": "reach 97425 xp",
@@ -1129,7 +1177,7 @@
   "workspaceSettings": {
     "modid": "better_skills",
     "modName": "Better Skills",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "add skills to your game",
     "author": "FeuSalamander",
     "websiteURL": "https://www.curseforge.com/minecraft/mc-mods/better-skills",

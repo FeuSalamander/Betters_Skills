@@ -1,0 +1,7 @@
+{
+  "parent": "better_skills:custom/watering_can",
+  "textures": {
+    "0": "better_skills:blocks/wateringcan",
+    "particle": "better_skills:items/test"
+  }
+}

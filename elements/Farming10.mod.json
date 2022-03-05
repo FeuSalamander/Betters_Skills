@@ -13,7 +13,9 @@
     "announceToChat": true,
     "hideIfNotCompleted": false,
     "rewardLoot": [],
-    "rewardRecipes": [],
+    "rewardRecipes": [
+      "Wateringcancraft"
+    ],
     "rewardFunction": "No function",
     "rewardXP": 0,
     "achievementType": "task",

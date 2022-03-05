@@ -19,5 +19,11 @@
       "trigger": "minecraft:impossible"
     }
   },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "better_skills:wateringcan_craft"
+    ]
+  },
   "parent": "better_skills:farming_9"
 }
