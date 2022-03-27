@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:iron_axe"
+    },
+    "title": {
+      "translate": "advancements.foraging_11.title"
+    },
+    "description": {
+      "translate": "advancements.foraging_11.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "foraging_11": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "better_skills:foraging_10"
+}

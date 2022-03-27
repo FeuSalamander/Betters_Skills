@@ -77,6 +77,8 @@ public class BetterSkillsModVariables {
 			nbt.putDouble("CombatLvl", instance.CombatLvl);
 			nbt.putDouble("FarmingLvL", instance.FarmingLvL);
 			nbt.putDouble("FarmingXP", instance.FarmingXP);
+			nbt.putDouble("ForagingXP", instance.ForagingXP);
+			nbt.putDouble("ForagingLvl", instance.ForagingLvl);
 			return nbt;
 		}
 
@@ -89,6 +91,8 @@ public class BetterSkillsModVariables {
 			instance.CombatLvl = nbt.getDouble("CombatLvl");
 			instance.FarmingLvL = nbt.getDouble("FarmingLvL");
 			instance.FarmingXP = nbt.getDouble("FarmingXP");
+			instance.ForagingXP = nbt.getDouble("ForagingXP");
+			instance.ForagingLvl = nbt.getDouble("ForagingLvl");
 		}
 	}
 
@@ -97,8 +101,10 @@ public class BetterSkillsModVariables {
 		public double MiningXP = 0.0;
 		public double MiningLvL = 0.0;
 		public double CombatLvl = 0.0;
-		public double FarmingLvL = 0;
-		public double FarmingXP = 0;
+		public double FarmingLvL = 0.0;
+		public double FarmingXP = 0.0;
+		public double ForagingXP = 0.0;
+		public double ForagingLvl = 0.0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -139,6 +145,8 @@ public class BetterSkillsModVariables {
 		clone.CombatLvl = original.CombatLvl;
 		clone.FarmingLvL = original.FarmingLvL;
 		clone.FarmingXP = original.FarmingXP;
+		clone.ForagingXP = original.ForagingXP;
+		clone.ForagingLvl = original.ForagingLvl;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -171,6 +179,8 @@ public class BetterSkillsModVariables {
 					variables.CombatLvl = message.data.CombatLvl;
 					variables.FarmingLvL = message.data.FarmingLvL;
 					variables.FarmingXP = message.data.FarmingXP;
+					variables.ForagingXP = message.data.ForagingXP;
+					variables.ForagingLvl = message.data.ForagingLvl;
 				}
 			});
 			context.setPacketHandled(true);

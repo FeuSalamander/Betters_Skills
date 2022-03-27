@@ -63,7 +63,10 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 		this.blit(ms, this.guiLeft + 121, this.guiTop + 15, 0, 0, 32, 32, 32, 32);
 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("better_skills:textures/wood_hoe.png"));
-		this.blit(ms, this.guiLeft + 9, this.guiTop + 95, 0, 0, 32, 32, 32, 32);
+		this.blit(ms, this.guiLeft + 9, this.guiTop + 94, 0, 0, 32, 32, 32, 32);
+
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("better_skills:textures/wood_axe.png"));
+		this.blit(ms, this.guiLeft + 121, this.guiTop + 96, 0, 0, 32, 32, 32, 32);
 
 		RenderSystem.disableBlend();
 	}
@@ -99,6 +102,11 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 		this.font.drawString(ms, "Total xp:", 6, 129, -12829636);
 		this.font.drawString(ms, "" + ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP) + "", 6, 141, -12829636);
+		this.font.drawString(ms, "Foraging " + ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingLvl) + "", 114, 81, -12829636);
+		this.font.drawString(ms, "Total xp :", 114, 130, -12829636);
+		this.font.drawString(ms, "" + ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP) + "", 115, 141, -12829636);
 	}
 
 	@Override
