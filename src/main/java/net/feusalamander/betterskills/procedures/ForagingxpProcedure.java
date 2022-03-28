@@ -8,11 +8,11 @@ import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
@@ -507,85 +507,8 @@ public class ForagingxpProcedure {
 				});
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.OAK_LOG) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP + 6);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.ForagingXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+6 foraging xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.SPRUCE_LOG) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP + 6);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.ForagingXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+6 foraging xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.BIRCH_LOG) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP + 6);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.ForagingXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+6 foraging xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.JUNGLE_LOG) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP + 6);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.ForagingXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+6 foraging xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.DARK_OAK_LOG) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP + 6);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.ForagingXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+6 foraging xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.WARPED_STEM) {
-			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP + 6);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.ForagingXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+6 foraging xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.CRIMSON_STEM) {
+		if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:logs"))
+				.contains((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock())) {
 			{
 				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP + 6);

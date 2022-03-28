@@ -1183,6 +1183,39 @@
       "locked_code": false,
       "registry_name": "setforaging",
       "path": "~/commands"
+    },
+    {
+      "name": "Excavate",
+      "type": "procedure",
+      "sortid": 111,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "excavate",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/advancementMining"
     }
   ],
   "variable_elements": [
@@ -1265,7 +1298,7 @@
       "advancements.combat.title": "Combat 1",
       "advancements.foraging_12.title": "Foraging 12",
       "advancements.combat_19.descr": "reach 322425 xp",
-      "advancements.foraging_10.descr": "reach 9925 xp",
+      "advancements.foraging_10.descr": "reach 9925 xp, break trees when you break the botom block up to 11 blocks",
       "advancements.foraging_20.title": "Foraging 20",
       "advancements.combat_3.descr": "reach 375 xp",
       "advancements.farming_11.title": "Farming 11",
@@ -1418,7 +1451,7 @@
   "workspaceSettings": {
     "modid": "better_skills",
     "modName": "Better Skills",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "description": "add skills to your game",
     "author": "FeuSalamander",
     "websiteURL": "https://www.curseforge.com/minecraft/mc-mods/better-skills",
