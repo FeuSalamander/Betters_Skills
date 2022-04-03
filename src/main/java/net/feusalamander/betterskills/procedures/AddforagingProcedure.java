@@ -2,8 +2,8 @@ package net.feusalamander.betterskills.procedures;
 
 import net.minecraft.entity.Entity;
 
-import net.feusalamander.betterskills.BetterSkillsModVariables;
-import net.feusalamander.betterskills.BetterSkillsMod;
+import net.feusalamander.betterskills.BetterskillsModVariables;
+import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -13,19 +13,19 @@ public class AddforagingProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency entity for procedure Addforaging!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency entity for procedure Addforaging!");
 			return;
 		}
 		if (dependencies.get("cmdparams") == null) {
 			if (!dependencies.containsKey("cmdparams"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency cmdparams for procedure Addforaging!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency cmdparams for procedure Addforaging!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		HashMap cmdparams = (HashMap) dependencies.get("cmdparams");
 		{
-			double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP + new Object() {
+			double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP + new Object() {
 						double convert(String s) {
 							try {
 								return Double.parseDouble(s.trim());
@@ -42,7 +42,7 @@ public class AddforagingProcedure {
 							return "";
 						}
 					}.getText()));
-			entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+			entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.ForagingXP = _setval;
 				capability.syncPlayerVariables(entity);
 			});

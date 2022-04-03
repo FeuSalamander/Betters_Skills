@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:golden_axe"
+    },
+    "title": {
+      "translate": "advancements.foraging_17.title"
+    },
+    "description": {
+      "translate": "advancements.foraging_17.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "foraging_17": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "betterskills:foraging_16"
+}

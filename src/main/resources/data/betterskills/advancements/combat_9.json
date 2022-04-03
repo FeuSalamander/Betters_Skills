@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:stone_sword"
+    },
+    "title": {
+      "translate": "advancements.combat_9.title"
+    },
+    "description": {
+      "translate": "advancements.combat_9.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "combat_9": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "betterskills:combat_8"
+}

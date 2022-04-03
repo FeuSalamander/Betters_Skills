@@ -22,18 +22,18 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 
-import net.feusalamander.betterskills.BetterSkillsModElements;
+import net.feusalamander.betterskills.BetterskillsModElements;
 
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-@BetterSkillsModElements.ModElement.Tag
-public class SkillsGui extends BetterSkillsModElements.ModElement {
+@BetterskillsModElements.ModElement.Tag
+public class SkillsGui extends BetterskillsModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
 
-	public SkillsGui(BetterSkillsModElements instance) {
+	public SkillsGui(BetterskillsModElements instance) {
 		super(instance, 2);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);

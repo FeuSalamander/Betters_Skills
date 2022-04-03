@@ -15,8 +15,8 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
-import net.feusalamander.betterskills.BetterSkillsModVariables;
-import net.feusalamander.betterskills.BetterSkillsMod;
+import net.feusalamander.betterskills.BetterskillsModVariables;
+import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -47,27 +47,27 @@ public class ExcavateProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency world for procedure Excavate!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency world for procedure Excavate!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency x for procedure Excavate!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency x for procedure Excavate!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency y for procedure Excavate!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency y for procedure Excavate!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency z for procedure Excavate!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency z for procedure Excavate!");
 			return;
 		}
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency entity for procedure Excavate!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency entity for procedure Excavate!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");
@@ -83,7 +83,7 @@ public class ExcavateProcedure {
 				&& (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 						? ((ServerPlayerEntity) entity).getAdvancements()
 								.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-										.getAdvancement(new ResourceLocation("better_skills:foraging_10")))
+										.getAdvancement(new ResourceLocation("betterskills:foraging_10")))
 								.isDone()
 						: false)) {
 			for (int index0 = 0; index0 < (int) (11); index0++) {
@@ -91,9 +91,9 @@ public class ExcavateProcedure {
 						.contains((world.getBlockState(new BlockPos((int) x, (int) (y + number), (int) z))).getBlock())) {
 					world.destroyBlock(new BlockPos((int) x, (int) (y + number), (int) z), false);
 					{
-						double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP + 6);
-						entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP + 6);
+						entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.ForagingXP = _setval;
 							capability.syncPlayerVariables(entity);
 						});

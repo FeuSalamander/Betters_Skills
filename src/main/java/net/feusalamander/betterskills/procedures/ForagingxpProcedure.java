@@ -16,8 +16,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
-import net.feusalamander.betterskills.BetterSkillsModVariables;
-import net.feusalamander.betterskills.BetterSkillsMod;
+import net.feusalamander.betterskills.BetterskillsModVariables;
+import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.Map;
 import java.util.Iterator;
@@ -49,27 +49,27 @@ public class ForagingxpProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency world for procedure Foragingxp!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency world for procedure Foragingxp!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency x for procedure Foragingxp!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency x for procedure Foragingxp!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency y for procedure Foragingxp!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency y for procedure Foragingxp!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency z for procedure Foragingxp!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency z for procedure Foragingxp!");
 			return;
 		}
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency entity for procedure Foragingxp!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency entity for procedure Foragingxp!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");
@@ -77,18 +77,18 @@ public class ForagingxpProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 522425) {
+		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 522425) {
 			{
 				double _setval = 20;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_20"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_20"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -98,18 +98,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 322425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 322425) {
 			{
 				double _setval = 19;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_19"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_19"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -119,18 +119,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 222425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 222425) {
 			{
 				double _setval = 18;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_18"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_18"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -140,18 +140,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 147425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 147425) {
 			{
 				double _setval = 17;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_17"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_17"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -161,18 +161,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 97425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 97425) {
 			{
 				double _setval = 16;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_16"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_16"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -182,18 +182,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 67425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 67425) {
 			{
 				double _setval = 15;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_15"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_15"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -203,18 +203,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 47425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 47425) {
 			{
 				double _setval = 14;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_14"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_14"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -224,18 +224,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 32425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 32425) {
 			{
 				double _setval = 13;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_13"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_13"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -245,18 +245,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 22425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 22425) {
 			{
 				double _setval = 12;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_12"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_12"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -266,18 +266,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 14925) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 14925) {
 			{
 				double _setval = 11;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_11"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_11"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -287,18 +287,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 9925) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 9925) {
 			{
 				double _setval = 10;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_10"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_10"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -308,18 +308,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 6425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 6425) {
 			{
 				double _setval = 9;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_9"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_9"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -329,18 +329,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 4425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 4425) {
 			{
 				double _setval = 8;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_8"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_8"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -350,18 +350,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 2925) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 2925) {
 			{
 				double _setval = 7;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_7"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_7"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -371,18 +371,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 1925) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 1925) {
 			{
 				double _setval = 6;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_6"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_6"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -392,18 +392,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 1175) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 1175) {
 			{
 				double _setval = 5;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_5"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_5"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -413,18 +413,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 675) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 675) {
 			{
 				double _setval = 4;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_4"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_4"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -434,18 +434,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 375) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 375) {
 			{
 				double _setval = 3;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_3"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_3"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -455,18 +455,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 175) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 175) {
 			{
 				double _setval = 2;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_2"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_2"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -476,18 +476,18 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP >= 50) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 50) {
 			{
 				double _setval = 1;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:foraging_1"));
+						.getAdvancement(new ResourceLocation("betterskills:foraging_1"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -497,11 +497,11 @@ public class ForagingxpProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP < 50) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP < 50) {
 			{
 				double _setval = 0;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingLvl = _setval;
 					capability.syncPlayerVariables(entity);
 				});
@@ -510,9 +510,9 @@ public class ForagingxpProcedure {
 		if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:logs"))
 				.contains((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock())) {
 			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).ForagingXP + 6);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP + 6);
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingXP = _setval;
 					capability.syncPlayerVariables(entity);
 				});

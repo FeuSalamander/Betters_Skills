@@ -2,8 +2,8 @@ package net.feusalamander.betterskills.procedures;
 
 import net.minecraft.entity.Entity;
 
-import net.feusalamander.betterskills.BetterSkillsModVariables;
-import net.feusalamander.betterskills.BetterSkillsMod;
+import net.feusalamander.betterskills.BetterskillsModVariables;
+import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -13,12 +13,12 @@ public class SetminingxpprocedureProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency entity for procedure Setminingxpprocedure!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency entity for procedure Setminingxpprocedure!");
 			return;
 		}
 		if (dependencies.get("cmdparams") == null) {
 			if (!dependencies.containsKey("cmdparams"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency cmdparams for procedure Setminingxpprocedure!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency cmdparams for procedure Setminingxpprocedure!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -41,7 +41,7 @@ public class SetminingxpprocedureProcedure {
 					return "";
 				}
 			}.getText());
-			entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+			entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.MiningXP = _setval;
 				capability.syncPlayerVariables(entity);
 			});

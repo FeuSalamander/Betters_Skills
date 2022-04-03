@@ -1,8 +1,0 @@
-{
-  "criteria": {
-    "farming_6": {
-      "trigger": "minecraft:impossible"
-    }
-  },
-  "parent": "better_skills:farming_5"
-}

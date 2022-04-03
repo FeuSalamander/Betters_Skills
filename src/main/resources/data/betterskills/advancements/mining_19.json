@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:golden_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.mining_19.title"
+    },
+    "description": {
+      "translate": "advancements.mining_19.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "mining_19": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "betterskills:mining_18"
+}

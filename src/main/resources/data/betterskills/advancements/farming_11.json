@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:iron_hoe"
+    },
+    "title": {
+      "translate": "advancements.farming_11.title"
+    },
+    "description": {
+      "translate": "advancements.farming_11.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "farming_11": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "betterskills:farming_10"
+}

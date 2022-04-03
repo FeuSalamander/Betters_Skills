@@ -3,8 +3,8 @@ loaderVersion="[36,)"
 license="All Rights Reserved"
 
 [[mods]]
-modId="better_skills"
-version="1.2.3"
+modId="betterskills"
+version="1.2.4"
 displayName="Better Skills"
 credits="Made by FeuSalamander"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/better-skills"
@@ -14,7 +14,7 @@ description='''
 add skills to your game
 '''
 
-[[dependencies.better_skills]]
+[[dependencies.betterskills]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.16.5]"
@@ -23,4 +23,10 @@ add skills to your game
 
 
 
+[[dependencies.betterskills]]
+    modId="just_enough_items"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 

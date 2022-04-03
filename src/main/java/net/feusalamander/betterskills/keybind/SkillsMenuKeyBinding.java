@@ -19,8 +19,8 @@ import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.Minecraft;
 
 import net.feusalamander.betterskills.procedures.SkillsMenuOnKeyReleasedProcedure;
-import net.feusalamander.betterskills.BetterSkillsModElements;
-import net.feusalamander.betterskills.BetterSkillsMod;
+import net.feusalamander.betterskills.BetterskillsModElements;
+import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.stream.Stream;
 import java.util.function.Supplier;
@@ -28,13 +28,13 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-@BetterSkillsModElements.ModElement.Tag
-public class SkillsMenuKeyBinding extends BetterSkillsModElements.ModElement {
+@BetterskillsModElements.ModElement.Tag
+public class SkillsMenuKeyBinding extends BetterskillsModElements.ModElement {
 	@OnlyIn(Dist.CLIENT)
 	private KeyBinding keys;
 	private long lastpress = 0;
 
-	public SkillsMenuKeyBinding(BetterSkillsModElements instance) {
+	public SkillsMenuKeyBinding(BetterskillsModElements instance) {
 		super(instance, 3);
 		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new,
 				KeyBindingPressedMessage::handler);
@@ -43,7 +43,7 @@ public class SkillsMenuKeyBinding extends BetterSkillsModElements.ModElement {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		keys = new KeyBinding("key.better_skills.skills_menu", GLFW.GLFW_KEY_KP_5, "key.categories.gameplay");
+		keys = new KeyBinding("key.betterskills.skills_menu", GLFW.GLFW_KEY_KP_5, "key.categories.gameplay");
 		ClientRegistry.registerKeyBinding(keys);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -57,7 +57,7 @@ public class SkillsMenuKeyBinding extends BetterSkillsModElements.ModElement {
 					lastpress = System.currentTimeMillis();
 				} else if (event.getAction() == GLFW.GLFW_RELEASE) {
 					int dt = (int) (System.currentTimeMillis() - lastpress);
-					BetterSkillsMod.PACKET_HANDLER.sendToServer(new KeyBindingPressedMessage(1, dt));
+					BetterskillsMod.PACKET_HANDLER.sendToServer(new KeyBindingPressedMessage(1, dt));
 					pressAction(Minecraft.getInstance().player, 1, dt);
 				}
 			}

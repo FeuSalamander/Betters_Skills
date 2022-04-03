@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:iron_hoe"
+    },
+    "title": {
+      "translate": "advancements.farming_10.title"
+    },
+    "description": {
+      "translate": "advancements.farming_10.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "farming_10": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "betterskills:wateringcan_craft"
+    ]
+  },
+  "parent": "betterskills:farming_9"
+}

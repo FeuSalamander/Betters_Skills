@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:golden_hoe"
+    },
+    "title": {
+      "translate": "advancements.farming_18.title"
+    },
+    "description": {
+      "translate": "advancements.farming_18.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "farming_18": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "betterskills:farming_17"
+}

@@ -1,8 +1,0 @@
-{
-  "criteria": {
-    "foraging_6": {
-      "trigger": "minecraft:impossible"
-    }
-  },
-  "parent": "better_skills:foraging_5"
-}

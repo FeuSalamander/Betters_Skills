@@ -27,8 +27,8 @@ import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.AgeableEntity;
 
-import net.feusalamander.betterskills.BetterSkillsModVariables;
-import net.feusalamander.betterskills.BetterSkillsMod;
+import net.feusalamander.betterskills.BetterskillsModVariables;
+import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -61,21 +61,21 @@ public class CombatXpProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency entity for procedure CombatXp!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency entity for procedure CombatXp!");
 			return;
 		}
 		if (dependencies.get("sourceentity") == null) {
 			if (!dependencies.containsKey("sourceentity"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency sourceentity for procedure CombatXp!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency sourceentity for procedure CombatXp!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
 		if (entity instanceof ZombieEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 5);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -86,9 +86,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof BlazeEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 20);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 20);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -99,9 +99,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof CaveSpiderEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 5);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -112,9 +112,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof CreeperEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 5);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -125,9 +125,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof CreeperEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 10);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 10);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -138,9 +138,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof EnderDragonEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 5000);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5000);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -151,9 +151,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof DrownedEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 5);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -164,9 +164,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof ElderGuardianEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 100);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 100);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -177,9 +177,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof EndermanEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 20);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 20);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -190,9 +190,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof GhastEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 30);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 30);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -203,9 +203,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof GolemEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 30);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 30);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -216,9 +216,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof GuardianEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 10);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 10);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -229,9 +229,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof HuskEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 6);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 6);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -242,9 +242,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof IronGolemEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 30);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 30);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -255,9 +255,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof MagmaCubeEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 10);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 10);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -268,9 +268,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof PhantomEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 30);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 30);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -281,9 +281,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof RavagerEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 30);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 30);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -294,9 +294,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof AgeableEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 10);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 10);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -307,9 +307,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof SkeletonEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 5);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});
@@ -320,9 +320,9 @@ public class CombatXpProcedure {
 		}
 		if (entity instanceof SkeletonEntity) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).CombatXP + 5);
-				sourceentity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
 				});

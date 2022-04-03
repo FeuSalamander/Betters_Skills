@@ -15,7 +15,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.feusalamander.betterskills.gui.SkillsGui;
-import net.feusalamander.betterskills.BetterSkillsMod;
+import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.Map;
 
@@ -26,27 +26,27 @@ public class SkillsMenuOnKeyReleasedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency world for procedure SkillsMenuOnKeyReleased!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency world for procedure SkillsMenuOnKeyReleased!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency x for procedure SkillsMenuOnKeyReleased!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency x for procedure SkillsMenuOnKeyReleased!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency y for procedure SkillsMenuOnKeyReleased!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency y for procedure SkillsMenuOnKeyReleased!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency z for procedure SkillsMenuOnKeyReleased!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency z for procedure SkillsMenuOnKeyReleased!");
 			return;
 		}
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency entity for procedure SkillsMenuOnKeyReleased!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency entity for procedure SkillsMenuOnKeyReleased!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");

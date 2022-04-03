@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_hoe"
+    },
+    "title": {
+      "translate": "advancements.farming_20.title"
+    },
+    "description": {
+      "translate": "advancements.farming_20.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "farming_20": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "betterskills:farming_19"
+}

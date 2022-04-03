@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:stone_axe"
+    },
+    "title": {
+      "translate": "advancements.foraging_5.title"
+    },
+    "description": {
+      "translate": "advancements.foraging_5.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "foraging_5": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "betterskills:foraging_4"
+}

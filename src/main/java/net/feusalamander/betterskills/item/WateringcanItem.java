@@ -23,7 +23,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.block.BlockState;
 
 import net.feusalamander.betterskills.procedures.WateringcanRightClickedOnBlockProcedure;
-import net.feusalamander.betterskills.BetterSkillsModElements;
+import net.feusalamander.betterskills.BetterskillsModElements;
 
 import java.util.stream.Stream;
 import java.util.Map;
@@ -34,12 +34,12 @@ import java.util.AbstractMap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;
 
-@BetterSkillsModElements.ModElement.Tag
-public class WateringcanItem extends BetterSkillsModElements.ModElement {
-	@ObjectHolder("better_skills:wateringcan")
+@BetterskillsModElements.ModElement.Tag
+public class WateringcanItem extends BetterskillsModElements.ModElement {
+	@ObjectHolder("betterskills:wateringcan")
 	public static final Item block = null;
 
-	public WateringcanItem(BetterSkillsModElements instance) {
+	public WateringcanItem(BetterskillsModElements instance) {
 		super(instance, 83);
 	}
 
@@ -67,7 +67,8 @@ public class WateringcanItem extends BetterSkillsModElements.ModElement {
 
 				WateringcanRightClickedOnBlockProcedure.executeProcedure(Stream
 						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
+								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}

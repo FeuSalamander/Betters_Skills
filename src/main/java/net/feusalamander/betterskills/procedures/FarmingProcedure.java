@@ -16,8 +16,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
-import net.feusalamander.betterskills.BetterSkillsModVariables;
-import net.feusalamander.betterskills.BetterSkillsMod;
+import net.feusalamander.betterskills.BetterskillsModVariables;
+import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.Map;
 import java.util.Iterator;
@@ -49,27 +49,27 @@ public class FarmingProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency world for procedure Farming!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency world for procedure Farming!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency x for procedure Farming!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency x for procedure Farming!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency y for procedure Farming!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency y for procedure Farming!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency z for procedure Farming!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency z for procedure Farming!");
 			return;
 		}
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				BetterSkillsMod.LOGGER.warn("Failed to load dependency entity for procedure Farming!");
+				BetterskillsMod.LOGGER.warn("Failed to load dependency entity for procedure Farming!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");
@@ -77,18 +77,18 @@ public class FarmingProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 522425) {
+		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 522425) {
 			{
 				double _setval = 20;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_20"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_20"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -98,18 +98,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 322425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 322425) {
 			{
 				double _setval = 19;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_19"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_19"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -119,18 +119,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 222425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 222425) {
 			{
 				double _setval = 18;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_18"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_18"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -140,18 +140,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 147425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 147425) {
 			{
 				double _setval = 17;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_17"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_17"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -161,18 +161,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 97425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 97425) {
 			{
 				double _setval = 16;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.MiningLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_16"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_16"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -182,18 +182,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 67425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 67425) {
 			{
 				double _setval = 15;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_15"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_15"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -203,18 +203,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 47425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 47425) {
 			{
 				double _setval = 14;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_14"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_14"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -224,18 +224,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 32425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 32425) {
 			{
 				double _setval = 13;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_13"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_13"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -245,18 +245,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 22425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 22425) {
 			{
 				double _setval = 12;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_12"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_12"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -266,18 +266,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 14925) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 14925) {
 			{
 				double _setval = 11;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_11"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_11"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -287,18 +287,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 9925) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 9925) {
 			{
 				double _setval = 10;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_10"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_10"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -308,18 +308,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 6425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 6425) {
 			{
 				double _setval = 9;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_9"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_9"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -329,18 +329,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 4425) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 4425) {
 			{
 				double _setval = 8;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_8"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_8"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -350,18 +350,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 2925) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 2925) {
 			{
 				double _setval = 7;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_7"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_7"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -371,18 +371,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 1925) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 1925) {
 			{
 				double _setval = 6;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_6"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_6"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -392,18 +392,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 1175) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 1175) {
 			{
 				double _setval = 5;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_5"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_5"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -413,18 +413,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 675) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 675) {
 			{
 				double _setval = 4;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_4"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_4"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -434,18 +434,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 375) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 375) {
 			{
 				double _setval = 3;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_3"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_3"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -455,18 +455,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 175) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 175) {
 			{
 				double _setval = 2;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_2"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_2"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -476,18 +476,18 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP >= 50) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 50) {
 			{
 				double _setval = 1;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-						.getAdvancement(new ResourceLocation("better_skills:farming_1"));
+						.getAdvancement(new ResourceLocation("betterskills:farming_1"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -497,11 +497,11 @@ public class FarmingProcedure {
 					}
 				}
 			}
-		} else if ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP < 50) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP < 50) {
 			{
 				double _setval = 0;
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingLvL = _setval;
 					capability.syncPlayerVariables(entity);
 				});
@@ -509,9 +509,9 @@ public class FarmingProcedure {
 		}
 		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.WHEAT) {
 			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP + 1);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 1);
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingXP = _setval;
 					capability.syncPlayerVariables(entity);
 				});
@@ -522,9 +522,9 @@ public class FarmingProcedure {
 		}
 		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.POTATOES) {
 			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP + 2);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 2);
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingXP = _setval;
 					capability.syncPlayerVariables(entity);
 				});
@@ -535,9 +535,9 @@ public class FarmingProcedure {
 		}
 		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.CARROTS) {
 			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP + 2);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 2);
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingXP = _setval;
 					capability.syncPlayerVariables(entity);
 				});
@@ -548,9 +548,9 @@ public class FarmingProcedure {
 		}
 		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.SUGAR_CANE) {
 			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP + 2);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 2);
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingXP = _setval;
 					capability.syncPlayerVariables(entity);
 				});
@@ -561,9 +561,9 @@ public class FarmingProcedure {
 		}
 		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.NETHER_WART) {
 			{
-				double _setval = ((entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterSkillsModVariables.PlayerVariables())).FarmingXP + 1.5);
-				entity.getCapability(BetterSkillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 1.5);
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingXP = _setval;
 					capability.syncPlayerVariables(entity);
 				});
