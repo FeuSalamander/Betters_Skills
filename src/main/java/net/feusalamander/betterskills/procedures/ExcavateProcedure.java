@@ -1,5 +1,6 @@
 package net.feusalamander.betterskills.procedures;
 
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.world.BlockEvent;
@@ -9,6 +10,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.FoodStats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -85,7 +87,9 @@ public class ExcavateProcedure {
 								.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
 										.getAdvancement(new ResourceLocation("betterskills:foraging_10")))
 								.isDone()
-						: false)) {
+						: false)
+				&& (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) >= 3
+						|| ((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) >= 3)) {
 			for (int index0 = 0; index0 < (int) (11); index0++) {
 				if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:logs"))
 						.contains((world.getBlockState(new BlockPos((int) x, (int) (y + number), (int) z))).getBlock())) {
@@ -105,6 +109,17 @@ public class ExcavateProcedure {
 				} else {
 					break;
 				}
+			}
+			if (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) >= 2) {
+				if (entity instanceof PlayerEntity) {
+					ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(),
+							(float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) - 3),
+							"field_75125_b");
+				}
+			} else {
+				if (entity instanceof PlayerEntity)
+					((PlayerEntity) entity).getFoodStats()
+							.setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) - 3));
 			}
 		}
 	}
