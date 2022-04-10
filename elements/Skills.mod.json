@@ -3,7 +3,7 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 176,
+    "width": 278,
     "height": 166,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
@@ -16,8 +16,8 @@
           "image": "wooden_pick.png",
           "use1Xscale": false,
           "name": "wooden_pick.png",
-          "x": 132,
-          "y": 53
+          "x": 78,
+          "y": 52
         }
       },
       {
@@ -29,8 +29,8 @@
             "falpha": 0.0
           },
           "name": "Mining <VAR:MiningLvL>",
-          "x": 132,
-          "y": 44
+          "x": 78,
+          "y": 43
         }
       },
       {
@@ -42,8 +42,8 @@
             "falpha": 0.0
           },
           "name": "<VAR:MiningXP>",
-          "x": 132,
-          "y": 96
+          "x": 78,
+          "y": 92
         }
       },
       {
@@ -55,8 +55,8 @@
             "falpha": 0.0
           },
           "name": "Total xp:",
-          "x": 132,
-          "y": 85
+          "x": 78,
+          "y": 83
         }
       },
       {
@@ -65,8 +65,8 @@
           "image": "wooden_sword.png",
           "use1Xscale": false,
           "name": "wooden_sword.png",
-          "x": 247,
-          "y": 52
+          "x": 176,
+          "y": 102
         }
       },
       {
@@ -78,8 +78,8 @@
             "falpha": 0.0
           },
           "name": "Combat <VAR:CombatLvl>",
-          "x": 240,
-          "y": 44
+          "x": 173,
+          "y": 91
         }
       },
       {
@@ -91,8 +91,8 @@
             "falpha": 0.0
           },
           "name": "Total xp:",
-          "x": 240,
-          "y": 85
+          "x": 173,
+          "y": 134
         }
       },
       {
@@ -104,8 +104,8 @@
             "falpha": 0.0
           },
           "name": "<VAR:CombatXP>",
-          "x": 240,
-          "y": 97
+          "x": 173,
+          "y": 146
         }
       },
       {
@@ -117,8 +117,8 @@
             "falpha": 0.0
           },
           "name": "Farming <VAR:FarmingLvL>",
-          "x": 132,
-          "y": 119
+          "x": 78,
+          "y": 117
         }
       },
       {
@@ -130,8 +130,8 @@
             "falpha": 0.0
           },
           "name": "Total xp:",
-          "x": 132,
-          "y": 166
+          "x": 78,
+          "y": 161
         }
       },
       {
@@ -143,8 +143,8 @@
             "falpha": 0.0
           },
           "name": "<VAR:FarmingXP>",
-          "x": 132,
-          "y": 178
+          "x": 78,
+          "y": 172
         }
       },
       {
@@ -153,8 +153,8 @@
           "image": "wood_hoe.png",
           "use1Xscale": false,
           "name": "wood_hoe.png",
-          "x": 135,
-          "y": 131
+          "x": 81,
+          "y": 129
         }
       },
       {
@@ -164,7 +164,7 @@
           "use1Xscale": false,
           "name": "wood_axe.png",
           "x": 247,
-          "y": 133
+          "y": 129
         }
       },
       {
@@ -176,8 +176,8 @@
             "falpha": 0.0
           },
           "name": "Foraging <VAR:ForagingLvl>",
-          "x": 240,
-          "y": 118
+          "x": 248,
+          "y": 117
         }
       },
       {
@@ -189,8 +189,8 @@
             "falpha": 0.0
           },
           "name": "Total xp :",
-          "x": 240,
-          "y": 167
+          "x": 248,
+          "y": 160
         }
       },
       {
@@ -202,8 +202,57 @@
             "falpha": 0.0
           },
           "name": "<VAR:ForagingXP>",
-          "x": 241,
-          "y": 178
+          "x": 249,
+          "y": 172
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fishing_rod.png",
+          "use1Xscale": false,
+          "name": "fishing_rod.png",
+          "x": 250,
+          "y": 52
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Fishing <VAR:FishingLvL>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Fishing <VAR:FishingLvL>",
+          "x": 249,
+          "y": 43
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Total xp:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Total xp:",
+          "x": 249,
+          "y": 82
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:FishingXP>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:FishingXP>",
+          "x": 249,
+          "y": 92
         }
       }
     ],

@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:fishing_rod"
+    },
+    "title": {
+      "translate": "advancements.fishing_16.title"
+    },
+    "description": {
+      "translate": "advancements.fishing_16.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "fishing_16": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "betterskills:fishing_15"
+}

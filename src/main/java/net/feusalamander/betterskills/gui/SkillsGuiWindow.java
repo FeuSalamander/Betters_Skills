@@ -33,7 +33,7 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.xSize = 176;
+		this.xSize = 278;
 		this.ySize = 166;
 	}
 
@@ -57,16 +57,19 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/wooden_pick.png"));
-		this.blit(ms, this.guiLeft + 6, this.guiTop + 16, 0, 0, 32, 32, 32, 32);
+		this.blit(ms, this.guiLeft + 3, this.guiTop + 15, 0, 0, 32, 32, 32, 32);
 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/wooden_sword.png"));
-		this.blit(ms, this.guiLeft + 121, this.guiTop + 15, 0, 0, 32, 32, 32, 32);
+		this.blit(ms, this.guiLeft + 101, this.guiTop + 65, 0, 0, 32, 32, 32, 32);
 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/wood_hoe.png"));
-		this.blit(ms, this.guiLeft + 9, this.guiTop + 94, 0, 0, 32, 32, 32, 32);
+		this.blit(ms, this.guiLeft + 6, this.guiTop + 92, 0, 0, 32, 32, 32, 32);
 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/wood_axe.png"));
-		this.blit(ms, this.guiLeft + 121, this.guiTop + 96, 0, 0, 32, 32, 32, 32);
+		this.blit(ms, this.guiLeft + 172, this.guiTop + 92, 0, 0, 32, 32, 32, 32);
+
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/fishing_rod.png"));
+		this.blit(ms, this.guiLeft + 175, this.guiTop + 15, 0, 0, 32, 32, 32, 32);
 
 		RenderSystem.disableBlend();
 	}
@@ -88,25 +91,30 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
 		this.font.drawString(ms, "Mining " + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL) + "", 6, 7, -12829636);
+				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL) + "", 3, 6, -12829636);
 		this.font.drawString(ms, "" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP) + "", 6, 59, -12829636);
-		this.font.drawString(ms, "Total xp:", 6, 48, -12829636);
+				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP) + "", 3, 55, -12829636);
+		this.font.drawString(ms, "Total xp:", 3, 46, -12829636);
 		this.font.drawString(ms, "Combat " + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).CombatLvl) + "", 114, 7, -12829636);
-		this.font.drawString(ms, "Total xp:", 114, 48, -12829636);
+				.orElse(new BetterskillsModVariables.PlayerVariables())).CombatLvl) + "", 98, 54, -12829636);
+		this.font.drawString(ms, "Total xp:", 98, 97, -12829636);
 		this.font.drawString(ms, "" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP) + "", 114, 60, -12829636);
+				.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP) + "", 98, 109, -12829636);
 		this.font.drawString(ms, "Farming " + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingLvL) + "", 6, 82, -12829636);
-		this.font.drawString(ms, "Total xp:", 6, 129, -12829636);
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingLvL) + "", 3, 80, -12829636);
+		this.font.drawString(ms, "Total xp:", 3, 124, -12829636);
 		this.font.drawString(ms, "" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP) + "", 6, 141, -12829636);
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP) + "", 3, 135, -12829636);
 		this.font.drawString(ms, "Foraging " + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingLvl) + "", 114, 81, -12829636);
-		this.font.drawString(ms, "Total xp :", 114, 130, -12829636);
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingLvl) + "", 173, 80, -12829636);
+		this.font.drawString(ms, "Total xp :", 173, 123, -12829636);
 		this.font.drawString(ms, "" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP) + "", 115, 141, -12829636);
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP) + "", 174, 135, -12829636);
+		this.font.drawString(ms, "Fishing " + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FishingLvL) + "", 174, 6, -12829636);
+		this.font.drawString(ms, "Total xp:", 174, 45, -12829636);
+		this.font.drawString(ms, "" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP) + "", 174, 55, -12829636);
 	}
 
 	@Override

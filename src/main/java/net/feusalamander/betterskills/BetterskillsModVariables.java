@@ -79,6 +79,8 @@ public class BetterskillsModVariables {
 			nbt.putDouble("FarmingXP", instance.FarmingXP);
 			nbt.putDouble("ForagingXP", instance.ForagingXP);
 			nbt.putDouble("ForagingLvl", instance.ForagingLvl);
+			nbt.putDouble("FishingXP", instance.FishingXP);
+			nbt.putDouble("FishingLvL", instance.FishingLvL);
 			return nbt;
 		}
 
@@ -93,6 +95,8 @@ public class BetterskillsModVariables {
 			instance.FarmingXP = nbt.getDouble("FarmingXP");
 			instance.ForagingXP = nbt.getDouble("ForagingXP");
 			instance.ForagingLvl = nbt.getDouble("ForagingLvl");
+			instance.FishingXP = nbt.getDouble("FishingXP");
+			instance.FishingLvL = nbt.getDouble("FishingLvL");
 		}
 	}
 
@@ -105,6 +109,8 @@ public class BetterskillsModVariables {
 		public double FarmingXP = 0.0;
 		public double ForagingXP = 0.0;
 		public double ForagingLvl = 0.0;
+		public double FishingXP = 0.0;
+		public double FishingLvL = 0.0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -147,6 +153,8 @@ public class BetterskillsModVariables {
 		clone.FarmingXP = original.FarmingXP;
 		clone.ForagingXP = original.ForagingXP;
 		clone.ForagingLvl = original.ForagingLvl;
+		clone.FishingXP = original.FishingXP;
+		clone.FishingLvL = original.FishingLvL;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -181,6 +189,8 @@ public class BetterskillsModVariables {
 					variables.FarmingXP = message.data.FarmingXP;
 					variables.ForagingXP = message.data.ForagingXP;
 					variables.ForagingLvl = message.data.ForagingLvl;
+					variables.FishingXP = message.data.FishingXP;
+					variables.FishingLvL = message.data.FishingLvL;
 				}
 			});
 			context.setPacketHandled(true);
