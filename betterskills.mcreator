@@ -1488,6 +1488,42 @@
       "locked_code": false,
       "registry_name": "fishing_20",
       "path": "~/advancementMining"
+    },
+    {
+      "name": "Thunderbolt",
+      "type": "procedure",
+      "sortid": 138,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "thunderbolt",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
