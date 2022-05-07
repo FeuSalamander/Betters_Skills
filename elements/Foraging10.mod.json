@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "Foraging 10",
-    "achievementDescription": "reach 9925 xp, break trees when you break the botom block up to 11 blocks",
+    "achievementDescription": "reach 9925 xp, grant the instant tree ability",
     "achievementIcon": {
       "value": "Items.IRON_AXE"
     },

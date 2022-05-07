@@ -81,6 +81,7 @@ public class BetterskillsModVariables {
 			nbt.putDouble("ForagingLvl", instance.ForagingLvl);
 			nbt.putDouble("FishingXP", instance.FishingXP);
 			nbt.putDouble("FishingLvL", instance.FishingLvL);
+			nbt.putBoolean("book", instance.book);
 			return nbt;
 		}
 
@@ -97,6 +98,7 @@ public class BetterskillsModVariables {
 			instance.ForagingLvl = nbt.getDouble("ForagingLvl");
 			instance.FishingXP = nbt.getDouble("FishingXP");
 			instance.FishingLvL = nbt.getDouble("FishingLvL");
+			instance.book = nbt.getBoolean("book");
 		}
 	}
 
@@ -111,6 +113,7 @@ public class BetterskillsModVariables {
 		public double ForagingLvl = 0.0;
 		public double FishingXP = 0.0;
 		public double FishingLvL = 0.0;
+		public boolean book = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -155,6 +158,7 @@ public class BetterskillsModVariables {
 		clone.ForagingLvl = original.ForagingLvl;
 		clone.FishingXP = original.FishingXP;
 		clone.FishingLvL = original.FishingLvL;
+		clone.book = original.book;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -191,6 +195,7 @@ public class BetterskillsModVariables {
 					variables.ForagingLvl = message.data.ForagingLvl;
 					variables.FishingXP = message.data.FishingXP;
 					variables.FishingLvL = message.data.FishingLvL;
+					variables.book = message.data.book;
 				}
 			});
 			context.setPacketHandled(true);

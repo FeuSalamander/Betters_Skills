@@ -1,18 +1,37 @@
 repositories {
   maven {
     // location of the maven that hosts JEI files
-  name = "Progwml6 maven"
-  url = "https://dvs1.progwml6.com/files/maven/"
-  }
+    name = "Progwml6 maven"
+    url = "https://dvs1.progwml6.com/files/maven/"
+  }    
   maven {
     // location of a maven mirror for JEI files, as a fallback
-     name = "ModMaven"
-  url = "https://modmaven.k-4u.nl"
-  }     
+    name = "ModMaven"
+    url = "https://modmaven.k-4u.nl"
+  }    
 }
 
 dependencies {
   compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.6.1.75:api")
   runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.6.1.75")
+}
+
+minecraft {
+  runs {
+      client {
+          property 'mixin.env.remapRefMap', 'true'
+          property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+      }
+  }
+}
+repositories {
+  maven {
+    url = "https://maven.blamejared.com"
+  }
+}
+
+dependencies {
+  compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-53.2:api")
+  runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-53.2")
 }
 

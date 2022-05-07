@@ -1,0 +1,15 @@
+{
+    "name": "Watering can",
+    "icon": "betterskills:wateringcan",
+    "category": "betterskills:items",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Use it to grow up crops but use 500 durability, you can refill it by sneak + right click when you stand in water"
+        }, {
+            "type": "patchouli:crafting",
+            "recipe": "betterskills:wateringcan_craft",
+            "title": "Watering Can"
+        }
+    ]
+}

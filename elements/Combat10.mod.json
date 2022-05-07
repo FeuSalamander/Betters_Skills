@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "Combat 10",
-    "achievementDescription": "reach 9925 xp",
+    "achievementDescription": "reach 9925 xp, grant the help of the souls ability",
     "achievementIcon": {
       "value": "Items.IRON_SWORD"
     },

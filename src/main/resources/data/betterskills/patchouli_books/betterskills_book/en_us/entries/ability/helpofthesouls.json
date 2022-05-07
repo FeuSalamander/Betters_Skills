@@ -1,0 +1,11 @@
+{
+    "name": "Help of the souls",
+    "icon": "minecraft:soul_sand",
+    "category": "betterskills:test_category",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Have 20% chance when you hit an enemy to deal 10 more damages"
+        }
+    ]
+}

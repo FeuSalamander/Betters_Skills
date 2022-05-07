@@ -1,0 +1,11 @@
+{
+    "name": "Instant tree",
+    "icon": "minecraft:oak_sapling",
+    "category": "betterskills:test_category",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "when you break the botom block of a tree, break all the tree up to 11 blocks and cost 3 food level/saturation"
+        }
+    ]
+}
