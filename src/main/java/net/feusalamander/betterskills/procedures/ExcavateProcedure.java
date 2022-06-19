@@ -81,7 +81,8 @@ public class ExcavateProcedure {
 		number = 1;
 		if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:logs"))
 				.contains((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock())
-				&& !entity.isSneaking()
+				&& (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).Instanttree == true
 				&& (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 						? ((ServerPlayerEntity) entity).getAdvancements()
 								.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()

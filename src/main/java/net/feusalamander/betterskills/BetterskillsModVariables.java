@@ -82,6 +82,8 @@ public class BetterskillsModVariables {
 			nbt.putDouble("FishingXP", instance.FishingXP);
 			nbt.putDouble("FishingLvL", instance.FishingLvL);
 			nbt.putBoolean("book", instance.book);
+			nbt.putBoolean("Instanttree", instance.Instanttree);
+			nbt.putBoolean("helpsoul", instance.helpsoul);
 			return nbt;
 		}
 
@@ -99,6 +101,8 @@ public class BetterskillsModVariables {
 			instance.FishingXP = nbt.getDouble("FishingXP");
 			instance.FishingLvL = nbt.getDouble("FishingLvL");
 			instance.book = nbt.getBoolean("book");
+			instance.Instanttree = nbt.getBoolean("Instanttree");
+			instance.helpsoul = nbt.getBoolean("helpsoul");
 		}
 	}
 
@@ -114,6 +118,8 @@ public class BetterskillsModVariables {
 		public double FishingXP = 0.0;
 		public double FishingLvL = 0.0;
 		public boolean book = false;
+		public boolean Instanttree = true;
+		public boolean helpsoul = true;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -159,6 +165,8 @@ public class BetterskillsModVariables {
 		clone.FishingXP = original.FishingXP;
 		clone.FishingLvL = original.FishingLvL;
 		clone.book = original.book;
+		clone.Instanttree = original.Instanttree;
+		clone.helpsoul = original.helpsoul;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -196,6 +204,8 @@ public class BetterskillsModVariables {
 					variables.FishingXP = message.data.FishingXP;
 					variables.FishingLvL = message.data.FishingLvL;
 					variables.book = message.data.book;
+					variables.Instanttree = message.data.Instanttree;
+					variables.helpsoul = message.data.helpsoul;
 				}
 			});
 			context.setPacketHandled(true);

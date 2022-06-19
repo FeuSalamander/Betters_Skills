@@ -15,6 +15,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
+import net.feusalamander.betterskills.BetterskillsModVariables;
 import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.Random;
@@ -88,7 +89,10 @@ public class ThunderboltProcedure {
 						.getProgress(((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager()
 								.getAdvancement(new ResourceLocation("betterskills:combat_10")))
 						.isDone()
-				: false) && (new Random()).nextInt((int) 4 + 1) == 2) {
+				: false)
+				&& (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).helpsoul == true
+				&& (new Random()).nextInt((int) 4 + 1) == 2) {
 			if (world instanceof ServerWorld) {
 				((ServerWorld) world).spawnParticle(ParticleTypes.SOUL, x, y, z, (int) 60, 1, 1, 1, 0.5);
 			}

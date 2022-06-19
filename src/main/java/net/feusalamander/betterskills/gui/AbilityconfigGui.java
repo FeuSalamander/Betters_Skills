@@ -22,7 +22,8 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 
-import net.feusalamander.betterskills.procedures.AbilityconfigprocProcedure;
+import net.feusalamander.betterskills.procedures.TreetoggleProcedure;
+import net.feusalamander.betterskills.procedures.SoulstoggleProcedure;
 import net.feusalamander.betterskills.BetterskillsModElements;
 
 import java.util.stream.Stream;
@@ -32,12 +33,12 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 @BetterskillsModElements.ModElement.Tag
-public class SkillsGui extends BetterskillsModElements.ModElement {
+public class AbilityconfigGui extends BetterskillsModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
 
-	public SkillsGui(BetterskillsModElements instance) {
-		super(instance, 2);
+	public AbilityconfigGui(BetterskillsModElements instance) {
+		super(instance, 140);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
@@ -49,13 +50,13 @@ public class SkillsGui extends BetterskillsModElements.ModElement {
 	private static class ContainerRegisterHandler {
 		@SubscribeEvent
 		public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-			event.getRegistry().register(containerType.setRegistryName("skills"));
+			event.getRegistry().register(containerType.setRegistryName("abilityconfig"));
 		}
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, SkillsGuiWindow::new));
+		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, AbilityconfigGuiWindow::new));
 	}
 
 	public static class GuiContainerModFactory implements IContainerFactory {
@@ -187,10 +188,13 @@ public class SkillsGui extends BetterskillsModElements.ModElement {
 			return;
 		if (buttonID == 0) {
 
-			AbilityconfigprocProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			TreetoggleProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+		}
+		if (buttonID == 1) {
+
+			SoulstoggleProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 
