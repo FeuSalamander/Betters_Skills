@@ -1,0 +1,11 @@
+{
+    "name": "Mole",
+    "icon": "minecraft:stone",
+    "category": "betterskills:test_category",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "When you break a stone block you break another one"
+        }
+    ]
+}

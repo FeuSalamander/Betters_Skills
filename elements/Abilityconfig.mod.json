@@ -81,7 +81,7 @@
             "name": "Soulsoff"
           },
           "name": "no.png",
-          "x": 188,
+          "x": 191,
           "y": 88
         }
       },
@@ -107,7 +107,7 @@
             "name": "Soulson"
           },
           "name": "ok.png",
-          "x": 188,
+          "x": 191,
           "y": 88
         }
       },
@@ -137,6 +137,59 @@
           "name": "Toggle",
           "x": 290,
           "y": 88
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Mole",
+          "color": {
+            "value": -3355444,
+            "falpha": 0.0
+          },
+          "name": "Mole",
+          "x": 99,
+          "y": 113
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ok.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Moleon"
+          },
+          "name": "ok.png",
+          "x": 125,
+          "y": 109
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "no.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Moleoff"
+          },
+          "name": "no.png",
+          "x": 125,
+          "y": 109
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Toggle",
+          "onClick": {
+            "name": "Moletoggle"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "Toggle",
+          "x": 290,
+          "y": 109
         }
       }
     ],

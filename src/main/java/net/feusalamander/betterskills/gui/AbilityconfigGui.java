@@ -24,6 +24,7 @@ import net.minecraft.client.gui.ScreenManager;
 
 import net.feusalamander.betterskills.procedures.TreetoggleProcedure;
 import net.feusalamander.betterskills.procedures.SoulstoggleProcedure;
+import net.feusalamander.betterskills.procedures.MoletoggleProcedure;
 import net.feusalamander.betterskills.BetterskillsModElements;
 
 import java.util.stream.Stream;
@@ -194,6 +195,11 @@ public class AbilityconfigGui extends BetterskillsModElements.ModElement {
 		if (buttonID == 1) {
 
 			SoulstoggleProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+		}
+		if (buttonID == 2) {
+
+			MoletoggleProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}

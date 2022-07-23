@@ -84,6 +84,7 @@ public class BetterskillsModVariables {
 			nbt.putBoolean("book", instance.book);
 			nbt.putBoolean("Instanttree", instance.Instanttree);
 			nbt.putBoolean("helpsoul", instance.helpsoul);
+			nbt.putBoolean("mole", instance.mole);
 			return nbt;
 		}
 
@@ -103,6 +104,7 @@ public class BetterskillsModVariables {
 			instance.book = nbt.getBoolean("book");
 			instance.Instanttree = nbt.getBoolean("Instanttree");
 			instance.helpsoul = nbt.getBoolean("helpsoul");
+			instance.mole = nbt.getBoolean("mole");
 		}
 	}
 
@@ -120,6 +122,7 @@ public class BetterskillsModVariables {
 		public boolean book = false;
 		public boolean Instanttree = true;
 		public boolean helpsoul = true;
+		public boolean mole = true;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -167,6 +170,7 @@ public class BetterskillsModVariables {
 		clone.book = original.book;
 		clone.Instanttree = original.Instanttree;
 		clone.helpsoul = original.helpsoul;
+		clone.mole = original.mole;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -206,6 +210,7 @@ public class BetterskillsModVariables {
 					variables.book = message.data.book;
 					variables.Instanttree = message.data.Instanttree;
 					variables.helpsoul = message.data.helpsoul;
+					variables.mole = message.data.mole;
 				}
 			});
 			context.setPacketHandled(true);

@@ -1696,6 +1696,89 @@
           }
         ]
       }
+    },
+    {
+      "name": "Mole",
+      "type": "procedure",
+      "sortid": 148,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mole",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/advancementMining"
+    },
+    {
+      "name": "Moleon",
+      "type": "procedure",
+      "sortid": 149,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "moleon",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Moleoff",
+      "type": "procedure",
+      "sortid": 150,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "moleoff",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Moletoggle",
+      "type": "procedure",
+      "sortid": 151,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "moletoggle",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1776,6 +1859,12 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "true"
+    },
+    {
+      "name": "mole",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "true"
     }
   ],
   "sound_elements": [],
@@ -1786,29 +1875,29 @@
       "advancements.combat_4.title": "Combat 4",
       "advancements.foraging_8.title": "Foraging 8",
       "advancements.fishing_4.descr": "reach 675 xp",
-      "advancements.combat_15.title": "Combat 15",
       "advancements.mining_9.descr": "reach 9425 xp",
+      "advancements.combat_15.title": "Combat 15",
       "advancements.foraging_6.descr": "reach 1925 xp",
       "advancements.foraging_16.descr": "Reach 97425 xp",
-      "advancements.farming_12.descr": "reach 22425 xp",
       "advancements.farming_8.descr": "reach 4425 xp",
+      "advancements.farming_12.descr": "reach 22425 xp",
       "advancements.fishing_16.title": "Fishing 16",
       "advancements.mining_19.title": "Mining 19",
       "advancements.foraging_18.title": "Foraging 18",
       "advancements.combat.title": "Combat 1",
       "advancements.foraging_12.title": "Foraging 12",
-      "advancements.foraging_10.descr": "reach 9925 xp, grant the instant tree ability",
       "advancements.combat_19.descr": "reach 322425 xp",
+      "advancements.foraging_10.descr": "reach 9925 xp, grant the instant tree ability",
       "advancements.foraging_20.title": "Foraging 20",
       "advancements.fishing_14.descr": "Reach 47425 xp",
       "advancements.combat_3.descr": "reach 375 xp",
       "advancements.mining_6.title": "Mining 6",
       "advancements.farming_9.descr": "reach 9425 xp",
-      "advancements.foraging_3.title": "Foraging 3",
       "advancements.farming_11.descr": "reach 14925 xp",
+      "advancements.foraging_3.title": "Foraging 3",
       "advancements.farming_18.descr": "reach 222425 xp",
-      "advancements.farming_2.descr": "reach 175 xp",
       "advancements.mining_13.descr": "Reach 32425 xp",
+      "advancements.farming_2.descr": "reach 175 xp",
       "advancements.farming_9.title": "Farming 9",
       "advancements.combat_9.descr": "reach 9425 xp",
       "advancements.foraging_13.title": "Foraging 13",
@@ -1820,8 +1909,8 @@
       "advancements.foraging_9.title": "Foraging 9",
       "advancements.combat_10.title": "Combat 10",
       "advancements.mining_5.title": "Mining 5",
-      "advancements.farming_17.descr": "reach 147425 xp",
       "advancements.farming_3.descr": "reach 375 xp",
+      "advancements.farming_17.descr": "reach 147425 xp",
       "advancements.combat_8.descr": "reach 4425 xp",
       "advancements.foraging_15.descr": "Reach 67425 xp",
       "advancements.fishing_4.title": "Fishing 4",
@@ -1843,17 +1932,17 @@
       "advancements.fishing_10.descr": "reach 9925 xp",
       "advancements.fishing_9.title": "Fishing 9",
       "advancements.foraging_2.descr": "reach 175 xp",
-      "advancements.farming_3.title": "Farming 3",
       "advancements.combat_5.title": "Combat 5",
+      "advancements.farming_3.title": "Farming 3",
       "advancements.mining_5.descr": "reach 1175 xp, haste 1",
       "advancements.foraging_7.title": "Foraging 7",
       "advancements.foraging_4.title": "Foraging 4",
       "advancements.farming_1.descr": "reach 50 xp",
       "advancements.farming_19.descr": "reach 322425 xp",
       "advancements.mining_2.descr": "reach 175 xp",
-      "advancements.farming_6.title": "Farming 6",
-      "advancements.combat_11.title": "Combat 11",
       "advancements.mining_7.title": "Mining 7",
+      "advancements.combat_11.title": "Combat 11",
+      "advancements.farming_6.title": "Farming 6",
       "advancements.farming_14.title": "Farming 14",
       "advancements.mining_3.descr": "reach 375 xp",
       "advancements.foraging_10.title": "Foraging 10",
@@ -1867,7 +1956,7 @@
       "advancements.fishing_6.title": "Fishing 6",
       "advancements.farming_5.title": "Farming 5",
       "advancements.fishing_18.title": "Fishing 18",
-      "advancements.mining_10.descr": "reach 9925 xp, haste 2",
+      "advancements.mining_10.descr": "reach 9925 xp, haste 2, Mole ability",
       "advancements.combat_3.title": "Combat 3",
       "advancements.foraging_18.descr": "Reach 222425 xp",
       "advancements.farming_13.title": "Farming 13",
@@ -2003,7 +2092,7 @@
   "workspaceSettings": {
     "modid": "betterskills",
     "modName": "Better Skills",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "description": "add skills to your game",
     "author": "FeuSalamander",
     "websiteURL": "https://www.curseforge.com/minecraft/mc-mods/better-skills",

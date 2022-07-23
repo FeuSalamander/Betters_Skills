@@ -18,6 +18,8 @@ import net.feusalamander.betterskills.procedures.TreeonProcedure;
 import net.feusalamander.betterskills.procedures.TreeoffProcedure;
 import net.feusalamander.betterskills.procedures.SoulsonProcedure;
 import net.feusalamander.betterskills.procedures.SoulsoffProcedure;
+import net.feusalamander.betterskills.procedures.MoleonProcedure;
+import net.feusalamander.betterskills.procedures.MoleoffProcedure;
 import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.stream.Stream;
@@ -76,7 +78,7 @@ public class AbilityconfigGuiWindow extends ContainerScreen<AbilityconfigGui.Gui
 		if (SoulsoffProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 				(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/no.png"));
-			this.blit(ms, this.guiLeft + 100, this.guiTop + 38, 0, 0, 17, 17, 17, 17);
+			this.blit(ms, this.guiLeft + 103, this.guiTop + 38, 0, 0, 17, 17, 17, 17);
 		}
 		if (TreeonProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 				(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
@@ -86,7 +88,17 @@ public class AbilityconfigGuiWindow extends ContainerScreen<AbilityconfigGui.Gui
 		if (SoulsonProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 				(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/ok.png"));
-			this.blit(ms, this.guiLeft + 100, this.guiTop + 38, 0, 0, 17, 17, 17, 17);
+			this.blit(ms, this.guiLeft + 103, this.guiTop + 38, 0, 0, 17, 17, 17, 17);
+		}
+		if (MoleonProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+				(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/ok.png"));
+			this.blit(ms, this.guiLeft + 37, this.guiTop + 59, 0, 0, 17, 17, 17, 17);
+		}
+		if (MoleoffProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+				(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/no.png"));
+			this.blit(ms, this.guiLeft + 37, this.guiTop + 59, 0, 0, 17, 17, 17, 17);
 		}
 		RenderSystem.disableBlend();
 	}
@@ -110,6 +122,7 @@ public class AbilityconfigGuiWindow extends ContainerScreen<AbilityconfigGui.Gui
 		this.font.drawString(ms, "Ability Config", 7, 5, -12829636);
 		this.font.drawString(ms, "Instant Tree", 10, 22, -3355444);
 		this.font.drawString(ms, "Help of the souls", 11, 42, -3355444);
+		this.font.drawString(ms, "Mole", 11, 63, -3355444);
 	}
 
 	@Override
@@ -132,6 +145,12 @@ public class AbilityconfigGuiWindow extends ContainerScreen<AbilityconfigGui.Gui
 			if (true) {
 				BetterskillsMod.PACKET_HANDLER.sendToServer(new AbilityconfigGui.ButtonPressedMessage(1, x, y, z));
 				AbilityconfigGui.handleButtonAction(entity, 1, x, y, z);
+			}
+		}));
+		this.addButton(new Button(this.guiLeft + 202, this.guiTop + 59, 40, 20, new StringTextComponent("Toggle"), e -> {
+			if (true) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new AbilityconfigGui.ButtonPressedMessage(2, x, y, z));
+				AbilityconfigGui.handleButtonAction(entity, 2, x, y, z);
 			}
 		}));
 	}
