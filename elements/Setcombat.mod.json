@@ -1,11 +1,9 @@
 {
-  "_fv": 24,
+  "_fv": 33,
   "_type": "command",
   "definition": {
     "commandName": "setcombatxp",
     "permissionLevel": "3",
-    "onCommandExecuted": {
-      "name": "SetcombatXp"
-    }
+    "argsxml": "<xml><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"old_command\"><field name=\"procedure\">SetcombatXp</field></block></next></block></xml>"
   }
 }

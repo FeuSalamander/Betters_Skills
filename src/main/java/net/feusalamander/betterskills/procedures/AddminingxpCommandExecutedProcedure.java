@@ -1,30 +1,19 @@
 package net.feusalamander.betterskills.procedures;
 
-import net.minecraft.entity.Entity;
+import org.checkerframework.checker.units.qual.s;
 
-import net.feusalamander.betterskills.BetterskillsModVariables;
-import net.feusalamander.betterskills.BetterskillsMod;
+import net.minecraft.world.entity.Entity;
 
-import java.util.Map;
+import net.feusalamander.betterskills.network.BetterskillsModVariables;
+
 import java.util.HashMap;
 
 public class AddminingxpCommandExecutedProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				BetterskillsMod.LOGGER.warn("Failed to load dependency entity for procedure AddminingxpCommandExecuted!");
+	public static void execute(Entity entity, HashMap cmdparams) {
+		if (entity == null || cmdparams == null)
 			return;
-		}
-		if (dependencies.get("cmdparams") == null) {
-			if (!dependencies.containsKey("cmdparams"))
-				BetterskillsMod.LOGGER.warn("Failed to load dependency cmdparams for procedure AddminingxpCommandExecuted!");
-			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		HashMap cmdparams = (HashMap) dependencies.get("cmdparams");
 		{
-			double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+			double _setval = (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + new Object() {
 						double convert(String s) {
 							try {
@@ -33,15 +22,7 @@ public class AddminingxpCommandExecutedProcedure {
 							}
 							return 0;
 						}
-					}.convert(new Object() {
-						public String getText() {
-							String param = (String) cmdparams.get("0");
-							if (param != null) {
-								return param;
-							}
-							return "";
-						}
-					}.getText()));
+					}.convert(cmdparams.containsKey("0") ? cmdparams.get("0").toString() : "");
 			entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.MiningXP = _setval;
 				capability.syncPlayerVariables(entity);

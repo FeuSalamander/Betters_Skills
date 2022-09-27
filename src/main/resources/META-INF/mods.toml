@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[36,)"
+loaderVersion="[40,)"
 license="All Rights Reserved"
 
 [[mods]]
 modId="betterskills"
-version="1.4.2"
+version="1.5.0"
 displayName="Better Skills"
 credits="Made by FeuSalamander"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/better-skills"
@@ -17,20 +17,14 @@ add skills to your game
 [[dependencies.betterskills]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.5]"
+    versionRange="[1.18.2]"
     ordering="NONE"
     side="BOTH"
 
 
 
 [[dependencies.betterskills]]
-    modId="just_enough_items-1.16.5"
-    mandatory=false
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.betterskills]]
-    modId="patchouli-1.16.5"
+    modId="patchouli"
     mandatory=false
     versionRange="[0,)"
     ordering="NONE"
