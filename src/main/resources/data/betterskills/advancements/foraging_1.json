@@ -1,6 +1,6 @@
 {
   "display": {
-    "background": "minecraft:textures/block/stone.png",
+    "background": "betterskills:textures/screens/oak.png",
     "icon": {
       "item": "minecraft:wooden_axe"
     },

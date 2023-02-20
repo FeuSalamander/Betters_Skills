@@ -507,7 +507,7 @@ public class MiningxpProcedure {
 				});
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.STONE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.STONE) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 1);
@@ -520,7 +520,7 @@ public class MiningxpProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+1 mining xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.GRANITE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.GRANITE) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 1);
@@ -533,7 +533,7 @@ public class MiningxpProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+1 mining xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.DIORITE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIORITE) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 1);
@@ -546,7 +546,7 @@ public class MiningxpProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+1 mining xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.COAL_ORE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.COAL_ORE) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 3);
@@ -559,7 +559,7 @@ public class MiningxpProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+3 mining xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.IRON_ORE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.IRON_ORE) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 5);
@@ -572,7 +572,7 @@ public class MiningxpProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+5 mining xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.REDSTONE_ORE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.REDSTONE_ORE) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 5);
@@ -585,7 +585,7 @@ public class MiningxpProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+5 mining xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.REDSTONE_ORE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.REDSTONE_ORE) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 5);
@@ -598,7 +598,7 @@ public class MiningxpProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+5 mining xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.GOLD_ORE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.GOLD_ORE) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 10);
@@ -611,7 +611,7 @@ public class MiningxpProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+10 mining xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.LAPIS_ORE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.LAPIS_ORE) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 10);
@@ -624,7 +624,7 @@ public class MiningxpProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+10 mining xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.DIAMOND_ORE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIAMOND_ORE) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 25);
@@ -637,7 +637,7 @@ public class MiningxpProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+25 mining xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.EMERALD_ORE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.EMERALD_ORE) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 50);
@@ -650,7 +650,7 @@ public class MiningxpProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+50 mining xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.ANCIENT_DEBRIS) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.ANCIENT_DEBRIS) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 50);
@@ -663,7 +663,7 @@ public class MiningxpProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+50 mining xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.OAK_LOG) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.OAK_LOG) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP + 6);

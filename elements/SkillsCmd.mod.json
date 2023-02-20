@@ -1,0 +1,9 @@
+{
+  "_fv": 34,
+  "_type": "command",
+  "definition": {
+    "commandName": "skills",
+    "permissionLevel": "3",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"string\"><field name=\"type\">word</field><field name=\"name\">skill</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">word</field><field name=\"name\">setadd</field><statement name=\"args\"><block type=\"number_default\"><field name=\"name\">xp</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">SkillsProc</field></block></statement></block></statement></block></statement><next><block type=\"call_procedure\"><field name=\"procedure\">SkillsFail</field></block></next></block></next></block></xml>"
+  }
+}

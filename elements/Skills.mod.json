@@ -1,260 +1,15 @@
 {
-  "_fv": 24,
+  "_fv": 34,
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 278,
-    "height": 166,
+    "width": 349,
+    "height": 208,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
-      {
-        "type": "image",
-        "data": {
-          "image": "wooden_pick.png",
-          "use1Xscale": false,
-          "name": "wooden_pick.png",
-          "x": 78,
-          "y": 52
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Mining <VAR:MiningLvL>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Mining <VAR:MiningLvL>",
-          "x": 78,
-          "y": 43
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<VAR:MiningXP>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<VAR:MiningXP>",
-          "x": 78,
-          "y": 92
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Total xp:",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Total xp:",
-          "x": 78,
-          "y": 83
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "wooden_sword.png",
-          "use1Xscale": false,
-          "name": "wooden_sword.png",
-          "x": 176,
-          "y": 102
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Combat <VAR:CombatLvl>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Combat <VAR:CombatLvl>",
-          "x": 173,
-          "y": 91
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Total xp:",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Total xp:",
-          "x": 173,
-          "y": 134
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<VAR:CombatXP>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<VAR:CombatXP>",
-          "x": 173,
-          "y": 146
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Farming <VAR:FarmingLvL>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Farming <VAR:FarmingLvL>",
-          "x": 78,
-          "y": 117
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Total xp:",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Total xp:",
-          "x": 78,
-          "y": 161
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<VAR:FarmingXP>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<VAR:FarmingXP>",
-          "x": 78,
-          "y": 172
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "wood_hoe.png",
-          "use1Xscale": false,
-          "name": "wood_hoe.png",
-          "x": 81,
-          "y": 129
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "wood_axe.png",
-          "use1Xscale": false,
-          "name": "wood_axe.png",
-          "x": 247,
-          "y": 129
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Foraging <VAR:ForagingLvl>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Foraging <VAR:ForagingLvl>",
-          "x": 248,
-          "y": 117
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Total xp :",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Total xp :",
-          "x": 248,
-          "y": 160
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<VAR:ForagingXP>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<VAR:ForagingXP>",
-          "x": 249,
-          "y": 172
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "fishing_rod.png",
-          "use1Xscale": false,
-          "name": "fishing_rod.png",
-          "x": 250,
-          "y": 52
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Fishing <VAR:FishingLvL>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Fishing <VAR:FishingLvL>",
-          "x": 249,
-          "y": 43
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Total xp:",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Total xp:",
-          "x": 249,
-          "y": 82
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<VAR:FishingXP>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<VAR:FishingXP>",
-          "x": 249,
-          "y": 92
-        }
-      },
       {
         "type": "button",
         "data": {
@@ -265,8 +20,28 @@
           "width": 98,
           "height": 20,
           "name": "Ability config",
-          "x": 251,
-          "y": 181
+          "x": 250,
+          "y": 179
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "skillsfont.png",
+          "use1Xscale": false,
+          "name": "skillsfont.png",
+          "x": 37,
+          "y": 16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "skillstextlow.png",
+          "use1Xscale": false,
+          "name": "skillstextlow.png",
+          "x": 43,
+          "y": 22
         }
       }
     ],

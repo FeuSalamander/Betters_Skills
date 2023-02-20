@@ -1,6 +1,6 @@
 {
   "display": {
-    "background": "minecraft:textures/block/stone.png",
+    "background": "betterskills:textures/screens/water.png",
     "icon": {
       "item": "minecraft:fishing_rod"
     },

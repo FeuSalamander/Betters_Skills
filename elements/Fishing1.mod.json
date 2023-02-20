@@ -1,13 +1,13 @@
 {
-  "_fv": 24,
+  "_fv": 34,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Fishing 1",
+    "achievementName": "Fishing",
     "achievementDescription": "reach 50 xp",
     "achievementIcon": {
       "value": "Items.FISHING_ROD"
     },
-    "background": "Default",
+    "background": "water.png",
     "disableDisplay": false,
     "showPopup": true,
     "announceToChat": true,

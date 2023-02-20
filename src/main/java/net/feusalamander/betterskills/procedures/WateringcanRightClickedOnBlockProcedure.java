@@ -64,17 +64,16 @@ public class WateringcanRightClickedOnBlockProcedure {
 		double Y = 0;
 		double Level = 0;
 		if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:crops"))
-				.contains((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock())) {
+				.contains((world.getBlockState(new BlockPos(x, y, z))).getBlock())) {
 			if ((itemstack).getDamage() < 9500) {
 				if (world instanceof ServerWorld) {
 					((ServerWorld) world).spawnParticle(ParticleTypes.SPLASH, x, y, z, (int) 25, 1, 1, 1, 1);
 				}
 				if (world instanceof World) {
-					if (BoneMealItem.applyBonemeal(new ItemStack(Items.BONE_MEAL), (World) world, new BlockPos((int) x, (int) y, (int) z))
-							|| BoneMealItem.growSeagrass(new ItemStack(Items.BONE_MEAL), (World) world, new BlockPos((int) x, (int) y, (int) z),
-									(Direction) null)) {
+					if (BoneMealItem.applyBonemeal(new ItemStack(Items.BONE_MEAL), (World) world, new BlockPos(x, y, z))
+							|| BoneMealItem.growSeagrass(new ItemStack(Items.BONE_MEAL), (World) world, new BlockPos(x, y, z), (Direction) null)) {
 						if (!world.isRemote())
-							((World) world).playEvent(2005, new BlockPos((int) x, (int) y, (int) z), 0);
+							((World) world).playEvent(2005, new BlockPos(x, y, z), 0);
 					}
 				}
 				{

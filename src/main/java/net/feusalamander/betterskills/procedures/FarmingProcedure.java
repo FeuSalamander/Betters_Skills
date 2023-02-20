@@ -507,7 +507,7 @@ public class FarmingProcedure {
 				});
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.WHEAT) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.WHEAT) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 1);
@@ -520,7 +520,7 @@ public class FarmingProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+1 farming xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.POTATOES) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 2);
@@ -533,7 +533,7 @@ public class FarmingProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+2 farming xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.CARROTS) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.CARROTS) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 2);
@@ -546,7 +546,7 @@ public class FarmingProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+2 farming xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.SUGAR_CANE) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.SUGAR_CANE) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 2);
@@ -559,7 +559,7 @@ public class FarmingProcedure {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+2 farming xp"), (true));
 			}
 		}
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.NETHER_WART) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.NETHER_WART) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 1.5);

@@ -48,7 +48,7 @@ public class AbilityconfigGuiWindow extends ContainerScreen<AbilityconfigGui.Gui
 		this.ySize = 140;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("betterskills:textures/abilityconfig.png");
+	private static final ResourceLocation texture = new ResourceLocation("betterskills:textures/screens/abilityconfig.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -67,37 +67,37 @@ public class AbilityconfigGuiWindow extends ContainerScreen<AbilityconfigGui.Gui
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/skilltree.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/skilltree.png"));
 		this.blit(ms, this.guiLeft + 0, this.guiTop + 0, 0, 0, 252, 140, 252, 140);
 
 		if (TreeoffProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 				(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/no.png"));
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/no.png"));
 			this.blit(ms, this.guiLeft + 77, this.guiTop + 18, 0, 0, 17, 17, 17, 17);
 		}
 		if (SoulsoffProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 				(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/no.png"));
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/no.png"));
 			this.blit(ms, this.guiLeft + 103, this.guiTop + 38, 0, 0, 17, 17, 17, 17);
 		}
 		if (TreeonProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 				(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/ok.png"));
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/ok.png"));
 			this.blit(ms, this.guiLeft + 77, this.guiTop + 18, 0, 0, 17, 17, 17, 17);
 		}
 		if (SoulsonProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 				(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/ok.png"));
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/ok.png"));
 			this.blit(ms, this.guiLeft + 103, this.guiTop + 38, 0, 0, 17, 17, 17, 17);
 		}
 		if (MoleonProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 				(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/ok.png"));
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/ok.png"));
 			this.blit(ms, this.guiLeft + 37, this.guiTop + 59, 0, 0, 17, 17, 17, 17);
 		}
 		if (MoleoffProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 				(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/no.png"));
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/no.png"));
 			this.blit(ms, this.guiLeft + 37, this.guiTop + 59, 0, 0, 17, 17, 17, 17);
 		}
 		RenderSystem.disableBlend();

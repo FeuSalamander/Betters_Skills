@@ -1,13 +1,13 @@
 {
-  "_fv": 24,
+  "_fv": 34,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Combat 1",
+    "achievementName": "Combat",
     "achievementDescription": "reach 50 xp",
     "achievementIcon": {
       "value": "Items.WOODEN_SWORD"
     },
-    "background": "Default",
+    "background": "spawner.png",
     "disableDisplay": false,
     "showPopup": true,
     "announceToChat": true,

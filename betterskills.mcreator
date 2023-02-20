@@ -9,104 +9,12 @@
       "registry_name": "skills"
     },
     {
-      "name": "SkillsMenuOnKeyReleased",
-      "type": "procedure",
-      "sortid": 3,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "skills_menu_on_key_released",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "SkillsMenu",
       "type": "keybind",
       "sortid": 3,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skills_menu"
-    },
-    {
-      "name": "Addminingxp",
-      "type": "command",
-      "sortid": 6,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "addminingxp",
-      "path": "~/commands"
-    },
-    {
-      "name": "AddminingxpCommandExecuted",
-      "type": "procedure",
-      "sortid": 7,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "addminingxp_command_executed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "Setminingxp",
-      "type": "command",
-      "sortid": 8,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "setminingxp",
-      "path": "~/commands"
-    },
-    {
-      "name": "Setminingxpprocedure",
-      "type": "procedure",
-      "sortid": 9,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "setminingxpprocedure",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
-      },
-      "path": "~/commands"
     },
     {
       "name": "Miningxp",
@@ -147,7 +55,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_1",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining2",
@@ -156,7 +64,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_2",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining3",
@@ -165,7 +73,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_3",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining4",
@@ -174,7 +82,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_4",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining5",
@@ -183,7 +91,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_5",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining6",
@@ -192,7 +100,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_6",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining7",
@@ -201,7 +109,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_7",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining8",
@@ -210,7 +118,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_8",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining9",
@@ -219,7 +127,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_9",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining10",
@@ -228,7 +136,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_10",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining11",
@@ -237,7 +145,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_11",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining12",
@@ -246,7 +154,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_12",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining13",
@@ -255,7 +163,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_13",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining14",
@@ -264,7 +172,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_14",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining15",
@@ -273,7 +181,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_15",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining16",
@@ -282,7 +190,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_16",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining17",
@@ -291,7 +199,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_17",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining18",
@@ -300,7 +208,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_18",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining19",
@@ -309,7 +217,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_19",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Mining20",
@@ -318,7 +226,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_20",
-      "path": "~/advancementMining"
+      "path": "~/Mining"
     },
     {
       "name": "Effects",
@@ -363,7 +271,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat2",
@@ -372,7 +280,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_2",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat3",
@@ -381,7 +289,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_3",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat4",
@@ -390,7 +298,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_4",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat5",
@@ -399,7 +307,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_5",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat6",
@@ -408,7 +316,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_6",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat7",
@@ -417,7 +325,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_7",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat8",
@@ -426,7 +334,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_8",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat9",
@@ -435,7 +343,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_9",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat10",
@@ -444,7 +352,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_10",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat11",
@@ -453,7 +361,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_11",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat12",
@@ -462,7 +370,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_12",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat13",
@@ -471,7 +379,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_13",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat14",
@@ -480,7 +388,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_14",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat15",
@@ -489,7 +397,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_15",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat16",
@@ -498,7 +406,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_16",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat17",
@@ -507,7 +415,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_17",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat18",
@@ -516,7 +424,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_18",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat19",
@@ -525,7 +433,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_19",
-      "path": "~/advancementMining"
+      "path": "~/Combat"
     },
     {
       "name": "Combat20",
@@ -534,127 +442,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_20",
-      "path": "~/advancementMining"
-    },
-    {
-      "name": "Addcombatxp",
-      "type": "command",
-      "sortid": 53,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "addcombatxp",
-      "path": "~/commands"
-    },
-    {
-      "name": "Addcombat",
-      "type": "procedure",
-      "sortid": 54,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "addcombat",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "Setcombat",
-      "type": "command",
-      "sortid": 55,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "setcombat",
-      "path": "~/commands"
-    },
-    {
-      "name": "SetcombatXp",
-      "type": "procedure",
-      "sortid": 56,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "setcombat_xp",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "SetFarmingXp",
-      "type": "procedure",
-      "sortid": 58,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "set_farming_xp",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "Addfarming",
-      "type": "procedure",
-      "sortid": 59,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "addfarming",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "Addfarmingxp",
-      "type": "command",
-      "sortid": 60,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "addfarmingxp",
-      "path": "~/commands"
-    },
-    {
-      "name": "Setfarming",
-      "type": "command",
-      "sortid": 61,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "setfarming",
-      "path": "~/commands"
+      "path": "~/Combat"
     },
     {
       "name": "Farming1",
@@ -663,7 +451,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_1",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming2",
@@ -672,7 +460,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_2",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming3",
@@ -681,7 +469,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_3",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming4",
@@ -690,7 +478,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_4",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming5",
@@ -699,7 +487,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_5",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming6",
@@ -708,7 +496,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_6",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming7",
@@ -717,7 +505,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_7",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming8",
@@ -726,7 +514,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_8",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming9",
@@ -735,7 +523,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_9",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming10",
@@ -744,7 +532,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_10",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming11",
@@ -753,7 +541,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_11",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming12",
@@ -762,7 +550,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_12",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming13",
@@ -771,7 +559,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_13",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming14",
@@ -780,7 +568,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_14",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming15",
@@ -789,7 +577,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_15",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming16",
@@ -798,7 +586,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_16",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming17",
@@ -807,7 +595,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_17",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming18",
@@ -816,7 +604,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_18",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming19",
@@ -825,7 +613,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_19",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming20",
@@ -834,7 +622,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_20",
-      "path": "~/advancementMining"
+      "path": "~/Farming"
     },
     {
       "name": "Farming",
@@ -959,7 +747,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_1",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging2",
@@ -968,7 +756,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_2",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging3",
@@ -977,7 +765,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_3",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging4",
@@ -986,7 +774,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_4",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging5",
@@ -995,7 +783,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_5",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging6",
@@ -1004,7 +792,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_6",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging7",
@@ -1013,7 +801,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_7",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging8",
@@ -1022,7 +810,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_8",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging9",
@@ -1031,7 +819,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_9",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging10",
@@ -1040,7 +828,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_10",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging11",
@@ -1049,7 +837,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_11",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging12",
@@ -1058,7 +846,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_12",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging13",
@@ -1067,7 +855,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_13",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging14",
@@ -1076,7 +864,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_14",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging15",
@@ -1085,7 +873,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_15",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging16",
@@ -1094,7 +882,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_16",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging17",
@@ -1103,7 +891,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_17",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging18",
@@ -1112,7 +900,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_18",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging19",
@@ -1121,7 +909,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_19",
-      "path": "~/advancementMining"
+      "path": "~/Foraging"
     },
     {
       "name": "Foraging20",
@@ -1130,67 +918,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_20",
-      "path": "~/advancementMining"
-    },
-    {
-      "name": "SetForagingXp",
-      "type": "procedure",
-      "sortid": 107,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "set_foraging_xp",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "Addforaging",
-      "type": "procedure",
-      "sortid": 108,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "addforaging",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "Addforagingxp",
-      "type": "command",
-      "sortid": 109,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "addforagingxp",
-      "path": "~/commands"
-    },
-    {
-      "name": "Setforaging",
-      "type": "command",
-      "sortid": 110,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "setforaging",
-      "path": "~/commands"
+      "path": "~/Foraging"
     },
     {
       "name": "Excavate",
@@ -1222,8 +950,7 @@
             "type": "world"
           }
         ]
-      },
-      "path": "~/advancementMining"
+      }
     },
     {
       "name": "Tooltips",
@@ -1250,73 +977,13 @@
       }
     },
     {
-      "name": "SetFishingxp",
-      "type": "procedure",
-      "sortid": 114,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "set_fishingxp",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "Addfishingxp",
-      "type": "procedure",
-      "sortid": 115,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "addfishingxp",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "Addfishing",
-      "type": "command",
-      "sortid": 116,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "addfishing",
-      "path": "~/commands"
-    },
-    {
-      "name": "Setfishing",
-      "type": "command",
-      "sortid": 117,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "setfishing",
-      "path": "~/commands"
-    },
-    {
       "name": "Fishing1",
       "type": "achievement",
       "sortid": 118,
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_1",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing2",
@@ -1325,7 +992,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_2",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing3",
@@ -1334,7 +1001,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_3",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing4",
@@ -1343,7 +1010,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_4",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing5",
@@ -1352,7 +1019,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_5",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing6",
@@ -1361,7 +1028,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_6",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing7",
@@ -1370,7 +1037,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_7",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing8",
@@ -1379,7 +1046,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_8",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing9",
@@ -1388,7 +1055,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_9",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing10",
@@ -1397,7 +1064,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_10",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing11",
@@ -1406,7 +1073,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_11",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing12",
@@ -1415,7 +1082,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_12",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing13",
@@ -1424,7 +1091,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_13",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing14",
@@ -1433,7 +1100,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_14",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing15",
@@ -1442,7 +1109,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_15",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing16",
@@ -1451,7 +1118,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_16",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing17",
@@ -1460,7 +1127,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_17",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing18",
@@ -1469,7 +1136,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_18",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing19",
@@ -1478,7 +1145,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_19",
-      "path": "~/advancementMining"
+      "path": "~/Fishing"
     },
     {
       "name": "Fishing20",
@@ -1487,43 +1154,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_20",
-      "path": "~/advancementMining"
-    },
-    {
-      "name": "Thunderbolt",
-      "type": "procedure",
-      "sortid": 138,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "thunderbolt",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
+      "path": "~/Fishing"
     },
     {
       "name": "Book",
@@ -1727,8 +1358,7 @@
             "type": "world"
           }
         ]
-      },
-      "path": "~/advancementMining"
+      }
     },
     {
       "name": "Moleon",
@@ -1776,6 +1406,85 @@
           {
             "name": "entity",
             "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SkillsCmd",
+      "type": "command",
+      "sortid": 152,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skills_cmd",
+      "path": "~/command"
+    },
+    {
+      "name": "SkillsFail",
+      "type": "procedure",
+      "sortid": 153,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skills_fail",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/command"
+    },
+    {
+      "name": "SkillsProc",
+      "type": "procedure",
+      "sortid": 154,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skills_proc",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/command"
+    },
+    {
+      "name": "OpenSkillsProc",
+      "type": "procedure",
+      "sortid": 155,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_skills_proc",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -1875,29 +1584,29 @@
       "advancements.combat_4.title": "Combat 4",
       "advancements.foraging_8.title": "Foraging 8",
       "advancements.fishing_4.descr": "reach 675 xp",
-      "advancements.mining_9.descr": "reach 9425 xp",
       "advancements.combat_15.title": "Combat 15",
+      "advancements.mining_9.descr": "reach 9425 xp",
       "advancements.foraging_6.descr": "reach 1925 xp",
       "advancements.foraging_16.descr": "Reach 97425 xp",
-      "advancements.farming_8.descr": "reach 4425 xp",
       "advancements.farming_12.descr": "reach 22425 xp",
+      "advancements.farming_8.descr": "reach 4425 xp",
       "advancements.fishing_16.title": "Fishing 16",
       "advancements.mining_19.title": "Mining 19",
       "advancements.foraging_18.title": "Foraging 18",
-      "advancements.combat.title": "Combat 1",
+      "advancements.combat.title": "Combat",
       "advancements.foraging_12.title": "Foraging 12",
-      "advancements.combat_19.descr": "reach 322425 xp",
       "advancements.foraging_10.descr": "reach 9925 xp, grant the instant tree ability",
+      "advancements.combat_19.descr": "reach 322425 xp",
       "advancements.foraging_20.title": "Foraging 20",
       "advancements.fishing_14.descr": "Reach 47425 xp",
       "advancements.combat_3.descr": "reach 375 xp",
       "advancements.mining_6.title": "Mining 6",
       "advancements.farming_9.descr": "reach 9425 xp",
-      "advancements.farming_11.descr": "reach 14925 xp",
       "advancements.foraging_3.title": "Foraging 3",
+      "advancements.farming_11.descr": "reach 14925 xp",
       "advancements.farming_18.descr": "reach 222425 xp",
-      "advancements.mining_13.descr": "Reach 32425 xp",
       "advancements.farming_2.descr": "reach 175 xp",
+      "advancements.mining_13.descr": "Reach 32425 xp",
       "advancements.farming_9.title": "Farming 9",
       "advancements.combat_9.descr": "reach 9425 xp",
       "advancements.foraging_13.title": "Foraging 13",
@@ -1909,8 +1618,8 @@
       "advancements.foraging_9.title": "Foraging 9",
       "advancements.combat_10.title": "Combat 10",
       "advancements.mining_5.title": "Mining 5",
-      "advancements.farming_3.descr": "reach 375 xp",
       "advancements.farming_17.descr": "reach 147425 xp",
+      "advancements.farming_3.descr": "reach 375 xp",
       "advancements.combat_8.descr": "reach 4425 xp",
       "advancements.foraging_15.descr": "Reach 67425 xp",
       "advancements.fishing_4.title": "Fishing 4",
@@ -1932,17 +1641,17 @@
       "advancements.fishing_10.descr": "reach 9925 xp",
       "advancements.fishing_9.title": "Fishing 9",
       "advancements.foraging_2.descr": "reach 175 xp",
-      "advancements.combat_5.title": "Combat 5",
       "advancements.farming_3.title": "Farming 3",
+      "advancements.combat_5.title": "Combat 5",
       "advancements.mining_5.descr": "reach 1175 xp, haste 1",
       "advancements.foraging_7.title": "Foraging 7",
       "advancements.foraging_4.title": "Foraging 4",
       "advancements.farming_1.descr": "reach 50 xp",
       "advancements.farming_19.descr": "reach 322425 xp",
       "advancements.mining_2.descr": "reach 175 xp",
-      "advancements.mining_7.title": "Mining 7",
-      "advancements.combat_11.title": "Combat 11",
       "advancements.farming_6.title": "Farming 6",
+      "advancements.combat_11.title": "Combat 11",
+      "advancements.mining_7.title": "Mining 7",
       "advancements.farming_14.title": "Farming 14",
       "advancements.mining_3.descr": "reach 375 xp",
       "advancements.foraging_10.title": "Foraging 10",
@@ -2006,7 +1715,7 @@
       "advancements.mining_6.descr": "reach 1925 xp",
       "advancements.foraging_3.descr": "reach 375 xp",
       "advancements.fishing_3.title": "Fishing 3",
-      "advancements.farming_1.title": "Farming 1",
+      "advancements.farming_1.title": "Farming",
       "advancements.fishing_20.descr": "Reach 522425 xp",
       "advancements.foraging_4.descr": "reach 675 xp",
       "advancements.farming_10.title": "Farming 10",
@@ -2026,11 +1735,11 @@
       "advancements.fishing_16.descr": "Reach 97425 xp",
       "advancements.combat_4.descr": "reach 675 xp",
       "advancements.combat.descr": "reach 50 xp",
-      "advancements.foraging_1.title": "Foraging 1",
-      "advancements.mining_1.title": "Mining 1",
+      "advancements.foraging_1.title": "Foraging",
+      "advancements.mining_1.title": "Mining",
       "advancements.farming_7.descr": "reach 2925 xp",
       "advancements.farming_13.descr": "Reach 32425 xp",
-      "advancements.fishing_1.title": "Fishing 1",
+      "advancements.fishing_1.title": "Fishing",
       "advancements.foraging_12.descr": "Reach 22425 xp",
       "advancements.fishing_12.title": "Fishing 12",
       "advancements.foraging_5.descr": "reach 1175 xp",
@@ -2080,11 +1789,27 @@
     "name": "~",
     "children": [
       {
-        "name": "commands",
+        "name": "command",
         "children": []
       },
       {
-        "name": "advancementMining",
+        "name": "Mining",
+        "children": []
+      },
+      {
+        "name": "Combat",
+        "children": []
+      },
+      {
+        "name": "Fishing",
+        "children": []
+      },
+      {
+        "name": "Farming",
+        "children": []
+      },
+      {
+        "name": "Foraging",
         "children": []
       }
     ]
@@ -2099,18 +1824,19 @@
     "license": "All Rights Reserved",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
-    "modPicture": "img_1156",
+    "modPicture": "betterskills",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [
-      "just_enough_items-1.16.5",
-      "patchouli-1.16.5"
+      "patchouli",
+      "reauth",
+      "jei"
     ],
     "currentGenerator": "forge-1.16.5",
     "credits": "Made by FeuSalamander",
     "modElementsPackage": "net.feusalamander.betterskills",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202100354000
+  "mcreatorVersion": 202200348217
 }

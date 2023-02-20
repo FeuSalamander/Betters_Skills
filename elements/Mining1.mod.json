@@ -1,8 +1,8 @@
 {
-  "_fv": 24,
+  "_fv": 34,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Mining 1",
+    "achievementName": "Mining",
     "achievementDescription": "reach 50 xp",
     "achievementIcon": {
       "value": "Items.WOODEN_PICKAXE"

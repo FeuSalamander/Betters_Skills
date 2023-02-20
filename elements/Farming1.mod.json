@@ -1,13 +1,13 @@
 {
-  "_fv": 24,
+  "_fv": 34,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Farming 1",
+    "achievementName": "Farming",
     "achievementDescription": "reach 50 xp",
     "achievementIcon": {
       "value": "Items.WOODEN_HOE"
     },
-    "background": "Default",
+    "background": "hay.png",
     "disableDisplay": false,
     "showPopup": true,
     "announceToChat": true,

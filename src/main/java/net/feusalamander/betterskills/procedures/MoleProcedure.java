@@ -75,7 +75,7 @@ public class MoleProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.STONE
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.STONE
 				&& (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 						? ((ServerPlayerEntity) entity).getAdvancements()
 								.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
@@ -84,8 +84,8 @@ public class MoleProcedure {
 						: false)
 				&& (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).mole == true) {
-			if ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == Blocks.STONE) {
-				world.destroyBlock(new BlockPos((int) (x + 1), (int) y, (int) z), false);
+			if ((world.getBlockState(new BlockPos(x + 1, y, z))).getBlock() == Blocks.STONE) {
+				world.destroyBlock(new BlockPos(x + 1, y, z), false);
 				{
 					double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 1);

@@ -508,7 +508,7 @@ public class ForagingxpProcedure {
 			}
 		}
 		if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:logs"))
-				.contains((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock())) {
+				.contains((world.getBlockState(new BlockPos(x, y, z))).getBlock())) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP + 6);

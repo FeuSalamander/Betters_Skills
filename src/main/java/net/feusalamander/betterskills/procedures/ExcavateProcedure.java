@@ -84,7 +84,7 @@ public class ExcavateProcedure {
 		double number = 0;
 		number = 1;
 		if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:logs"))
-				.contains((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock())
+				.contains((world.getBlockState(new BlockPos(x, y, z))).getBlock())
 				&& (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new BetterskillsModVariables.PlayerVariables())).Instanttree == true
 				&& (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
@@ -97,8 +97,8 @@ public class ExcavateProcedure {
 						|| ((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) >= 3)) {
 			for (int index0 = 0; index0 < (int) (11); index0++) {
 				if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:logs"))
-						.contains((world.getBlockState(new BlockPos((int) x, (int) (y + number), (int) z))).getBlock())) {
-					world.destroyBlock(new BlockPos((int) x, (int) (y + number), (int) z), false);
+						.contains((world.getBlockState(new BlockPos(x, y + number, z))).getBlock())) {
+					world.destroyBlock(new BlockPos(x, y + number, z), false);
 					{
 						double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP + 6);

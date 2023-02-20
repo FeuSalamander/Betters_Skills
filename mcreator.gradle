@@ -1,21 +1,3 @@
-repositories {
-  maven {
-    // location of the maven that hosts JEI files
-    name = "Progwml6 maven"
-    url = "https://dvs1.progwml6.com/files/maven/"
-  }    
-  maven {
-    // location of a maven mirror for JEI files, as a fallback
-    name = "ModMaven"
-    url = "https://modmaven.k-4u.nl"
-  }    
-}
-
-dependencies {
-  compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.6.1.75:api")
-  runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.6.1.75")
-}
-
 minecraft {
   runs {
       client {
@@ -33,5 +15,36 @@ repositories {
 dependencies {
   compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-53.2:api")
   runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-53.2")
+}
+
+repositories {
+    maven {
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+}
+dependencies {
+   compileOnly fg.deobf("curse.maven:reauth-237701:4120078")
+   runtimeOnly fg.deobf("curse.maven:reauth-237701:4120078")
+}
+
+repositories {
+  maven {
+    // location of the maven that hosts JEI files
+    name = "Progwml6 maven"
+    url = "https://dvs1.progwml6.com/files/maven/"
+  }    
+  maven {
+    // location of a maven mirror for JEI files, as a fallback
+    name = "ModMaven"
+    url = "https://modmaven.k-4u.nl"
+  }    
+}
+
+dependencies {
+  compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153:api")
+  runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153")
 }
 
