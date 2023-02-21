@@ -85,6 +85,9 @@ public class BetterskillsModVariables {
 			nbt.putBoolean("Instanttree", instance.Instanttree);
 			nbt.putBoolean("helpsoul", instance.helpsoul);
 			nbt.putBoolean("mole", instance.mole);
+			nbt.putString("xptype", instance.xptype);
+			nbt.putDouble("xpnumber", instance.xpnumber);
+			nbt.putDouble("xptime", instance.xptime);
 			return nbt;
 		}
 
@@ -105,6 +108,9 @@ public class BetterskillsModVariables {
 			instance.Instanttree = nbt.getBoolean("Instanttree");
 			instance.helpsoul = nbt.getBoolean("helpsoul");
 			instance.mole = nbt.getBoolean("mole");
+			instance.xptype = nbt.getString("xptype");
+			instance.xpnumber = nbt.getDouble("xpnumber");
+			instance.xptime = nbt.getDouble("xptime");
 		}
 	}
 
@@ -123,6 +129,9 @@ public class BetterskillsModVariables {
 		public boolean Instanttree = true;
 		public boolean helpsoul = true;
 		public boolean mole = true;
+		public String xptype = "";
+		public double xpnumber = 0;
+		public double xptime = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -171,6 +180,9 @@ public class BetterskillsModVariables {
 		clone.Instanttree = original.Instanttree;
 		clone.helpsoul = original.helpsoul;
 		clone.mole = original.mole;
+		clone.xptype = original.xptype;
+		clone.xpnumber = original.xpnumber;
+		clone.xptime = original.xptime;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -211,6 +223,9 @@ public class BetterskillsModVariables {
 					variables.Instanttree = message.data.Instanttree;
 					variables.helpsoul = message.data.helpsoul;
 					variables.mole = message.data.mole;
+					variables.xptype = message.data.xptype;
+					variables.xpnumber = message.data.xpnumber;
+					variables.xptime = message.data.xptime;
 				}
 			});
 			context.setPacketHandled(true);

@@ -46,6 +46,7 @@ public class EffectsProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
+		double time = 0;
 		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL >= 20) {
 			if (entity instanceof LivingEntity)
@@ -62,6 +63,32 @@ public class EffectsProcedure {
 				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL >= 5) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 20, (int) 0, (false), (false)));
+		}
+		time = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).xptime);
+		if (time > 0) {
+			{
+				double _setval = (time - 1);
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.xptime = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else {
+			{
+				String _setval = "";
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.xptype = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			{
+				double _setval = 0;
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.xpnumber = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		}
 	}
 }
