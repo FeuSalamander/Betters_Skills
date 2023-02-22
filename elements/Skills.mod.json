@@ -43,6 +43,19 @@
           "x": 43,
           "y": 22
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:ForagingXP>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:ForagingXP>",
+          "x": 152,
+          "y": 91
+        }
       }
     ],
     "gridSettings": {

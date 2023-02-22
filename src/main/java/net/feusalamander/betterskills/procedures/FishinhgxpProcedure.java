@@ -5,7 +5,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.player.ItemFishedEvent;
 
 import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -49,6 +48,8 @@ public class FishinhgxpProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
+		double xp = 0;
+		xp = 25;
 		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 522425) {
 			{
@@ -479,16 +480,49 @@ public class FishinhgxpProcedure {
 				});
 			}
 		}
-		{
-			double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP + 25);
-			entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.FishingXP = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+25 fishing xp"), (true));
+		if (xp > 0) {
+			{
+				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP + xp);
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.FishingXP = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("fishing")) {
+				{
+					double _setval = (xp + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xpnumber = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			} else {
+				{
+					String _setval = "fishing";
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xptype = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					double _setval = xp;
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xpnumber = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			}
+			{
+				double _setval = 100;
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.xptime = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			xp = 0;
 		}
 	}
 }

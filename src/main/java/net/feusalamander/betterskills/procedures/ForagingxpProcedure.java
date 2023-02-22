@@ -5,13 +5,11 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.world.BlockEvent;
 
 import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
@@ -77,6 +75,11 @@ public class ForagingxpProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
+		double xp = 0;
+		if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:logs"))
+				.contains((world.getBlockState(new BlockPos(x, y, z))).getBlock())) {
+			xp = 5;
+		}
 		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP >= 522425) {
 			{
@@ -507,19 +510,49 @@ public class ForagingxpProcedure {
 				});
 			}
 		}
-		if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:logs"))
-				.contains((world.getBlockState(new BlockPos(x, y, z))).getBlock())) {
+		if (xp > 0) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP + 6);
+						.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP + xp);
 				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ForagingXP = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+6 foraging xp"), (true));
+			if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("foraging")) {
+				{
+					double _setval = (xp + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xpnumber = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			} else {
+				{
+					String _setval = "foraging";
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xptype = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					double _setval = xp;
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xpnumber = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
+			{
+				double _setval = 100;
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.xptime = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			xp = 0;
 		}
 	}
 }

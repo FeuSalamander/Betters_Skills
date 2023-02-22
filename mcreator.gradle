@@ -18,19 +18,6 @@ dependencies {
 }
 
 repositories {
-    maven {
-        url "https://www.cursemaven.com"
-        content {
-            includeGroup "curse.maven"
-        }
-    }
-}
-dependencies {
-   compileOnly fg.deobf("curse.maven:reauth-237701:4120078")
-   runtimeOnly fg.deobf("curse.maven:reauth-237701:4120078")
-}
-
-repositories {
   maven {
     // location of the maven that hosts JEI files
     name = "Progwml6 maven"

@@ -5,12 +5,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.world.BlockEvent;
 
 import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 import net.minecraft.advancements.AdvancementProgress;
@@ -77,6 +75,22 @@ public class FarmingProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
+		double xp = 0;
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.WHEAT) {
+			xp = 1;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES) {
+			xp = 1.5;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.CARROTS) {
+			xp = 1.5;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.SUGAR_CANE) {
+			xp = 1;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.NETHER_WART) {
+			xp = 2;
+		}
 		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 522425) {
 			{
@@ -507,70 +521,49 @@ public class FarmingProcedure {
 				});
 			}
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.WHEAT) {
+		if (xp > 0) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 1);
+						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + xp);
 				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FarmingXP = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+1 farming xp"), (true));
+			if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("farming")) {
+				{
+					double _setval = (xp + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xpnumber = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			} else {
+				{
+					String _setval = "farming";
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xptype = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					double _setval = xp;
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xpnumber = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES) {
 			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 2);
+				double _setval = 100;
 				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.FarmingXP = _setval;
+					capability.xptime = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+2 farming xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.CARROTS) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 2);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.FarmingXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+2 farming xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.SUGAR_CANE) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 2);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.FarmingXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+2 farming xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.NETHER_WART) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP + 1.5);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.FarmingXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+1.5 farming xp"), (true));
-			}
+			xp = 0;
 		}
 	}
 }

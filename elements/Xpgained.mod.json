@@ -5,16 +5,6 @@
     "priority": "NORMAL",
     "components": [
       {
-        "type": "image",
-        "data": {
-          "image": "xpfont.png",
-          "use1Xscale": true,
-          "name": "xpfont.png",
-          "x": 336,
-          "y": 28
-        }
-      },
-      {
         "type": "label",
         "data": {
           "text": "<VAR:integer:xpnumber>",
@@ -38,6 +28,16 @@
           "name": "<VAR:xptype>",
           "x": 167,
           "y": 92
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "xpfont.png",
+          "use1Xscale": true,
+          "name": "xpfont.png",
+          "x": 354,
+          "y": -12
         }
       }
     ],

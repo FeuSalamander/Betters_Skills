@@ -14,6 +14,7 @@ import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.Minecraft;
 
+import net.feusalamander.betterskills.BetterskillsModVariables;
 import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.HashMap;
@@ -83,6 +84,8 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
+		this.font.drawString(ms, "" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP) + "", 113, 75, -12829636);
 	}
 
 	@Override

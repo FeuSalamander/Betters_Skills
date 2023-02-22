@@ -5,12 +5,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.world.BlockEvent;
 
 import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 import net.minecraft.advancements.AdvancementProgress;
@@ -77,6 +75,43 @@ public class MiningxpProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
+		double xp = 0;
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.STONE) {
+			xp = 1;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.GRANITE) {
+			xp = 1;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIORITE) {
+			xp = 1;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.COAL_ORE) {
+			xp = 3;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.IRON_ORE) {
+			xp = 5;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.REDSTONE_ORE) {
+			xp = 5;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.REDSTONE_ORE) {
+			xp = 5;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.GOLD_ORE) {
+			xp = 10;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.LAPIS_ORE) {
+			xp = 10;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIAMOND_ORE) {
+			xp = 25;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.EMERALD_ORE) {
+			xp = 50;
+		}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.ANCIENT_DEBRIS) {
+			xp = 50;
+		}
 		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 522425) {
 			{
@@ -507,10 +542,10 @@ public class MiningxpProcedure {
 				});
 			}
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.STONE) {
+		if (xp > 0) {
 			{
 				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 1);
+						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + xp);
 				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.MiningXP = _setval;
 					capability.syncPlayerVariables(entity);
@@ -519,7 +554,7 @@ public class MiningxpProcedure {
 			if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("mining")) {
 				{
-					double _setval = (1 + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					double _setval = (xp + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.xpnumber = _setval;
@@ -535,7 +570,7 @@ public class MiningxpProcedure {
 					});
 				}
 				{
-					double _setval = 1;
+					double _setval = xp;
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.xpnumber = _setval;
 						capability.syncPlayerVariables(entity);
@@ -549,192 +584,7 @@ public class MiningxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.GRANITE) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 1);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+1 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIORITE) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 1);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+1 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.COAL_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 3);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+3 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.IRON_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 5);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+5 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.REDSTONE_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 5);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+5 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.REDSTONE_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 5);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+5 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.GOLD_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 10);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+10 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.LAPIS_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 10);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+10 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIAMOND_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 25);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+25 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.EMERALD_ORE) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 50);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+50 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.ANCIENT_DEBRIS) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 50);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.MiningXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+50 mining xp"), (true));
-			}
-		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.OAK_LOG) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP + 6);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.ForagingXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("foraging")) {
-				{
-					double _setval = (6 + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
-					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.xpnumber = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-			} else {
-				{
-					String _setval = "foraging";
-					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.xptype = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					double _setval = 6;
-					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.xpnumber = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-			}
-			{
-				double _setval = 100;
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.xptime = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
+			xp = 0;
 		}
 	}
 }

@@ -5,7 +5,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -77,268 +76,63 @@ public class CombatXpProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
+		double xp = 0;
 		if (!(sourceentity instanceof PlayerEntity)) {
 			return;
 		}
 		if (entity instanceof ZombieEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+5 combat xp"), (true));
-			}
+			xp = 5;
 		}
 		if (entity instanceof BlazeEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 20);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+20 combat xp"), (true));
-			}
+			xp = 20;
 		}
 		if (entity instanceof CaveSpiderEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+5 combat xp"), (true));
-			}
+			xp = 5;
 		}
 		if (entity instanceof CreeperEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+5 combat xp"), (true));
-			}
-		}
-		if (entity instanceof CreeperEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 10);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+10 combat xp"), (true));
-			}
+			xp = 5;
 		}
 		if (entity instanceof EnderDragonEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5000);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+5000 combat xp"), (true));
-			}
+			xp = 5000;
 		}
 		if (entity instanceof DrownedEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+5 combat xp"), (true));
-			}
+			xp = 5;
 		}
 		if (entity instanceof ElderGuardianEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 100);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+100 combat xp"), (true));
-			}
+			xp = 100;
 		}
 		if (entity instanceof EndermanEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 20);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+20 combat xp"), (true));
-			}
+			xp = 15;
 		}
 		if (entity instanceof GhastEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 30);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+30 combat xp"), (true));
-			}
+			xp = 25;
 		}
 		if (entity instanceof GolemEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 30);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+30 combat xp"), (true));
-			}
+			xp = 10;
 		}
 		if (entity instanceof GuardianEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 10);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+10 combat xp"), (true));
-			}
+			xp = 12;
 		}
 		if (entity instanceof HuskEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 6);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+6 combat xp"), (true));
-			}
+			xp = 6;
 		}
 		if (entity instanceof IronGolemEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 30);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+30 combat xp"), (true));
-			}
+			xp = 35;
 		}
 		if (entity instanceof MagmaCubeEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 10);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+10 combat xp"), (true));
-			}
+			xp = 3;
 		}
 		if (entity instanceof PhantomEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 30);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+30 combat xp"), (true));
-			}
+			xp = 30;
 		}
 		if (entity instanceof RavagerEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 30);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+30 combat xp"), (true));
-			}
+			xp = 30;
 		}
 		if (entity instanceof AgeableEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 10);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+10 combat xp"), (true));
-			}
+			xp = 10;
 		}
 		if (entity instanceof SkeletonEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+5 combat xp"), (true));
-			}
-		}
-		if (entity instanceof SkeletonEntity) {
-			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + 5);
-				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
-			}
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("+5 combat xp"), (true));
-			}
+			xp = 5;
 		}
 		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 522425) {
@@ -769,6 +563,50 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+		}
+		if (xp > 0) {
+			{
+				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + xp);
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.CombatXP = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("combat")) {
+				{
+					double _setval = (xp + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xpnumber = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			} else {
+				{
+					String _setval = "combat";
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xptype = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					double _setval = xp;
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xpnumber = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			}
+			{
+				double _setval = 100;
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.xptime = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			xp = 0;
 		}
 	}
 }

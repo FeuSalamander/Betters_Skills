@@ -57,9 +57,6 @@ public class XpgainedOverlay {
 			RenderSystem.disableAlphaTest();
 			if (XpgainedOnProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/xpfont.png"));
-				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 123, posY + -92, 0, 0, 78, 31, 78, 31);
-
 				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
 						"" + (int) ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber) + "",
@@ -68,6 +65,9 @@ public class XpgainedOverlay {
 						"" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new BetterskillsModVariables.PlayerVariables())).xptype) + "",
 						posX + -46, posY + -28, -16737895);
+				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/xpfont.png"));
+				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 141, posY + -132, 0, 0, 117, 47, 117, 47);
+
 			}
 			RenderSystem.depthMask(true);
 			RenderSystem.enableDepthTest();

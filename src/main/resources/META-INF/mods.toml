@@ -30,12 +30,6 @@ add skills to your game
     ordering="NONE"
     side="BOTH"
 [[dependencies.betterskills]]
-    modId="reauth"
-    mandatory=false
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.betterskills]]
     modId="jei"
     mandatory=false
     versionRange="[0,)"
