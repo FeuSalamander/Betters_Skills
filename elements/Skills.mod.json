@@ -20,8 +20,8 @@
           "width": 98,
           "height": 20,
           "name": "Ability config",
-          "x": 250,
-          "y": 179
+          "x": 281,
+          "y": 193
         }
       },
       {
@@ -47,14 +47,181 @@
       {
         "type": "label",
         "data": {
+          "text": "Mining <VAR:MiningLvL>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Mining <VAR:MiningLvL>",
+          "x": 66,
+          "y": 87
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Combat <VAR:CombatLvl>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Combat <VAR:CombatLvl>",
+          "x": 128,
+          "y": 87
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Farming <VAR:FarmingLvL>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Farming <VAR:FarmingLvL>",
+          "x": 258,
+          "y": 87
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Fishing <VAR:FishingLvL>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Fishing <VAR:FishingLvL>",
+          "x": 326,
+          "y": 86
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Foraging <VAR:ForagingLvl>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Foraging <VAR:ForagingLvl>",
+          "x": 196,
+          "y": 87
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fishing_rod.png",
+          "use1Xscale": false,
+          "name": "fishing_rod.png",
+          "x": 327,
+          "y": 98
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "wooden_pick.png",
+          "use1Xscale": false,
+          "name": "wooden_pick.png",
+          "x": 68,
+          "y": 97
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "wooden_sword.png",
+          "use1Xscale": false,
+          "name": "wooden_sword.png",
+          "x": 135,
+          "y": 98
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "wood_axe.png",
+          "use1Xscale": false,
+          "name": "wood_axe.png",
+          "x": 198,
+          "y": 99
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "wood_hoe.png",
+          "use1Xscale": false,
+          "name": "wood_hoe.png",
+          "x": 260,
+          "y": 99
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:MiningXP>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:MiningXP>",
+          "x": 66,
+          "y": 132
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:CombatXP>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:CombatXP>",
+          "x": 128,
+          "y": 132
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:FarmingXP>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:FarmingXP>",
+          "x": 270,
+          "y": 132
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:FishingXP>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:FishingXP>",
+          "x": 326,
+          "y": 131
+        }
+      },
+      {
+        "type": "label",
+        "data": {
           "text": "<VAR:ForagingXP>",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
           "name": "<VAR:ForagingXP>",
-          "x": 152,
-          "y": 91
+          "x": 197,
+          "y": 132
         }
       }
     ],

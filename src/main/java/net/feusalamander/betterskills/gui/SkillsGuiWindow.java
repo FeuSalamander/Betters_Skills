@@ -65,6 +65,21 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/skillstextlow.png"));
 		this.blit(ms, this.guiLeft + 4, this.guiTop + 6, 0, 0, 100, 27, 100, 27);
 
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/fishing_rod.png"));
+		this.blit(ms, this.guiLeft + 288, this.guiTop + 82, 0, 0, 32, 32, 32, 32);
+
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/wooden_pick.png"));
+		this.blit(ms, this.guiLeft + 29, this.guiTop + 81, 0, 0, 32, 32, 32, 32);
+
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/wooden_sword.png"));
+		this.blit(ms, this.guiLeft + 96, this.guiTop + 82, 0, 0, 32, 32, 32, 32);
+
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/wood_axe.png"));
+		this.blit(ms, this.guiLeft + 159, this.guiTop + 83, 0, 0, 32, 32, 32, 32);
+
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/wood_hoe.png"));
+		this.blit(ms, this.guiLeft + 221, this.guiTop + 83, 0, 0, 32, 32, 32, 32);
+
 		RenderSystem.disableBlend();
 	}
 
@@ -84,8 +99,26 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
+		this.font.drawString(ms, "Mining " + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL) + "", 27, 71, -12829636);
+		this.font.drawString(ms, "Combat " + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).CombatLvl) + "", 89, 71, -12829636);
+		this.font.drawString(ms, "Farming " + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingLvL) + "", 219, 71, -12829636);
+		this.font.drawString(ms, "Fishing " + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FishingLvL) + "", 287, 70, -12829636);
+		this.font.drawString(ms, "Foraging " + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingLvl) + "", 157, 71, -12829636);
 		this.font.drawString(ms, "" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP) + "", 113, 75, -12829636);
+				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP) + "", 27, 116, -12829636);
+		this.font.drawString(ms, "" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP) + "", 89, 116, -12829636);
+		this.font.drawString(ms, "" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP) + "", 231, 116, -12829636);
+		this.font.drawString(ms, "" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP) + "", 287, 115, -12829636);
+		this.font.drawString(ms, "" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP) + "", 158, 116, -12829636);
 	}
 
 	@Override
@@ -98,7 +131,7 @@ public class SkillsGuiWindow extends ContainerScreen<SkillsGui.GuiContainerMod> 
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 211, this.guiTop + 163, 98, 20, new StringTextComponent("Ability config"), e -> {
+		this.addButton(new Button(this.guiLeft + 242, this.guiTop + 177, 98, 20, new StringTextComponent("Ability config"), e -> {
 			if (true) {
 				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsGui.ButtonPressedMessage(0, x, y, z));
 				SkillsGui.handleButtonAction(entity, 0, x, y, z);
