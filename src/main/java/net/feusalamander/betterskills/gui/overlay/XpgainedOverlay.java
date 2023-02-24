@@ -63,41 +63,41 @@ public class XpgainedOverlay {
 			if (XpgainedOnProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/xpfont.png"));
-				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 141, posY + -132, 0, 0, 117, 47, 117, 47);
+				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 203, posY + -131, 0, 0, 117, 47, 117, 47);
 
 				Minecraft.getInstance().fontRenderer
 						.drawString(event.getMatrixStack(),
 								"+" + (int) ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber) + " XP",
-								posX + 155, posY + -105, -16777216);
+								posX + 216, posY + -101, -16777216);
 				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
 						"" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new BetterskillsModVariables.PlayerVariables())).xptype) + "",
-						posX + 150, posY + -122, -16777216);
+						posX + 212, posY + -123, -16777216);
 				if (MiningOnProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/wooden_pick.png"));
-					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 224, posY + -124, 0, 0, 32, 32, 32, 32);
+					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 281, posY + -124, 0, 0, 32, 32, 32, 32);
 				}
 				if (FishingOnProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/fishing_rod.png"));
-					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 224, posY + -124, 0, 0, 32, 32, 32, 32);
+					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 281, posY + -124, 0, 0, 32, 32, 32, 32);
 				}
 				if (CombatOnProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/wooden_sword.png"));
-					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 224, posY + -124, 0, 0, 32, 32, 32, 32);
+					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 281, posY + -124, 0, 0, 32, 32, 32, 32);
 				}
 				if (ForagingOnProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/wood_axe.png"));
-					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 224, posY + -124, 0, 0, 32, 32, 32, 32);
+					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 281, posY + -124, 0, 0, 32, 32, 32, 32);
 				}
 				if (FarmingOnProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/wood_hoe.png"));
-					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 224, posY + -124, 0, 0, 32, 32, 32, 32);
+					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 281, posY + -124, 0, 0, 32, 32, 32, 32);
 				}
 			}
 			RenderSystem.depthMask(true);

@@ -10,8 +10,8 @@
           "image": "xpfont.png",
           "use1Xscale": true,
           "name": "xpfont.png",
-          "x": 354,
-          "y": -12
+          "x": 416,
+          "y": -11
         }
       },
       {
@@ -23,8 +23,8 @@
             "falpha": 0.0
           },
           "name": "+<VAR:integer:xpnumber> XP",
-          "x": 368,
-          "y": 15
+          "x": 429,
+          "y": 19
         }
       },
       {
@@ -36,8 +36,8 @@
             "falpha": 0.0
           },
           "name": "<VAR:xptype>",
-          "x": 363,
-          "y": -2
+          "x": 425,
+          "y": -3
         }
       },
       {
@@ -49,7 +49,7 @@
             "name": "MiningOn"
           },
           "name": "wooden_pick.png",
-          "x": 437,
+          "x": 494,
           "y": -4
         }
       },
@@ -62,7 +62,7 @@
             "name": "FishingOn"
           },
           "name": "fishing_rod.png",
-          "x": 437,
+          "x": 494,
           "y": -4
         }
       },
@@ -75,7 +75,7 @@
             "name": "CombatOn"
           },
           "name": "wooden_sword.png",
-          "x": 437,
+          "x": 494,
           "y": -4
         }
       },
@@ -88,7 +88,7 @@
             "name": "ForagingOn"
           },
           "name": "wood_axe.png",
-          "x": 437,
+          "x": 494,
           "y": -4
         }
       },
@@ -101,7 +101,7 @@
             "name": "FarmingOn"
           },
           "name": "wood_hoe.png",
-          "x": 437,
+          "x": 494,
           "y": -4
         }
       }

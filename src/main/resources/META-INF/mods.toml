@@ -4,14 +4,14 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="betterskills"
-version="1.4.2"
+version="1.6"
 displayName="Better Skills"
 credits="Made by FeuSalamander"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/better-skills"
 logoFile="logo.png"
 authors="FeuSalamander"
 description='''
-add skills to your game
+add skills to the game
 '''
 
 [[dependencies.betterskills]]
