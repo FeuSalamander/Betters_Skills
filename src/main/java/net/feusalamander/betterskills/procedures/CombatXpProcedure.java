@@ -134,6 +134,50 @@ public class CombatXpProcedure {
 		if (entity instanceof SkeletonEntity) {
 			xp = 5;
 		}
+		if (xp > 0) {
+			{
+				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + xp);
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.CombatXP = _setval;
+					capability.syncPlayerVariables(sourceentity);
+				});
+			}
+			if (((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Combat")) {
+				{
+					double _setval = (xp + (sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
+					sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xpnumber = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
+			} else {
+				{
+					String _setval = "Combat";
+					sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xptype = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
+				{
+					double _setval = xp;
+					sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xpnumber = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
+			}
+			{
+				double _setval = 100;
+				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.xptime = _setval;
+					capability.syncPlayerVariables(sourceentity);
+				});
+			}
+			xp = 0;
+		}
 		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 522425) {
 			{
@@ -563,50 +607,6 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-		}
-		if (xp > 0) {
-			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + xp);
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CombatXP = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Combat")) {
-				{
-					double _setval = (xp + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
-					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.xpnumber = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-			} else {
-				{
-					String _setval = "Combat";
-					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.xptype = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					double _setval = xp;
-					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.xpnumber = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-			}
-			{
-				double _setval = 100;
-				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.xptime = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			xp = 0;
 		}
 	}
 }

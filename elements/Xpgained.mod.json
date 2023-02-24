@@ -5,6 +5,16 @@
     "priority": "NORMAL",
     "components": [
       {
+        "type": "image",
+        "data": {
+          "image": "xpfont.png",
+          "use1Xscale": true,
+          "name": "xpfont.png",
+          "x": 354,
+          "y": -12
+        }
+      },
+      {
         "type": "label",
         "data": {
           "text": "+<VAR:integer:xpnumber> XP",
@@ -13,7 +23,7 @@
             "falpha": 0.0
           },
           "name": "+<VAR:integer:xpnumber> XP",
-          "x": 363,
+          "x": 368,
           "y": 15
         }
       },
@@ -33,11 +43,66 @@
       {
         "type": "image",
         "data": {
-          "image": "xpfont.png",
-          "use1Xscale": true,
-          "name": "xpfont.png",
-          "x": 354,
-          "y": -12
+          "image": "wooden_pick.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MiningOn"
+          },
+          "name": "wooden_pick.png",
+          "x": 437,
+          "y": -4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fishing_rod.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FishingOn"
+          },
+          "name": "fishing_rod.png",
+          "x": 437,
+          "y": -4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "wooden_sword.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "CombatOn"
+          },
+          "name": "wooden_sword.png",
+          "x": 437,
+          "y": -4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "wood_axe.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ForagingOn"
+          },
+          "name": "wood_axe.png",
+          "x": 437,
+          "y": -4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "wood_hoe.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FarmingOn"
+          },
+          "name": "wood_hoe.png",
+          "x": 437,
+          "y": -4
         }
       }
     ],

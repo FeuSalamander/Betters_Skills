@@ -1513,6 +1513,96 @@
           }
         ]
       }
+    },
+    {
+      "name": "MiningOn",
+      "type": "procedure",
+      "sortid": 159,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mining_on",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Xpgained Conditions"
+    },
+    {
+      "name": "CombatOn",
+      "type": "procedure",
+      "sortid": 160,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combat_on",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Xpgained Conditions"
+    },
+    {
+      "name": "FarmingOn",
+      "type": "procedure",
+      "sortid": 161,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farming_on",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Xpgained Conditions"
+    },
+    {
+      "name": "ForagingOn",
+      "type": "procedure",
+      "sortid": 162,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "foraging_on",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Xpgained Conditions"
+    },
+    {
+      "name": "FishingOn",
+      "type": "procedure",
+      "sortid": 163,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fishing_on",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Xpgained Conditions"
     }
   ],
   "variable_elements": [
@@ -1853,6 +1943,10 @@
       },
       {
         "name": "Foraging",
+        "children": []
+      },
+      {
+        "name": "Xpgained Conditions",
         "children": []
       }
     ]
