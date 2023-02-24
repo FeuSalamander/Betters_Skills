@@ -57,14 +57,15 @@ public class XpgainedOverlay {
 			RenderSystem.disableAlphaTest();
 			if (XpgainedOnProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
-						"" + (int) ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber) + "",
-						posX + -68, posY + -48, -6750055);
+				Minecraft.getInstance().fontRenderer
+						.drawString(event.getMatrixStack(),
+								"+" + (int) ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber) + " XP",
+								posX + 150, posY + -105, -16777216);
 				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
 						"" + ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new BetterskillsModVariables.PlayerVariables())).xptype) + "",
-						posX + -46, posY + -28, -16737895);
+						posX + 150, posY + -122, -16777216);
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("betterskills:textures/screens/xpfont.png"));
 				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 141, posY + -132, 0, 0, 117, 47, 117, 47);
 

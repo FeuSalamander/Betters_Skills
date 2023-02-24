@@ -490,7 +490,7 @@ public class FishinhgxpProcedure {
 				});
 			}
 			if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("fishing")) {
+					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Fishing")) {
 				{
 					double _setval = (xp + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
@@ -501,7 +501,7 @@ public class FishinhgxpProcedure {
 				}
 			} else {
 				{
-					String _setval = "fishing";
+					String _setval = "Fishing";
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.xptype = _setval;
 						capability.syncPlayerVariables(entity);

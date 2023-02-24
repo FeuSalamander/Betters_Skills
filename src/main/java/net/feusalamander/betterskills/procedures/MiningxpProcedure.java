@@ -552,7 +552,7 @@ public class MiningxpProcedure {
 				});
 			}
 			if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("mining")) {
+					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Mining")) {
 				{
 					double _setval = (xp + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
@@ -563,7 +563,7 @@ public class MiningxpProcedure {
 				}
 			} else {
 				{
-					String _setval = "mining";
+					String _setval = "Mining";
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.xptype = _setval;
 						capability.syncPlayerVariables(entity);

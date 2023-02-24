@@ -531,7 +531,7 @@ public class FarmingProcedure {
 				});
 			}
 			if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("farming")) {
+					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Farming")) {
 				{
 					double _setval = (xp + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
@@ -542,7 +542,7 @@ public class FarmingProcedure {
 				}
 			} else {
 				{
-					String _setval = "farming";
+					String _setval = "Farming";
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.xptype = _setval;
 						capability.syncPlayerVariables(entity);

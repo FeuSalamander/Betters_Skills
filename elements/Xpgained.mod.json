@@ -7,14 +7,14 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:integer:xpnumber>",
+          "text": "+<VAR:integer:xpnumber> XP",
           "color": {
-            "value": -6750055,
+            "value": -16777216,
             "falpha": 0.0
           },
-          "name": "<VAR:integer:xpnumber>",
-          "x": 145,
-          "y": 72
+          "name": "+<VAR:integer:xpnumber> XP",
+          "x": 363,
+          "y": 15
         }
       },
       {
@@ -22,12 +22,12 @@
         "data": {
           "text": "<VAR:xptype>",
           "color": {
-            "value": -16737895,
+            "value": -16777216,
             "falpha": 0.0
           },
           "name": "<VAR:xptype>",
-          "x": 167,
-          "y": 92
+          "x": 363,
+          "y": -2
         }
       },
       {

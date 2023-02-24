@@ -6,12 +6,10 @@ import net.minecraftforge.event.world.BlockEvent;
 
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
@@ -94,8 +92,38 @@ public class MoleProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("+1 mining xp"), (true));
+				if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Mining")) {
+					{
+						double _setval = (1 + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
+						entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.xpnumber = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				} else {
+					{
+						String _setval = "Mining";
+						entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.xptype = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = 1;
+						entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.xpnumber = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
+				{
+					double _setval = 100;
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.xptime = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 			}
 		}

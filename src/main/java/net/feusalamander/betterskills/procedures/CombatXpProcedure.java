@@ -574,7 +574,7 @@ public class CombatXpProcedure {
 				});
 			}
 			if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("combat")) {
+					.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Combat")) {
 				{
 					double _setval = (xp + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
@@ -585,7 +585,7 @@ public class CombatXpProcedure {
 				}
 			} else {
 				{
-					String _setval = "combat";
+					String _setval = "Combat";
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.xptype = _setval;
 						capability.syncPlayerVariables(entity);
