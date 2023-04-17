@@ -16,8 +16,7 @@ public class SoulstoggleProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).helpsoul == true) {
+		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).helpsoul == true) {
 			{
 				boolean _setval = (false);
 				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -25,8 +24,7 @@ public class SoulstoggleProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).helpsoul == false) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).helpsoul == false) {
 			{
 				boolean _setval = (true);
 				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

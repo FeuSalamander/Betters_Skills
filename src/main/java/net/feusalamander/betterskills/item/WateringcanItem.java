@@ -65,11 +65,8 @@ public class WateringcanItem extends BetterskillsModElements.ModElement {
 				int z = pos.getZ();
 				ItemStack itemstack = context.getItem();
 
-				WateringcanRightClickedOnBlockProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				WateringcanRightClickedOnBlockProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
+						new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 		}.setRegistryName("wateringcan"));
@@ -107,10 +104,8 @@ public class WateringcanItem extends BetterskillsModElements.ModElement {
 			if (equipmentSlot == EquipmentSlotType.MAINHAND) {
 				ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 				builder.putAll(super.getAttributeModifiers(equipmentSlot));
-				builder.put(Attributes.ATTACK_DAMAGE,
-						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Tool modifier", 0f, AttributeModifier.Operation.ADDITION));
-				builder.put(Attributes.ATTACK_SPEED,
-						new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", -3, AttributeModifier.Operation.ADDITION));
+				builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Tool modifier", 0f, AttributeModifier.Operation.ADDITION));
+				builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", -3, AttributeModifier.Operation.ADDITION));
 				return builder.build();
 			}
 			return super.getAttributeModifiers(equipmentSlot);

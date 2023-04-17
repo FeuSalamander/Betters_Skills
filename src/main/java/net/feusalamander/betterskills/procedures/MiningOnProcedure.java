@@ -16,8 +16,7 @@ public class MiningOnProcedure {
 			return false;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Mining")) {
+		if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Mining")) {
 			return true;
 		}
 		return false;

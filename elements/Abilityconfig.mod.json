@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 39,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -15,7 +15,6 @@
         "data": {
           "image": "skilltree.png",
           "use1Xscale": false,
-          "name": "skilltree.png",
           "x": 87,
           "y": 50
         }
@@ -23,12 +22,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Ability Config",
+          "name": "label_ability_config",
+          "text": {
+            "fixedValue": "Ability Config"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Ability Config",
           "x": 95,
           "y": 55
         }
@@ -36,12 +37,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Instant Tree",
+          "name": "label_instant_tree",
+          "text": {
+            "fixedValue": "Instant Tree"
+          },
           "color": {
             "value": -3355444,
             "falpha": 0.0
           },
-          "name": "Instant Tree",
           "x": 98,
           "y": 72
         }
@@ -49,12 +52,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Help of the souls",
+          "name": "label_help_of_the_souls",
+          "text": {
+            "fixedValue": "Help of the souls"
+          },
           "color": {
             "value": -3355444,
             "falpha": 0.0
           },
-          "name": "Help of the souls",
           "x": 99,
           "y": 92
         }
@@ -67,7 +72,6 @@
           "displayCondition": {
             "name": "Treeoff"
           },
-          "name": "no.png",
           "x": 165,
           "y": 68
         }
@@ -80,7 +84,6 @@
           "displayCondition": {
             "name": "Soulsoff"
           },
-          "name": "no.png",
           "x": 191,
           "y": 88
         }
@@ -93,7 +96,6 @@
           "displayCondition": {
             "name": "Treeon"
           },
-          "name": "ok.png",
           "x": 165,
           "y": 68
         }
@@ -106,7 +108,6 @@
           "displayCondition": {
             "name": "Soulson"
           },
-          "name": "ok.png",
           "x": 191,
           "y": 88
         }
@@ -114,13 +115,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_toggle",
           "text": "Toggle",
           "onClick": {
             "name": "Treetoggle"
           },
           "width": 40,
           "height": 20,
-          "name": "Toggle",
           "x": 290,
           "y": 67
         }
@@ -128,13 +129,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_toggle1",
           "text": "Toggle",
           "onClick": {
             "name": "Soulstoggle"
           },
           "width": 40,
           "height": 20,
-          "name": "Toggle",
           "x": 290,
           "y": 88
         }
@@ -142,12 +143,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Mole",
+          "name": "label_mole",
+          "text": {
+            "fixedValue": "Mole"
+          },
           "color": {
             "value": -3355444,
             "falpha": 0.0
           },
-          "name": "Mole",
           "x": 99,
           "y": 113
         }
@@ -160,7 +163,6 @@
           "displayCondition": {
             "name": "Moleon"
           },
-          "name": "ok.png",
           "x": 125,
           "y": 109
         }
@@ -173,7 +175,6 @@
           "displayCondition": {
             "name": "Moleoff"
           },
-          "name": "no.png",
           "x": 125,
           "y": 109
         }
@@ -181,13 +182,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_toggle2",
           "text": "Toggle",
           "onClick": {
             "name": "Moletoggle"
           },
           "width": 40,
           "height": 20,
-          "name": "Toggle",
           "x": 290,
           "y": 109
         }

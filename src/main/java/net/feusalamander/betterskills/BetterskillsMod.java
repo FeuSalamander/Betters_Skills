@@ -43,8 +43,7 @@ import java.util.function.Supplier;
 public class BetterskillsMod {
 	public static final Logger LOGGER = LogManager.getLogger(BetterskillsMod.class);
 	private static final String PROTOCOL_VERSION = "1";
-	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation("betterskills", "betterskills"),
-			() -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
+	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation("betterskills", "betterskills"), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
 	public BetterskillsModElements elements;
 
 	public BetterskillsMod() {

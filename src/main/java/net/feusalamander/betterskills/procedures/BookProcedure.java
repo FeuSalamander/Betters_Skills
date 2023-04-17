@@ -68,8 +68,7 @@ public class BookProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).book == true) {
+		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).book == true) {
 			{
 				boolean _setval = (true);
 				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -77,12 +76,10 @@ public class BookProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).book == false) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).book == false) {
 			if (world instanceof ServerWorld) {
 				((World) world).getServer().getCommandManager().handleCommand(
-						new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-								new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+						new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 						"give @p patchouli:guide_book{\"patchouli:book\": \"betterskills:betterskills_book\"}");
 			}
 			{

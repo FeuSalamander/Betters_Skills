@@ -16,8 +16,7 @@ public class MoleoffProcedure {
 			return false;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).mole == false) {
+		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).mole == false) {
 			return true;
 		}
 		return false;

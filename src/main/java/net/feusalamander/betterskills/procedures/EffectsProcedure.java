@@ -47,25 +47,20 @@ public class EffectsProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		double time = 0;
-		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL >= 20) {
+		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL >= 20) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 20, (int) 3, (false), (false)));
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL >= 15) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL >= 15) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 20, (int) 2, (false), (false)));
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL >= 10) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL >= 10) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 20, (int) 1, (false), (false)));
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL >= 5) {
+		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL >= 5) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 20, (int) 0, (false), (false)));
 		}
-		time = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).xptime);
+		time = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).xptime);
 		if (time > 0) {
 			{
 				double _setval = (time - 1);

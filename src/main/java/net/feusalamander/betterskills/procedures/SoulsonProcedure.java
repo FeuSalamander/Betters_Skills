@@ -16,8 +16,7 @@ public class SoulsonProcedure {
 			return false;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).helpsoul == true) {
+		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).helpsoul == true) {
 			return true;
 		}
 		return false;

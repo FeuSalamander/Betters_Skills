@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 39,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,13 +13,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_ability_config",
           "text": "Ability config",
           "onClick": {
             "name": "Abilityconfigproc"
           },
           "width": 98,
           "height": 20,
-          "name": "Ability config",
           "x": 281,
           "y": 193
         }
@@ -29,7 +29,6 @@
         "data": {
           "image": "skillsfont.png",
           "use1Xscale": false,
-          "name": "skillsfont.png",
           "x": 37,
           "y": 16
         }
@@ -39,7 +38,6 @@
         "data": {
           "image": "skillstextlow.png",
           "use1Xscale": false,
-          "name": "skillstextlow.png",
           "x": 43,
           "y": 22
         }
@@ -47,12 +45,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Mining <VAR:MiningLvL>",
+          "name": "label_mining_varmininglvl",
+          "text": {
+            "fixedValue": "Mining <VAR:MiningLvL>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Mining <VAR:MiningLvL>",
           "x": 66,
           "y": 87
         }
@@ -60,12 +60,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Combat <VAR:CombatLvl>",
+          "name": "label_combat_varcombatlvl",
+          "text": {
+            "fixedValue": "Combat <VAR:CombatLvl>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Combat <VAR:CombatLvl>",
           "x": 128,
           "y": 87
         }
@@ -73,12 +75,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Farming <VAR:FarmingLvL>",
+          "name": "label_farming_varfarminglvl",
+          "text": {
+            "fixedValue": "Farming <VAR:FarmingLvL>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Farming <VAR:FarmingLvL>",
           "x": 258,
           "y": 87
         }
@@ -86,12 +90,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Fishing <VAR:FishingLvL>",
+          "name": "label_fishing_varfishinglvl",
+          "text": {
+            "fixedValue": "Fishing <VAR:FishingLvL>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Fishing <VAR:FishingLvL>",
           "x": 326,
           "y": 86
         }
@@ -99,12 +105,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Foraging <VAR:ForagingLvl>",
+          "name": "label_foraging_varforaginglvl",
+          "text": {
+            "fixedValue": "Foraging <VAR:ForagingLvl>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Foraging <VAR:ForagingLvl>",
           "x": 196,
           "y": 87
         }
@@ -114,7 +122,6 @@
         "data": {
           "image": "fishing_rod.png",
           "use1Xscale": false,
-          "name": "fishing_rod.png",
           "x": 327,
           "y": 98
         }
@@ -124,7 +131,6 @@
         "data": {
           "image": "wooden_pick.png",
           "use1Xscale": false,
-          "name": "wooden_pick.png",
           "x": 68,
           "y": 97
         }
@@ -134,7 +140,6 @@
         "data": {
           "image": "wooden_sword.png",
           "use1Xscale": false,
-          "name": "wooden_sword.png",
           "x": 135,
           "y": 98
         }
@@ -144,7 +149,6 @@
         "data": {
           "image": "wood_axe.png",
           "use1Xscale": false,
-          "name": "wood_axe.png",
           "x": 198,
           "y": 99
         }
@@ -154,7 +158,6 @@
         "data": {
           "image": "wood_hoe.png",
           "use1Xscale": false,
-          "name": "wood_hoe.png",
           "x": 260,
           "y": 99
         }
@@ -162,66 +165,76 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:MiningXP>",
+          "name": "label_varforagingxp",
+          "text": {
+            "fixedValue": "<VAR:ForagingXP>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<VAR:MiningXP>",
-          "x": 66,
-          "y": 132
+          "x": 196,
+          "y": 134
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "<VAR:CombatXP>",
+          "name": "label_varcombatxp",
+          "text": {
+            "fixedValue": "<VAR:CombatXP>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<VAR:CombatXP>",
           "x": 128,
-          "y": 132
+          "y": 134
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "<VAR:FarmingXP>",
+          "name": "label_varminingxp",
+          "text": {
+            "fixedValue": "<VAR:MiningXP>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<VAR:FarmingXP>",
-          "x": 270,
-          "y": 132
+          "x": 66,
+          "y": 134
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "<VAR:FishingXP>",
+          "name": "label_varfarmingxp",
+          "text": {
+            "fixedValue": "<VAR:FarmingXP>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<VAR:FishingXP>",
+          "x": 258,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_varfishingxp",
+          "text": {
+            "fixedValue": "<VAR:FishingXP>"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
           "x": 326,
-          "y": 131
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<VAR:ForagingXP>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<VAR:ForagingXP>",
-          "x": 197,
-          "y": 132
+          "y": 134
         }
       }
     ],

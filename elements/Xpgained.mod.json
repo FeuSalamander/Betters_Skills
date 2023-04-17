@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 39,
   "_type": "overlay",
   "definition": {
     "priority": "NORMAL",
@@ -9,7 +9,6 @@
         "data": {
           "image": "xpfont.png",
           "use1Xscale": true,
-          "name": "xpfont.png",
           "x": 416,
           "y": -11
         }
@@ -17,12 +16,14 @@
       {
         "type": "label",
         "data": {
-          "text": "+<VAR:integer:xpnumber> XP",
+          "name": "label_varintegerxpnumber_xp",
+          "text": {
+            "fixedValue": "+<VAR:integer:xpnumber> XP"
+          },
           "color": {
             "value": -16777216,
             "falpha": 0.0
           },
-          "name": "+<VAR:integer:xpnumber> XP",
           "x": 429,
           "y": 19
         }
@@ -30,12 +31,14 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:xptype>",
+          "name": "label_varxptype",
+          "text": {
+            "fixedValue": "<VAR:xptype>"
+          },
           "color": {
             "value": -16777216,
             "falpha": 0.0
           },
-          "name": "<VAR:xptype>",
           "x": 425,
           "y": -3
         }
@@ -48,7 +51,6 @@
           "displayCondition": {
             "name": "MiningOn"
           },
-          "name": "wooden_pick.png",
           "x": 494,
           "y": -4
         }
@@ -61,7 +63,6 @@
           "displayCondition": {
             "name": "FishingOn"
           },
-          "name": "fishing_rod.png",
           "x": 494,
           "y": -4
         }
@@ -74,7 +75,6 @@
           "displayCondition": {
             "name": "CombatOn"
           },
-          "name": "wooden_sword.png",
           "x": 494,
           "y": -4
         }
@@ -87,7 +87,6 @@
           "displayCondition": {
             "name": "ForagingOn"
           },
-          "name": "wood_axe.png",
           "x": 494,
           "y": -4
         }
@@ -100,7 +99,6 @@
           "displayCondition": {
             "name": "FarmingOn"
           },
-          "name": "wood_hoe.png",
           "x": 494,
           "y": -4
         }

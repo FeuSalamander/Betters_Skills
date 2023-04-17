@@ -16,8 +16,7 @@ public class TreeonProcedure {
 			return false;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).Instanttree == true) {
+		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).Instanttree == true) {
 			return true;
 		}
 		return false;

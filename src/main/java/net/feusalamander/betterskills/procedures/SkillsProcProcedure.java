@@ -40,9 +40,7 @@ public class SkillsProcProcedure {
 				}
 			} else if ((StringArgumentType.getString(arguments, "setadd")).equals("add")) {
 				{
-					double _setval = (DoubleArgumentType.getDouble(arguments, "xp")
-							+ (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP);
+					double _setval = (DoubleArgumentType.getDouble(arguments, "xp") + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP);
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.FarmingXP = _setval;
 						capability.syncPlayerVariables(entity);
@@ -64,9 +62,7 @@ public class SkillsProcProcedure {
 				}
 			} else if ((StringArgumentType.getString(arguments, "setadd")).equals("add")) {
 				{
-					double _setval = (DoubleArgumentType.getDouble(arguments, "xp")
-							+ (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP);
+					double _setval = (DoubleArgumentType.getDouble(arguments, "xp") + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP);
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.FishingXP = _setval;
 						capability.syncPlayerVariables(entity);
@@ -88,9 +84,7 @@ public class SkillsProcProcedure {
 				}
 			} else if ((StringArgumentType.getString(arguments, "setadd")).equals("add")) {
 				{
-					double _setval = (DoubleArgumentType.getDouble(arguments, "xp")
-							+ (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP);
+					double _setval = (DoubleArgumentType.getDouble(arguments, "xp") + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP);
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.MiningXP = _setval;
 						capability.syncPlayerVariables(entity);
@@ -112,9 +106,7 @@ public class SkillsProcProcedure {
 				}
 			} else if ((StringArgumentType.getString(arguments, "setadd")).equals("add")) {
 				{
-					double _setval = (DoubleArgumentType.getDouble(arguments, "xp")
-							+ (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP);
+					double _setval = (DoubleArgumentType.getDouble(arguments, "xp") + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP);
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.CombatXP = _setval;
 						capability.syncPlayerVariables(entity);
@@ -136,9 +128,7 @@ public class SkillsProcProcedure {
 				}
 			} else if ((StringArgumentType.getString(arguments, "setadd")).equals("add")) {
 				{
-					double _setval = (DoubleArgumentType.getDouble(arguments, "xp")
-							+ (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP);
+					double _setval = (DoubleArgumentType.getDouble(arguments, "xp") + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP);
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.ForagingXP = _setval;
 						capability.syncPlayerVariables(entity);

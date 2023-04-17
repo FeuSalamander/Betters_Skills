@@ -16,8 +16,7 @@ public class XpgainedOnProcedure {
 			return false;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (!((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).isEmpty()) {
+		if (!((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).xptype).isEmpty()) {
 			return true;
 		}
 		return false;

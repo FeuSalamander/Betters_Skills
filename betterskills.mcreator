@@ -6,7 +6,13 @@
       "sortid": 2,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "skills"
+      "registry_name": "skills",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/gui/SkillsGuiWindow.java",
+          "src/main/java/net/feusalamander/betterskills/gui/SkillsGui.java"
+        ]
+      }
     },
     {
       "name": "SkillsMenu",
@@ -14,7 +20,12 @@
       "sortid": 3,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "skills_menu"
+      "registry_name": "skills_menu",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/keybind/SkillsMenuKeyBinding.java"
+        ]
+      }
     },
     {
       "name": "Miningxp",
@@ -24,6 +35,9 @@
       "locked_code": false,
       "registry_name": "miningxp",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MiningxpProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -55,6 +69,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_1.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -64,6 +83,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_2.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -73,6 +97,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_3.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -82,6 +111,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_4",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_4.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -91,6 +125,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_5",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_5.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -100,6 +139,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_6",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_6.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -109,6 +153,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_7",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_7.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -118,6 +167,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_8",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_8.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -127,6 +181,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_9",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_9.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -136,6 +195,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_10",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_10.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -145,6 +209,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_11",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_11.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -154,6 +223,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_12",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_12.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -163,6 +237,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_13",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_13.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -172,6 +251,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_14",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_14.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -181,6 +265,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_15",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_15.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -190,6 +279,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_16",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_16.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -199,6 +293,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_17",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_17.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -208,6 +307,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_18",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_18.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -217,6 +321,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_19",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_19.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -226,6 +335,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_20",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/mining_20.json"
+        ]
+      },
       "path": "~/Mining"
     },
     {
@@ -236,6 +350,9 @@
       "locked_code": false,
       "registry_name": "effects",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/EffectsProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -252,6 +369,9 @@
       "locked_code": false,
       "registry_name": "combat_xp",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/CombatXpProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -271,6 +391,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -280,6 +405,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_2.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -289,6 +419,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_3.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -298,6 +433,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_4",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_4.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -307,6 +447,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_5",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_5.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -316,6 +461,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_6",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_6.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -325,6 +475,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_7",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_7.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -334,6 +489,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_8",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_8.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -343,6 +503,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_9",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_9.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -352,6 +517,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_10",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_10.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -361,6 +531,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_11",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_11.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -370,6 +545,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_12",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_12.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -379,6 +559,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_13",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_13.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -388,6 +573,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_14",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_14.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -397,6 +587,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_15",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_15.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -406,6 +601,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_16",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_16.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -415,6 +615,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_17",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_17.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -424,6 +629,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_18",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_18.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -433,6 +643,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_19",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_19.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -442,6 +657,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "combat_20",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/combat_20.json"
+        ]
+      },
       "path": "~/Combat"
     },
     {
@@ -451,6 +671,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_1.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -460,6 +685,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_2.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -469,6 +699,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_3.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -478,6 +713,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_4",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_4.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -487,6 +727,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_5",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_5.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -496,6 +741,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_6",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_6.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -505,6 +755,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_7",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_7.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -514,6 +769,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_8",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_8.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -523,6 +783,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_9",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_9.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -532,6 +797,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_10",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_10.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -541,6 +811,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_11",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_11.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -550,6 +825,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_12",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_12.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -559,6 +839,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_13",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_13.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -568,6 +853,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_14",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_14.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -577,6 +867,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_15",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_15.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -586,6 +881,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_16",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_16.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -595,6 +895,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_17",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_17.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -604,6 +909,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_18",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_18.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -613,6 +923,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_19",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_19.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -622,6 +937,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "farming_20",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/farming_20.json"
+        ]
+      },
       "path": "~/Farming"
     },
     {
@@ -632,6 +952,9 @@
       "locked_code": false,
       "registry_name": "farming",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FarmingProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -662,7 +985,13 @@
       "sortid": 83,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "wateringcan"
+      "registry_name": "wateringcan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/item/WateringcanItem.java",
+          "src/main/resources/assets/betterskills/models/item/wateringcan.json"
+        ]
+      }
     },
     {
       "name": "WateringcanRightClickedOnBlock",
@@ -672,6 +1001,9 @@
       "locked_code": false,
       "registry_name": "wateringcan_right_clicked_on_block",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/WateringcanRightClickedOnBlockProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -706,7 +1038,12 @@
       "sortid": 85,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "wateringcancraft"
+      "registry_name": "wateringcancraft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/recipes/wateringcan_craft.json"
+        ]
+      }
     },
     {
       "name": "Foragingxp",
@@ -716,6 +1053,9 @@
       "locked_code": false,
       "registry_name": "foragingxp",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/ForagingxpProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -747,6 +1087,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_1.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -756,6 +1101,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_2.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -765,6 +1115,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_3.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -774,6 +1129,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_4",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_4.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -783,6 +1143,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_5",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_5.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -792,6 +1157,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_6",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_6.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -801,6 +1171,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_7",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_7.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -810,6 +1185,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_8",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_8.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -819,6 +1199,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_9",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_9.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -828,6 +1213,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_10",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_10.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -837,6 +1227,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_11",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_11.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -846,6 +1241,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_12",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_12.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -855,6 +1255,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_13",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_13.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -864,6 +1269,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_14",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_14.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -873,6 +1283,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_15",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_15.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -882,6 +1297,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_16",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_16.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -891,6 +1311,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_17",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_17.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -900,6 +1325,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_18",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_18.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -909,6 +1339,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_19",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_19.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -918,6 +1353,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "foraging_20",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/foraging_20.json"
+        ]
+      },
       "path": "~/Foraging"
     },
     {
@@ -936,6 +1376,9 @@
       "locked_code": false,
       "registry_name": "fishinhgxp",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FishinhgxpProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -951,6 +1394,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_1.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -960,6 +1408,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_2.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -969,6 +1422,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_3.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -978,6 +1436,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_4",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_4.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -987,6 +1450,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_5",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_5.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -996,6 +1464,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_6",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_6.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1005,6 +1478,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_7",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_7.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1014,6 +1492,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_8",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_8.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1023,6 +1506,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_9",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_9.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1032,6 +1520,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_10",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_10.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1041,6 +1534,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_11",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_11.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1050,6 +1548,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_12",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_12.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1059,6 +1562,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_13",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_13.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1068,6 +1576,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_14",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_14.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1077,6 +1590,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_15",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_15.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1086,6 +1604,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_16",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_16.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1095,6 +1618,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_17",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_17.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1104,6 +1632,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_18",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_18.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1113,6 +1646,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_19",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_19.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1122,6 +1660,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fishing_20",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/betterskills/advancements/fishing_20.json"
+        ]
+      },
       "path": "~/Fishing"
     },
     {
@@ -1132,6 +1675,9 @@
       "locked_code": false,
       "registry_name": "book",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/BookProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1162,7 +1708,13 @@
       "sortid": 140,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "abilityconfig"
+      "registry_name": "abilityconfig",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/gui/AbilityconfigGui.java",
+          "src/main/java/net/feusalamander/betterskills/gui/AbilityconfigGuiWindow.java"
+        ]
+      }
     },
     {
       "name": "Abilityconfigproc",
@@ -1172,6 +1724,9 @@
       "locked_code": false,
       "registry_name": "abilityconfigproc",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/AbilityconfigprocProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1205,6 +1760,9 @@
       "registry_name": "treeon",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/TreeonProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1222,6 +1780,9 @@
       "registry_name": "treeoff",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/TreeoffProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1238,6 +1799,9 @@
       "locked_code": false,
       "registry_name": "treetoggle",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/TreetoggleProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1255,6 +1819,9 @@
       "registry_name": "soulson",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/SoulsonProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1272,6 +1839,9 @@
       "registry_name": "soulsoff",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/SoulsoffProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1288,6 +1858,9 @@
       "locked_code": false,
       "registry_name": "soulstoggle",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/SoulstoggleProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1304,6 +1877,9 @@
       "locked_code": false,
       "registry_name": "mole",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MoleProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1337,6 +1913,9 @@
       "registry_name": "moleon",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MoleonProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1354,6 +1933,9 @@
       "registry_name": "moleoff",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MoleoffProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1370,6 +1952,9 @@
       "locked_code": false,
       "registry_name": "moletoggle",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MoletoggleProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1385,6 +1970,11 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "skills_cmd",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/command/SkillsCmdCommand.java"
+        ]
+      },
       "path": "~/command"
     },
     {
@@ -1395,6 +1985,9 @@
       "locked_code": false,
       "registry_name": "skills_fail",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/SkillsFailProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1412,6 +2005,9 @@
       "locked_code": false,
       "registry_name": "skills_proc",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/SkillsProcProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -1433,6 +2029,9 @@
       "locked_code": false,
       "registry_name": "open_skills_proc",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/OpenSkillsProcProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1463,7 +2062,12 @@
       "sortid": 156,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "xpgained"
+      "registry_name": "xpgained",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/gui/overlay/XpgainedOverlay.java"
+        ]
+      }
     },
     {
       "name": "XpgainedOn",
@@ -1474,6 +2078,9 @@
       "registry_name": "xpgained_on",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/XpgainedOnProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1490,6 +2097,9 @@
       "locked_code": false,
       "registry_name": "treefeller",
       "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/TreefellerProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1523,6 +2133,9 @@
       "registry_name": "mining_on",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MiningOnProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1541,6 +2154,9 @@
       "registry_name": "combat_on",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/CombatOnProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1559,6 +2175,9 @@
       "registry_name": "farming_on",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FarmingOnProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1577,6 +2196,9 @@
       "registry_name": "foraging_on",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/ForagingOnProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1595,6 +2217,9 @@
       "registry_name": "fishing_on",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FishingOnProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1717,29 +2342,29 @@
       "advancements.combat_4.title": "Combat 4",
       "advancements.foraging_8.title": "Foraging 8",
       "advancements.fishing_4.descr": "reach 675 xp",
-      "advancements.combat_15.title": "Combat 15",
       "advancements.mining_9.descr": "reach 9425 xp",
+      "advancements.combat_15.title": "Combat 15",
       "advancements.foraging_6.descr": "reach 1925 xp",
       "advancements.foraging_16.descr": "Reach 97425 xp",
-      "advancements.farming_12.descr": "reach 22425 xp",
       "advancements.farming_8.descr": "reach 4425 xp",
+      "advancements.farming_12.descr": "reach 22425 xp",
       "advancements.fishing_16.title": "Fishing 16",
       "advancements.mining_19.title": "Mining 19",
       "advancements.foraging_18.title": "Foraging 18",
       "advancements.combat.title": "Combat",
       "advancements.foraging_12.title": "Foraging 12",
-      "advancements.foraging_10.descr": "reach 9925 xp, grant the instant tree ability",
       "advancements.combat_19.descr": "reach 322425 xp",
+      "advancements.foraging_10.descr": "reach 9925 xp, grant the instant tree ability",
       "advancements.foraging_20.title": "Foraging 20",
       "advancements.fishing_14.descr": "Reach 47425 xp",
       "advancements.combat_3.descr": "reach 375 xp",
       "advancements.mining_6.title": "Mining 6",
       "advancements.farming_9.descr": "reach 9425 xp",
-      "advancements.foraging_3.title": "Foraging 3",
       "advancements.farming_11.descr": "reach 14925 xp",
+      "advancements.foraging_3.title": "Foraging 3",
       "advancements.farming_18.descr": "reach 222425 xp",
-      "advancements.farming_2.descr": "reach 175 xp",
       "advancements.mining_13.descr": "Reach 32425 xp",
+      "advancements.farming_2.descr": "reach 175 xp",
       "advancements.farming_9.title": "Farming 9",
       "advancements.combat_9.descr": "reach 9425 xp",
       "advancements.foraging_13.title": "Foraging 13",
@@ -1751,8 +2376,8 @@
       "advancements.foraging_9.title": "Foraging 9",
       "advancements.combat_10.title": "Combat 10",
       "advancements.mining_5.title": "Mining 5",
-      "advancements.farming_17.descr": "reach 147425 xp",
       "advancements.farming_3.descr": "reach 375 xp",
+      "advancements.farming_17.descr": "reach 147425 xp",
       "advancements.combat_8.descr": "reach 4425 xp",
       "advancements.foraging_15.descr": "Reach 67425 xp",
       "advancements.fishing_4.title": "Fishing 4",
@@ -1774,17 +2399,17 @@
       "advancements.fishing_10.descr": "reach 9925 xp",
       "advancements.fishing_9.title": "Fishing 9",
       "advancements.foraging_2.descr": "reach 175 xp",
-      "advancements.farming_3.title": "Farming 3",
       "advancements.combat_5.title": "Combat 5",
+      "advancements.farming_3.title": "Farming 3",
       "advancements.mining_5.descr": "reach 1175 xp, haste 1",
       "advancements.foraging_7.title": "Foraging 7",
       "advancements.foraging_4.title": "Foraging 4",
       "advancements.farming_1.descr": "reach 50 xp",
       "advancements.farming_19.descr": "reach 322425 xp",
       "advancements.mining_2.descr": "reach 175 xp",
-      "advancements.farming_6.title": "Farming 6",
-      "advancements.combat_11.title": "Combat 11",
       "advancements.mining_7.title": "Mining 7",
+      "advancements.combat_11.title": "Combat 11",
+      "advancements.farming_6.title": "Farming 6",
       "advancements.farming_14.title": "Farming 14",
       "advancements.mining_3.descr": "reach 375 xp",
       "advancements.foraging_10.title": "Foraging 10",
@@ -1974,5 +2599,5 @@
     "modElementsPackage": "net.feusalamander.betterskills",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200348217
+  "mcreatorVersion": 202300110610
 }

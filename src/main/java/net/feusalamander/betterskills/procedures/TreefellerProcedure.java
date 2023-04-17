@@ -84,35 +84,26 @@ public class TreefellerProcedure {
 		BlockState logtype = Blocks.AIR.getDefaultState();
 		double number = 0;
 		number = 1;
-		if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:logs"))
-				.contains((world.getBlockState(new BlockPos(x, y, z))).getBlock())
-				&& (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new BetterskillsModVariables.PlayerVariables())).Instanttree == true
+		if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:logs")).contains((world.getBlockState(new BlockPos(x, y, z))).getBlock())
+				&& (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).Instanttree == true
 				&& (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
-						? ((ServerPlayerEntity) entity).getAdvancements()
-								.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-										.getAdvancement(new ResourceLocation("betterskills:foraging_10")))
-								.isDone()
+						? ((ServerPlayerEntity) entity).getAdvancements().getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:foraging_10"))).isDone()
 						: false)
-				&& (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) >= 3
-						|| ((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) >= 3)) {
+				&& (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) >= 3 || ((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) >= 3)) {
 			for (int index0 = 0; index0 < (int) (11); index0++) {
 				logtype = (world.getBlockState(new BlockPos(x, y + number, z)));
 				if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:logs")).contains((logtype).getBlock())) {
 					world.destroyBlock(new BlockPos(x, y + number, z), false);
 					{
-						double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP + 5);
+						double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP + 5);
 						entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.ForagingXP = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Foraging")) {
+					if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Foraging")) {
 						{
-							double _setval = (5 + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
+							double _setval = (5 + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
 							entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.xpnumber = _setval;
 								capability.syncPlayerVariables(entity);
@@ -153,14 +144,12 @@ public class TreefellerProcedure {
 			}
 			if (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) >= 2) {
 				if (entity instanceof PlayerEntity) {
-					ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(),
-							(float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) - 3),
+					ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(), (float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) - 3),
 							"field_75125_b");
 				}
 			} else {
 				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).getFoodStats()
-							.setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) - 3));
+					((PlayerEntity) entity).getFoodStats().setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) - 3));
 			}
 		}
 	}

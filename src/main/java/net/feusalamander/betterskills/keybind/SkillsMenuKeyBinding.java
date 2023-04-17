@@ -36,8 +36,7 @@ public class SkillsMenuKeyBinding extends BetterskillsModElements.ModElement {
 
 	public SkillsMenuKeyBinding(BetterskillsModElements instance) {
 		super(instance, 3);
-		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new,
-				KeyBindingPressedMessage::handler);
+		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new, KeyBindingPressedMessage::handler);
 	}
 
 	@Override
@@ -101,10 +100,9 @@ public class SkillsMenuKeyBinding extends BetterskillsModElements.ModElement {
 			return;
 		if (type == 1) {
 
-			OpenSkillsProcProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			OpenSkillsProcProcedure.executeProcedure(
+					Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }
