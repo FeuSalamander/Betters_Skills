@@ -2,141 +2,117 @@ package net.feusalamander.betterskills.procedures;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
-import net.minecraft.world.World;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.passive.IronGolemEntity;
-import net.minecraft.entity.passive.GolemEntity;
-import net.minecraft.entity.monster.ZombieEntity;
-import net.minecraft.entity.monster.SkeletonEntity;
-import net.minecraft.entity.monster.RavagerEntity;
-import net.minecraft.entity.monster.PhantomEntity;
-import net.minecraft.entity.monster.MagmaCubeEntity;
-import net.minecraft.entity.monster.HuskEntity;
-import net.minecraft.entity.monster.GuardianEntity;
-import net.minecraft.entity.monster.GhastEntity;
-import net.minecraft.entity.monster.EndermanEntity;
-import net.minecraft.entity.monster.ElderGuardianEntity;
-import net.minecraft.entity.monster.DrownedEntity;
-import net.minecraft.entity.monster.CreeperEntity;
-import net.minecraft.entity.monster.CaveSpiderEntity;
-import net.minecraft.entity.monster.BlazeEntity;
-import net.minecraft.entity.boss.dragon.EnderDragonEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.AgeableEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.monster.Skeleton;
+import net.minecraft.world.entity.monster.Ravager;
+import net.minecraft.world.entity.monster.Phantom;
+import net.minecraft.world.entity.monster.MagmaCube;
+import net.minecraft.world.entity.monster.Husk;
+import net.minecraft.world.entity.monster.Guardian;
+import net.minecraft.world.entity.monster.Ghast;
+import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.monster.ElderGuardian;
+import net.minecraft.world.entity.monster.Drowned;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.CaveSpider;
+import net.minecraft.world.entity.monster.Blaze;
+import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
+import net.minecraft.world.entity.animal.IronGolem;
+import net.minecraft.world.entity.animal.AbstractGolem;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
-import net.feusalamander.betterskills.BetterskillsModVariables;
-import net.feusalamander.betterskills.BetterskillsMod;
+import net.feusalamander.betterskills.network.BetterskillsModVariables;
 
-import java.util.Map;
+import javax.annotation.Nullable;
+
 import java.util.Iterator;
-import java.util.HashMap;
 
+@Mod.EventBusSubscriber
 public class CombatXpProcedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onEntityDeath(LivingDeathEvent event) {
-			if (event != null && event.getEntity() != null) {
-				Entity entity = event.getEntity();
-				Entity sourceentity = event.getSource().getTrueSource();
-				double i = entity.getPosX();
-				double j = entity.getPosY();
-				double k = entity.getPosZ();
-				World world = entity.world;
-				Map<String, Object> dependencies = new HashMap<>();
-				dependencies.put("x", i);
-				dependencies.put("y", j);
-				dependencies.put("z", k);
-				dependencies.put("world", world);
-				dependencies.put("entity", entity);
-				dependencies.put("sourceentity", sourceentity);
-				dependencies.put("event", event);
-				executeProcedure(dependencies);
-			}
+	@SubscribeEvent
+	public static void onEntityDeath(LivingDeathEvent event) {
+		if (event != null && event.getEntity() != null) {
+			execute(event, event.getEntity(), event.getSource().getEntity());
 		}
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				BetterskillsMod.LOGGER.warn("Failed to load dependency entity for procedure CombatXp!");
+	public static void execute(Entity entity, Entity sourceentity) {
+		execute(null, entity, sourceentity);
+	}
+
+	private static void execute(@Nullable Event event, Entity entity, Entity sourceentity) {
+		if (entity == null || sourceentity == null)
 			return;
-		}
-		if (dependencies.get("sourceentity") == null) {
-			if (!dependencies.containsKey("sourceentity"))
-				BetterskillsMod.LOGGER.warn("Failed to load dependency sourceentity for procedure CombatXp!");
-			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		Entity sourceentity = (Entity) dependencies.get("sourceentity");
 		double xp = 0;
-		if (!(sourceentity instanceof PlayerEntity)) {
+		if (!(sourceentity instanceof Player)) {
 			return;
 		}
-		if (entity instanceof ZombieEntity) {
+		if (entity instanceof Zombie) {
 			xp = 5;
 		}
-		if (entity instanceof BlazeEntity) {
+		if (entity instanceof Blaze) {
 			xp = 20;
 		}
-		if (entity instanceof CaveSpiderEntity) {
+		if (entity instanceof CaveSpider) {
 			xp = 5;
 		}
-		if (entity instanceof CreeperEntity) {
+		if (entity instanceof Creeper) {
 			xp = 5;
 		}
-		if (entity instanceof EnderDragonEntity) {
+		if (entity instanceof EnderDragon) {
 			xp = 5000;
 		}
-		if (entity instanceof DrownedEntity) {
+		if (entity instanceof Drowned) {
 			xp = 5;
 		}
-		if (entity instanceof ElderGuardianEntity) {
+		if (entity instanceof ElderGuardian) {
 			xp = 100;
 		}
-		if (entity instanceof EndermanEntity) {
+		if (entity instanceof EnderMan) {
 			xp = 15;
 		}
-		if (entity instanceof GhastEntity) {
+		if (entity instanceof Ghast) {
 			xp = 25;
 		}
-		if (entity instanceof GolemEntity) {
+		if (entity instanceof AbstractGolem) {
 			xp = 10;
 		}
-		if (entity instanceof GuardianEntity) {
+		if (entity instanceof Guardian) {
 			xp = 12;
 		}
-		if (entity instanceof HuskEntity) {
+		if (entity instanceof Husk) {
 			xp = 6;
 		}
-		if (entity instanceof IronGolemEntity) {
+		if (entity instanceof IronGolem) {
 			xp = 35;
 		}
-		if (entity instanceof MagmaCubeEntity) {
+		if (entity instanceof MagmaCube) {
 			xp = 3;
 		}
-		if (entity instanceof PhantomEntity) {
+		if (entity instanceof Phantom) {
 			xp = 30;
 		}
-		if (entity instanceof RavagerEntity) {
+		if (entity instanceof Ravager) {
 			xp = 30;
 		}
-		if (entity instanceof AgeableEntity) {
+		if (entity instanceof AgeableMob) {
 			xp = 10;
 		}
-		if (entity instanceof SkeletonEntity) {
+		if (entity instanceof Skeleton) {
 			xp = 5;
 		}
 		if (xp > 0) {
 			{
-				double _setval = ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + xp);
+				double _setval = (sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP + xp;
 				sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.CombatXP = _setval;
 					capability.syncPlayerVariables(sourceentity);
@@ -144,7 +120,7 @@ public class CombatXpProcedure {
 			}
 			if (((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Combat")) {
 				{
-					double _setval = (xp + (sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
+					double _setval = xp + (sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber;
 					sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.xpnumber = _setval;
 						capability.syncPlayerVariables(sourceentity);
@@ -183,15 +159,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_20"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_20"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 322425) {
@@ -202,15 +176,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_19"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_19"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 222425) {
@@ -221,15 +193,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_18"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_18"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 147425) {
@@ -240,15 +210,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_17"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_17"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 97425) {
@@ -259,15 +227,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_16"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_16"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 67425) {
@@ -278,15 +244,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_15"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_15"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 47425) {
@@ -297,15 +261,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_14"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_14"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 32425) {
@@ -316,15 +278,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_13"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_13"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 22425) {
@@ -335,15 +295,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_12"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_12"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 14925) {
@@ -354,15 +312,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_11"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_11"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 9925) {
@@ -373,15 +329,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_10"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_10"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 6425) {
@@ -392,15 +346,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_9"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_9"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 4425) {
@@ -411,15 +363,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_8"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_8"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 2925) {
@@ -430,15 +380,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_7"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_7"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 1925) {
@@ -449,15 +397,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_6"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_6"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 1175) {
@@ -468,15 +414,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_5"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_5"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 675) {
@@ -487,15 +431,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_4"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_4"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 375) {
@@ -506,15 +448,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_3"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_3"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 175) {
@@ -525,15 +465,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat_2"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_2"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 50) {
@@ -544,15 +482,13 @@ public class CombatXpProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
-			if (sourceentity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:combat"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) sourceentity).getAdvancements().getProgress(_adv);
+			if (sourceentity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) sourceentity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP < 50) {

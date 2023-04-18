@@ -13,8 +13,8 @@ repositories {
 }
 
 dependencies {
-  compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-53.2:api")
-  runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-53.2")
+  compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77:api")
+  runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77")
 }
 
 repositories {
@@ -26,12 +26,13 @@ repositories {
   maven {
     // location of a maven mirror for JEI files, as a fallback
     name = "ModMaven"
-    url = "https://modmaven.k-4u.nl"
-  }    
+    url = "https://modmaven.dev"
+  }   
 }
 
 dependencies {
-  compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153:api")
-  runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153")
+  compileOnly fg.deobf("mezz.jei:jei-1.19.2-common-api:11.4.0.286")
+  compileOnly fg.deobf("mezz.jei:jei-1.19.2-forge-api:11.4.0.286")
+  runtimeOnly fg.deobf("mezz.jei:jei-1.19.2-forge:11.4.0.286")
 }
 

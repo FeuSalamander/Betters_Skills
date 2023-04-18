@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[36,)"
+loaderVersion="[43,)"
 license="All Rights Reserved"
 
 [[mods]]
@@ -17,7 +17,7 @@ add skills to the game
 [[dependencies.betterskills]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.5]"
+    versionRange="[1.19.2]"
     ordering="NONE"
     side="BOTH"
 

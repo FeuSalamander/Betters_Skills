@@ -1,24 +1,14 @@
 package net.feusalamander.betterskills.procedures;
 
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-
-import net.feusalamander.betterskills.BetterskillsMod;
-
-import java.util.Map;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.Component;
 
 public class SkillsFailProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				BetterskillsMod.LOGGER.warn("Failed to load dependency entity for procedure SkillsFail!");
+	public static void execute(Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cExample of use: /skills farming add/set 999"), (false));
-		}
+		if (entity instanceof Player _player && !_player.level.isClientSide())
+			_player.displayClientMessage(Component.literal("\u00A7cExample of use: /skills farming add/set 999"), (false));
 	}
 }

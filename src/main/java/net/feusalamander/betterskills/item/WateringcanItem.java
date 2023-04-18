@@ -1,114 +1,78 @@
 
 package net.feusalamander.betterskills.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.ai.attributes.Attribute;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
 
 import net.feusalamander.betterskills.procedures.WateringcanRightClickedOnBlockProcedure;
-import net.feusalamander.betterskills.BetterskillsModElements;
 
-import java.util.stream.Stream;
-import java.util.Map;
 import java.util.List;
-import java.util.HashMap;
-import java.util.AbstractMap;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;
 
-@BetterskillsModElements.ModElement.Tag
-public class WateringcanItem extends BetterskillsModElements.ModElement {
-	@ObjectHolder("betterskills:wateringcan")
-	public static final Item block = null;
-
-	public WateringcanItem(BetterskillsModElements instance) {
-		super(instance, 83);
+public class WateringcanItem extends Item {
+	public WateringcanItem() {
+		super(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).durability(10000));
 	}
 
 	@Override
-	public void initElements() {
-		elements.items.add(() -> new ItemToolCustom() {
-			@Override
-			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
-				super.addInformation(itemstack, world, list, flag);
-				list.add(new StringTextComponent("use it to grow faster the crops"));
-			}
-
-			@Override
-			public ActionResultType onItemUse(ItemUseContext context) {
-				ActionResultType retval = super.onItemUse(context);
-				World world = context.getWorld();
-				BlockPos pos = context.getPos();
-				PlayerEntity entity = context.getPlayer();
-				Direction direction = context.getFace();
-				BlockState blockstate = world.getBlockState(pos);
-				int x = pos.getX();
-				int y = pos.getY();
-				int z = pos.getZ();
-				ItemStack itemstack = context.getItem();
-
-				WateringcanRightClickedOnBlockProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-						new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-				return retval;
-			}
-		}.setRegistryName("wateringcan"));
+	public float getDestroySpeed(ItemStack itemstack, BlockState blockstate) {
+		return List.of().contains(blockstate.getBlock()) ? 0f : 1;
 	}
 
-	private static class ItemToolCustom extends Item {
-		protected ItemToolCustom() {
-			super(new Item.Properties().group(ItemGroup.TOOLS).maxDamage(10000));
-		}
+	@Override
+	public boolean mineBlock(ItemStack itemstack, Level world, BlockState blockstate, BlockPos pos, LivingEntity entity) {
+		itemstack.hurtAndBreak(1, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+		return true;
+	}
 
-		@Override
-		public float getDestroySpeed(ItemStack itemstack, BlockState blockstate) {
-			return 1;
-		}
+	@Override
+	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+		itemstack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+		return true;
+	}
 
-		@Override
-		public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {
-			stack.damageItem(1, entityLiving, i -> i.sendBreakAnimation(EquipmentSlotType.MAINHAND));
-			return true;
-		}
+	@Override
+	public int getEnchantmentValue() {
+		return 0;
+	}
 
-		@Override
-		public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-			stack.damageItem(2, attacker, i -> i.sendBreakAnimation(EquipmentSlotType.MAINHAND));
-			return true;
+	@Override
+	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot equipmentSlot) {
+		if (equipmentSlot == EquipmentSlot.MAINHAND) {
+			ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+			builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
+			builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 0f, AttributeModifier.Operation.ADDITION));
+			builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", -3, AttributeModifier.Operation.ADDITION));
+			return builder.build();
 		}
+		return super.getDefaultAttributeModifiers(equipmentSlot);
+	}
 
-		@Override
-		public int getItemEnchantability() {
-			return 0;
-		}
+	@Override
+	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, world, list, flag);
+		list.add(Component.literal("use it to grow faster the crops"));
+	}
 
-		@Override
-		public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlotType equipmentSlot) {
-			if (equipmentSlot == EquipmentSlotType.MAINHAND) {
-				ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-				builder.putAll(super.getAttributeModifiers(equipmentSlot));
-				builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Tool modifier", 0f, AttributeModifier.Operation.ADDITION));
-				builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", -3, AttributeModifier.Operation.ADDITION));
-				return builder.build();
-			}
-			return super.getAttributeModifiers(equipmentSlot);
-		}
+	@Override
+	public InteractionResult useOn(UseOnContext context) {
+		super.useOn(context);
+		WateringcanRightClickedOnBlockProcedure.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(), context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
+		return InteractionResult.SUCCESS;
 	}
 }

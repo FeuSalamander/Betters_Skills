@@ -1,97 +1,56 @@
 package net.feusalamander.betterskills.procedures;
 
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Direction;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.BoneMealItem;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.BoneMealItem;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-
-import net.feusalamander.betterskills.BetterskillsMod;
-
-import java.util.Random;
-import java.util.Map;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.BlockPos;
 
 public class WateringcanRightClickedOnBlockProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				BetterskillsMod.LOGGER.warn("Failed to load dependency world for procedure WateringcanRightClickedOnBlock!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				BetterskillsMod.LOGGER.warn("Failed to load dependency x for procedure WateringcanRightClickedOnBlock!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				BetterskillsMod.LOGGER.warn("Failed to load dependency y for procedure WateringcanRightClickedOnBlock!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				BetterskillsMod.LOGGER.warn("Failed to load dependency z for procedure WateringcanRightClickedOnBlock!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				BetterskillsMod.LOGGER.warn("Failed to load dependency entity for procedure WateringcanRightClickedOnBlock!");
-			return;
-		}
-		if (dependencies.get("itemstack") == null) {
-			if (!dependencies.containsKey("itemstack"))
-				BetterskillsMod.LOGGER.warn("Failed to load dependency itemstack for procedure WateringcanRightClickedOnBlock!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		double RandomZ = 0;
 		double RandomX = 0;
 		double Y = 0;
 		double Level = 0;
-		if (BlockTags.getCollection().getTagByID(new ResourceLocation("minecraft:crops")).contains((world.getBlockState(new BlockPos(x, y, z))).getBlock())) {
-			if ((itemstack).getDamage() < 9500) {
-				if (world instanceof ServerWorld) {
-					((ServerWorld) world).spawnParticle(ParticleTypes.SPLASH, x, y, z, (int) 25, 1, 1, 1, 1);
-				}
-				if (world instanceof World) {
-					if (BoneMealItem.applyBonemeal(new ItemStack(Items.BONE_MEAL), (World) world, new BlockPos(x, y, z)) || BoneMealItem.growSeagrass(new ItemStack(Items.BONE_MEAL), (World) world, new BlockPos(x, y, z), (Direction) null)) {
-						if (!world.isRemote())
-							((World) world).playEvent(2005, new BlockPos(x, y, z), 0);
+		if ((world.getBlockState(new BlockPos(x, y, z))).is(BlockTags.create(new ResourceLocation("minecraft:crops")))) {
+			if ((itemstack).getDamageValue() < 9500) {
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.SPLASH, x, y, z, 25, 1, 1, 1, 1);
+				if (world instanceof Level _level) {
+					BlockPos _bp = new BlockPos(x, y, z);
+					if (BoneMealItem.growCrop(new ItemStack(Items.BONE_MEAL), _level, _bp) || BoneMealItem.growWaterPlant(new ItemStack(Items.BONE_MEAL), _level, _bp, null)) {
+						if (!_level.isClientSide())
+							_level.levelEvent(2005, _bp, 0);
 					}
 				}
 				{
 					ItemStack _ist = itemstack;
-					if (_ist.attemptDamageItem((int) 500, new Random(), null)) {
+					if (_ist.hurt(500, RandomSource.create(), null)) {
 						_ist.shrink(1);
-						_ist.setDamage(0);
+						_ist.setDamageValue(0);
 					}
 				}
 			} else {
-				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("no more water"), (true));
-				}
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("no more water"), (true));
 			}
-		} else if (entity.isInWaterOrBubbleColumn() && entity.isSneaking()) {
+		} else if (entity.isInWaterOrBubble() && entity.isShiftKeyDown()) {
 			{
 				ItemStack _ist = itemstack;
-				if (_ist.attemptDamageItem((int) (-250), new Random(), null)) {
+				if (_ist.hurt(-250, RandomSource.create(), null)) {
 					_ist.shrink(1);
-					_ist.setDamage(0);
+					_ist.setDamageValue(0);
 				}
 			}
 		}

@@ -2,52 +2,35 @@ package net.feusalamander.betterskills.procedures;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.ItemFishedEvent;
 
-import net.minecraft.world.World;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
-import net.feusalamander.betterskills.BetterskillsModVariables;
-import net.feusalamander.betterskills.BetterskillsMod;
+import net.feusalamander.betterskills.network.BetterskillsModVariables;
 
-import java.util.Map;
+import javax.annotation.Nullable;
+
 import java.util.Iterator;
-import java.util.HashMap;
 
+@Mod.EventBusSubscriber
 public class FishinhgxpProcedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onPlayerFishItem(ItemFishedEvent event) {
-			PlayerEntity entity = event.getPlayer();
-			double i = entity.getPosX();
-			double j = entity.getPosY();
-			double k = entity.getPosZ();
-			World world = entity.world;
-			Map<String, Object> dependencies = new HashMap<>();
-			dependencies.put("x", i);
-			dependencies.put("y", j);
-			dependencies.put("z", k);
-			dependencies.put("world", world);
-			dependencies.put("entity", entity);
-			dependencies.put("event", event);
-			executeProcedure(dependencies);
-		}
+	@SubscribeEvent
+	public static void onPlayerFishItem(ItemFishedEvent event) {
+		execute(event, event.getEntity());
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				BetterskillsMod.LOGGER.warn("Failed to load dependency entity for procedure Fishinhgxp!");
+	public static void execute(Entity entity) {
+		execute(null, entity);
+	}
+
+	private static void execute(@Nullable Event event, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
 		double xp = 0;
 		xp = 25;
 		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 522425) {
@@ -58,15 +41,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_20"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_20"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 322425) {
@@ -77,15 +58,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_19"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_19"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 222425) {
@@ -96,15 +75,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_18"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_18"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 147425) {
@@ -115,15 +92,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_17"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_17"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 97425) {
@@ -134,15 +109,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_16"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_16"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 67425) {
@@ -153,15 +126,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_15"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_15"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 47425) {
@@ -172,15 +143,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_14"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_14"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 32425) {
@@ -191,15 +160,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_13"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_13"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 22425) {
@@ -210,15 +177,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_12"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_12"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 14925) {
@@ -229,15 +194,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_11"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_11"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 9925) {
@@ -248,15 +211,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_10"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_10"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 6425) {
@@ -267,15 +228,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:foraging_9"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:foraging_9"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 4425) {
@@ -286,15 +245,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_8"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_8"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 2925) {
@@ -305,15 +262,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_7"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_7"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 1925) {
@@ -324,15 +279,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_6"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_6"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 1175) {
@@ -343,15 +296,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_5"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_5"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 675) {
@@ -362,15 +313,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_4"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_4"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 375) {
@@ -381,15 +330,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_3"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_3"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 175) {
@@ -400,15 +347,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_2"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_2"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP >= 50) {
@@ -419,15 +364,13 @@ public class FishinhgxpProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("betterskills:fishing_1"));
-				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:fishing_1"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemaningCriteria().iterator();
-					while (_iterator.hasNext()) {
-						String _criterion = (String) _iterator.next();
-						((ServerPlayerEntity) entity).getAdvancements().grantCriterion(_adv, _criterion);
-					}
+					Iterator _iterator = _ap.getRemainingCriteria().iterator();
+					while (_iterator.hasNext())
+						_player.getAdvancements().award(_adv, (String) _iterator.next());
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP < 50) {
@@ -441,7 +384,7 @@ public class FishinhgxpProcedure {
 		}
 		if (xp > 0) {
 			{
-				double _setval = ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP + xp);
+				double _setval = (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FishingXP + xp;
 				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.FishingXP = _setval;
 					capability.syncPlayerVariables(entity);
@@ -449,7 +392,7 @@ public class FishinhgxpProcedure {
 			}
 			if (((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).xptype).equals("Fishing")) {
 				{
-					double _setval = (xp + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber);
+					double _setval = xp + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).xpnumber;
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.xpnumber = _setval;
 						capability.syncPlayerVariables(entity);

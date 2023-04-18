@@ -9,8 +9,9 @@
       "registry_name": "skills",
       "metadata": {
         "files": [
-          "src/main/java/net/feusalamander/betterskills/gui/SkillsGuiWindow.java",
-          "src/main/java/net/feusalamander/betterskills/gui/SkillsGui.java"
+          "src/main/java/net/feusalamander/betterskills/world/inventory/SkillsMenu.java",
+          "src/main/java/net/feusalamander/betterskills/network/SkillsButtonMessage.java",
+          "src/main/java/net/feusalamander/betterskills/client/gui/SkillsScreen.java"
         ]
       }
     },
@@ -23,7 +24,7 @@
       "registry_name": "skills_menu",
       "metadata": {
         "files": [
-          "src/main/java/net/feusalamander/betterskills/keybind/SkillsMenuKeyBinding.java"
+          "src/main/java/net/feusalamander/betterskills/network/SkillsMenuMessage.java"
         ]
       }
     },
@@ -988,8 +989,8 @@
       "registry_name": "wateringcan",
       "metadata": {
         "files": [
-          "src/main/java/net/feusalamander/betterskills/item/WateringcanItem.java",
-          "src/main/resources/assets/betterskills/models/item/wateringcan.json"
+          "src/main/resources/assets/betterskills/models/item/wateringcan.json",
+          "src/main/java/net/feusalamander/betterskills/item/WateringcanItem.java"
         ]
       }
     },
@@ -1361,14 +1362,6 @@
       "path": "~/Foraging"
     },
     {
-      "name": "Tooltips",
-      "type": "code",
-      "sortid": 112,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "tooltips"
-    },
-    {
       "name": "Fishinhgxp",
       "type": "procedure",
       "sortid": 113,
@@ -1711,8 +1704,9 @@
       "registry_name": "abilityconfig",
       "metadata": {
         "files": [
-          "src/main/java/net/feusalamander/betterskills/gui/AbilityconfigGui.java",
-          "src/main/java/net/feusalamander/betterskills/gui/AbilityconfigGuiWindow.java"
+          "src/main/java/net/feusalamander/betterskills/client/gui/AbilityconfigScreen.java",
+          "src/main/java/net/feusalamander/betterskills/network/AbilityconfigButtonMessage.java",
+          "src/main/java/net/feusalamander/betterskills/world/inventory/AbilityconfigMenu.java"
         ]
       }
     },
@@ -2065,7 +2059,7 @@
       "registry_name": "xpgained",
       "metadata": {
         "files": [
-          "src/main/java/net/feusalamander/betterskills/gui/overlay/XpgainedOverlay.java"
+          "src/main/java/net/feusalamander/betterskills/client/screens/XpgainedOverlay.java"
         ]
       }
     },
@@ -2339,36 +2333,41 @@
     "en_us": {
       "advancements.mining_18.descr": "reach 222425 xp",
       "advancements.fishing_5.title": "Fishing 5",
+      "gui.betterskills.abilityconfig.label_mole": "Mole",
+      "gui.betterskills.skills.label_varfarmingxp": "\u003cVAR:FarmingXP\u003e",
       "advancements.combat_4.title": "Combat 4",
       "advancements.foraging_8.title": "Foraging 8",
       "advancements.fishing_4.descr": "reach 675 xp",
-      "advancements.combat_15.title": "Combat 15",
       "advancements.mining_9.descr": "reach 9425 xp",
+      "advancements.combat_15.title": "Combat 15",
       "advancements.foraging_6.descr": "reach 1925 xp",
       "advancements.foraging_16.descr": "Reach 97425 xp",
-      "advancements.farming_12.descr": "reach 22425 xp",
       "advancements.farming_8.descr": "reach 4425 xp",
+      "advancements.farming_12.descr": "reach 22425 xp",
       "advancements.fishing_16.title": "Fishing 16",
       "advancements.mining_19.title": "Mining 19",
       "advancements.foraging_18.title": "Foraging 18",
       "advancements.combat.title": "Combat",
       "advancements.foraging_12.title": "Foraging 12",
-      "advancements.foraging_10.descr": "reach 9925 xp, grant the instant tree ability",
       "advancements.combat_19.descr": "reach 322425 xp",
+      "advancements.foraging_10.descr": "reach 9925 xp, grant the instant tree ability",
       "advancements.foraging_20.title": "Foraging 20",
       "advancements.fishing_14.descr": "Reach 47425 xp",
       "advancements.combat_3.descr": "reach 375 xp",
       "advancements.mining_6.title": "Mining 6",
       "advancements.farming_9.descr": "reach 9425 xp",
-      "advancements.foraging_3.title": "Foraging 3",
       "advancements.farming_11.descr": "reach 14925 xp",
+      "advancements.foraging_3.title": "Foraging 3",
+      "gui.betterskills.xpgained.label_varxptype": "\u003cVAR:xptype\u003e",
       "advancements.farming_18.descr": "reach 222425 xp",
-      "advancements.farming_2.descr": "reach 175 xp",
       "advancements.mining_13.descr": "Reach 32425 xp",
+      "advancements.farming_2.descr": "reach 175 xp",
       "advancements.farming_9.title": "Farming 9",
       "advancements.combat_9.descr": "reach 9425 xp",
       "advancements.foraging_13.title": "Foraging 13",
       "advancements.combat_2.descr": "reach 175 xp",
+      "gui.betterskills.abilityconfig.button_toggle2": "Toggle",
+      "gui.betterskills.abilityconfig.button_toggle1": "Toggle",
       "advancements.farming_20.title": "Farming 20",
       "advancements.mining_12.descr": "reach 22425 xp",
       "advancements.fishing_15.descr": "Reach 67425 xp",
@@ -2376,8 +2375,8 @@
       "advancements.foraging_9.title": "Foraging 9",
       "advancements.combat_10.title": "Combat 10",
       "advancements.mining_5.title": "Mining 5",
-      "advancements.farming_17.descr": "reach 147425 xp",
       "advancements.farming_3.descr": "reach 375 xp",
+      "advancements.farming_17.descr": "reach 147425 xp",
       "advancements.combat_8.descr": "reach 4425 xp",
       "advancements.foraging_15.descr": "Reach 67425 xp",
       "advancements.fishing_4.title": "Fishing 4",
@@ -2388,6 +2387,7 @@
       "advancements.mining_11.descr": "reach 14925 xp",
       "advancements.combat_18.descr": "reach 222425 xp",
       "advancements.combat_14.title": "Combat 14",
+      "gui.betterskills.abilityconfig.button_toggle": "Toggle",
       "advancements.farming_12.title": "Farming 12",
       "advancements.fishing_15.title": "Fishing 15",
       "advancements.mining_15.title": "Mining 15",
@@ -2397,22 +2397,24 @@
       "advancements.foraging_11.title": "Foraging 11",
       "advancements.farming_15.title": "Farming 15",
       "advancements.fishing_10.descr": "reach 9925 xp",
+      "gui.betterskills.skills.label_combat_varcombatlvl": "Combat \u003cVAR:CombatLvl\u003e",
       "advancements.fishing_9.title": "Fishing 9",
       "advancements.foraging_2.descr": "reach 175 xp",
-      "advancements.farming_3.title": "Farming 3",
       "advancements.combat_5.title": "Combat 5",
+      "advancements.farming_3.title": "Farming 3",
       "advancements.mining_5.descr": "reach 1175 xp, haste 1",
       "advancements.foraging_7.title": "Foraging 7",
       "advancements.foraging_4.title": "Foraging 4",
       "advancements.farming_1.descr": "reach 50 xp",
       "advancements.farming_19.descr": "reach 322425 xp",
       "advancements.mining_2.descr": "reach 175 xp",
-      "advancements.farming_6.title": "Farming 6",
-      "advancements.combat_11.title": "Combat 11",
       "advancements.mining_7.title": "Mining 7",
+      "advancements.combat_11.title": "Combat 11",
+      "advancements.farming_6.title": "Farming 6",
       "advancements.farming_14.title": "Farming 14",
       "advancements.mining_3.descr": "reach 375 xp",
       "advancements.foraging_10.title": "Foraging 10",
+      "gui.betterskills.skills.label_varcombatxp": "\u003cVAR:CombatXP\u003e",
       "advancements.fishing_3.descr": "reach 375 xp",
       "advancements.combat_2.title": "Combat 2",
       "advancements.foraging_17.descr": "Reach 147425 xp",
@@ -2423,8 +2425,10 @@
       "advancements.fishing_6.title": "Fishing 6",
       "advancements.farming_5.title": "Farming 5",
       "advancements.fishing_18.title": "Fishing 18",
+      "gui.betterskills.abilityconfig.label_help_of_the_souls": "Help of the souls",
       "advancements.mining_10.descr": "reach 9925 xp, haste 2, Mole ability",
       "advancements.combat_3.title": "Combat 3",
+      "gui.betterskills.skills.label_varminingxp": "\u003cVAR:MiningXP\u003e",
       "advancements.foraging_18.descr": "Reach 222425 xp",
       "advancements.farming_13.title": "Farming 13",
       "item.betterskills.wateringcan": "Watering can",
@@ -2451,6 +2455,7 @@
       "advancements.combat_7.title": "Combat 7",
       "advancements.fishing_1.descr": "reach 50 xp",
       "advancements.mining_1.descr": "reach 50 xp",
+      "gui.betterskills.skills.button_ability_config": "Ability config",
       "advancements.foraging_19.descr": "Reach 322425 xp",
       "advancements.fishing_13.title": "Fishing 13",
       "advancements.fishing_2.title": "Fishing 2",
@@ -2458,11 +2463,13 @@
       "advancements.foraging_13.descr": "Reach 32425 xp",
       "advancements.foraging_9.descr": "reach 9425 xp",
       "advancements.fishing_7.descr": "reach 2925 xp",
+      "gui.betterskills.skills.label_varforagingxp": "\u003cVAR:ForagingXP\u003e",
       "key.betterskills.skills_menu": "Open the Skill Menu",
       "advancements.fishing_17.descr": "Reach 147425 xp",
       "advancements.farming_11.title": "Farming 11",
       "advancements.mining_16.title": "Mining 16",
       "advancements.combat_16.descr": "reach 97425 xp",
+      "gui.betterskills.skills.label_farming_varfarminglvl": "Farming \u003cVAR:FarmingLvL\u003e",
       "advancements.foraging_14.descr": "Reach 47425 xp",
       "advancements.fishing_20.title": "Fishing 20",
       "advancements.mining_12.title": "Mining 12",
@@ -2470,10 +2477,12 @@
       "advancements.combat_10.descr": "reach 9925 xp, grant the help of the souls ability",
       "advancements.farming_2.title": "Farming 2",
       "advancements.fishing_6.descr": "reach 1925 xp",
+      "gui.betterskills.skills.label_mining_varmininglvl": "Mining \u003cVAR:MiningLvL\u003e",
       "advancements.mining_6.descr": "reach 1925 xp",
       "advancements.foraging_3.descr": "reach 375 xp",
       "advancements.fishing_3.title": "Fishing 3",
       "advancements.farming_1.title": "Farming",
+      "gui.betterskills.skills.label_fishing_varfishinglvl": "Fishing \u003cVAR:FishingLvL\u003e",
       "advancements.fishing_20.descr": "Reach 522425 xp",
       "advancements.foraging_4.descr": "reach 675 xp",
       "advancements.farming_10.title": "Farming 10",
@@ -2502,18 +2511,22 @@
       "advancements.fishing_12.title": "Fishing 12",
       "advancements.foraging_5.descr": "reach 1175 xp",
       "advancements.foraging_8.descr": "reach 4425 xp",
+      "gui.betterskills.abilityconfig.label_instant_tree": "Instant Tree",
       "advancements.foraging_19.title": "Foraging 19",
       "advancements.fishing_8.descr": "reach 4425 xp",
       "advancements.mining_18.title": "Mining 18",
+      "gui.betterskills.abilityconfig.label_ability_config": "Ability Config",
       "advancements.combat_7.descr": "reach 2925 xp",
       "advancements.combat_15.descr": "reach 67425 xp",
       "advancements.mining_10.title": "Mining 10",
       "advancements.combat_12.descr": "reach 22425 xp",
       "advancements.mining_17.descr": "reach 147425 xp",
       "advancements.combat_17.title": "Combat 17",
+      "gui.betterskills.skills.label_varfishingxp": "\u003cVAR:FishingXP\u003e",
       "advancements.farming_18.title": "Farming 18",
       "advancements.mining_4.title": "Mining 4",
       "advancements.mining_14.descr": "Reach 47425 xp",
+      "gui.betterskills.xpgained.label_varintegerxpnumber_xp": "+\u003cVAR:integer:xpnumber\u003e XP",
       "advancements.combat_8.title": "Combat 8",
       "advancements.combat_9.title": "Combat 9",
       "advancements.combat_6.descr": "reach 1925 xp",
@@ -2532,6 +2545,7 @@
       "advancements.foraging_11.descr": "Reach 14925 xp",
       "advancements.fishing_9.descr": "reach 9425 xp",
       "advancements.fishing_11.title": "Fishing 11",
+      "gui.betterskills.skills.label_foraging_varforaginglvl": "Foraging \u003cVAR:ForagingLvl\u003e",
       "advancements.combat_5.descr": "reach 1175 xp",
       "advancements.farming_14.descr": "Reach 47425 xp",
       "advancements.combat_14.descr": "Reach 47425 xp",
@@ -2594,7 +2608,7 @@
       "patchouli",
       "jei"
     ],
-    "currentGenerator": "forge-1.16.5",
+    "currentGenerator": "forge-1.19.2",
     "credits": "Made by FeuSalamander",
     "modElementsPackage": "net.feusalamander.betterskills",
     "lockBaseModFiles": false
