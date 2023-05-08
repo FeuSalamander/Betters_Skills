@@ -2222,6 +2222,111 @@
         ]
       },
       "path": "~/Xpgained Conditions"
+    },
+    {
+      "name": "MiningLvl",
+      "type": "procedure",
+      "sortid": 164,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mining_lvl",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MiningLvlProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "CombatLvl",
+      "type": "procedure",
+      "sortid": 165,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combat_lvl",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/CombatLvlProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "ForagingLvl",
+      "type": "procedure",
+      "sortid": 166,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "foraging_lvl",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/ForagingLvlProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "FarmingLvl",
+      "type": "procedure",
+      "sortid": 167,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farming_lvl",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FarmingLvlProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "FishingLvl",
+      "type": "procedure",
+      "sortid": 168,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fishing_lvl",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FishingLvlProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
     }
   ],
   "variable_elements": [
@@ -2586,6 +2691,10 @@
       },
       {
         "name": "Xpgained Conditions",
+        "children": []
+      },
+      {
+        "name": "GuiVar",
         "children": []
       }
     ]

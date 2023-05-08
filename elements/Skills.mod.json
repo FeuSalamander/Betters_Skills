@@ -43,198 +43,133 @@
         }
       },
       {
-        "type": "label",
+        "type": "imagebutton",
         "data": {
-          "name": "label_mining_varmininglvl",
-          "text": {
-            "fixedValue": "Mining <VAR:MiningLvL>"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 66,
-          "y": 87
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_combat_varcombatlvl",
-          "text": {
-            "fixedValue": "Combat <VAR:CombatLvl>"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 128,
-          "y": 87
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_farming_varfarminglvl",
-          "text": {
-            "fixedValue": "Farming <VAR:FarmingLvL>"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 258,
-          "y": 87
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_fishing_varfishinglvl",
-          "text": {
-            "fixedValue": "Fishing <VAR:FishingLvL>"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 326,
-          "y": 86
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_foraging_varforaginglvl",
-          "text": {
-            "fixedValue": "Foraging <VAR:ForagingLvl>"
-          },
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "x": 196,
-          "y": 87
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "fishing_rod.png",
-          "use1Xscale": false,
-          "x": 327,
+          "name": "imagebutton_mining",
+          "image": "mining.png",
+          "hoveredImage": "",
+          "x": 59,
           "y": 98
         }
       },
       {
-        "type": "image",
+        "type": "imagebutton",
         "data": {
-          "image": "wooden_pick.png",
-          "use1Xscale": false,
-          "x": 68,
-          "y": 97
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "wooden_sword.png",
-          "use1Xscale": false,
-          "x": 135,
+          "name": "imagebutton_combat",
+          "image": "combat.png",
+          "hoveredImage": "",
+          "x": 124,
           "y": 98
         }
       },
       {
-        "type": "image",
+        "type": "imagebutton",
         "data": {
-          "image": "wood_axe.png",
-          "use1Xscale": false,
-          "x": 198,
-          "y": 99
+          "name": "imagebutton_foraging",
+          "image": "foraging.png",
+          "hoveredImage": "",
+          "x": 189,
+          "y": 98
         }
       },
       {
-        "type": "image",
+        "type": "imagebutton",
         "data": {
-          "image": "wood_hoe.png",
-          "use1Xscale": false,
-          "x": 260,
-          "y": 99
+          "name": "imagebutton_farming",
+          "image": "farming.png",
+          "hoveredImage": "",
+          "x": 254,
+          "y": 98
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_fishing",
+          "image": "fishing.png",
+          "hoveredImage": "",
+          "x": 319,
+          "y": 98
         }
       },
       {
         "type": "label",
         "data": {
-          "name": "label_varforagingxp",
+          "name": "label_proc_mining_lvl",
           "text": {
-            "fixedValue": "<VAR:ForagingXP>"
+            "fixedValue": "",
+            "name": "MiningLvl"
           },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 196,
+          "x": 82,
           "y": 134
         }
       },
       {
         "type": "label",
         "data": {
-          "name": "label_varcombatxp",
+          "name": "label_proc_combat_lvl",
           "text": {
-            "fixedValue": "<VAR:CombatXP>"
+            "fixedValue": "",
+            "name": "CombatLvl"
           },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 128,
-          "y": 134
+          "x": 142,
+          "y": 190
         }
       },
       {
         "type": "label",
         "data": {
-          "name": "label_varminingxp",
+          "name": "label_proc_foraging_lvl",
           "text": {
-            "fixedValue": "<VAR:MiningXP>"
+            "fixedValue": "",
+            "name": "ForagingLvl"
           },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 66,
-          "y": 134
+          "x": 201,
+          "y": 180
         }
       },
       {
         "type": "label",
         "data": {
-          "name": "label_varfarmingxp",
+          "name": "label_proc_farming_lvl",
           "text": {
-            "fixedValue": "<VAR:FarmingXP>"
+            "fixedValue": "",
+            "name": "FarmingLvl"
           },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 258,
-          "y": 134
+          "x": 259,
+          "y": 174
         }
       },
       {
         "type": "label",
         "data": {
-          "name": "label_varfishingxp",
+          "name": "label_proc_fishing_lvl",
           "text": {
-            "fixedValue": "<VAR:FishingXP>"
+            "fixedValue": "",
+            "name": "FishingLvl"
           },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 326,
-          "y": 134
+          "x": 321,
+          "y": 175
         }
       }
     ],
