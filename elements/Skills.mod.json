@@ -47,7 +47,10 @@
         "data": {
           "name": "imagebutton_mining",
           "image": "mining.png",
-          "hoveredImage": "",
+          "hoveredImage": "smining.png",
+          "onClick": {
+            "name": "OpenMiningGui"
+          },
           "x": 59,
           "y": 98
         }
@@ -57,7 +60,7 @@
         "data": {
           "name": "imagebutton_combat",
           "image": "combat.png",
-          "hoveredImage": "",
+          "hoveredImage": "scombat.png",
           "x": 124,
           "y": 98
         }
@@ -67,7 +70,7 @@
         "data": {
           "name": "imagebutton_foraging",
           "image": "foraging.png",
-          "hoveredImage": "",
+          "hoveredImage": "sforaging.png",
           "x": 189,
           "y": 98
         }
@@ -77,7 +80,7 @@
         "data": {
           "name": "imagebutton_farming",
           "image": "farming.png",
-          "hoveredImage": "",
+          "hoveredImage": "sfarming.png",
           "x": 254,
           "y": 98
         }
@@ -87,7 +90,7 @@
         "data": {
           "name": "imagebutton_fishing",
           "image": "fishing.png",
-          "hoveredImage": "",
+          "hoveredImage": "sfishing.png",
           "x": 319,
           "y": 98
         }
@@ -101,11 +104,11 @@
             "name": "MiningLvl"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 82,
-          "y": 134
+          "x": 80,
+          "y": 137
         }
       },
       {
@@ -117,11 +120,11 @@
             "name": "CombatLvl"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 142,
-          "y": 190
+          "x": 145,
+          "y": 137
         }
       },
       {
@@ -133,11 +136,11 @@
             "name": "ForagingLvl"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 201,
-          "y": 180
+          "x": 210,
+          "y": 137
         }
       },
       {
@@ -149,11 +152,11 @@
             "name": "FarmingLvl"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 259,
-          "y": 174
+          "x": 275,
+          "y": 137
         }
       },
       {
@@ -165,11 +168,86 @@
             "name": "FishingLvl"
           },
           "color": {
-            "value": -12829636,
+            "value": -1,
             "falpha": 0.0
           },
-          "x": 321,
-          "y": 175
+          "x": 340,
+          "y": 137
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_mining",
+          "text": {
+            "fixedValue": "Mining"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 70,
+          "y": 87
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_combat",
+          "text": {
+            "fixedValue": "Combat"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 87
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_foraging",
+          "text": {
+            "fixedValue": "Foraging"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 193,
+          "y": 87
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_farming",
+          "text": {
+            "fixedValue": "Farming"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 260,
+          "y": 87
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_fishing",
+          "text": {
+            "fixedValue": "Fishing"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 326,
+          "y": 87
         }
       }
     ],

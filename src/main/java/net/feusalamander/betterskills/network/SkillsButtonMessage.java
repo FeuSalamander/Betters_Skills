@@ -12,6 +12,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.feusalamander.betterskills.world.inventory.SkillsMenu;
+import net.feusalamander.betterskills.procedures.OpenMiningGuiProcedure;
 import net.feusalamander.betterskills.procedures.AbilityconfigprocProcedure;
 import net.feusalamander.betterskills.BetterskillsMod;
 
@@ -65,6 +66,10 @@ public class SkillsButtonMessage {
 		if (buttonID == 0) {
 
 			AbilityconfigprocProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 1) {
+
+			OpenMiningGuiProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

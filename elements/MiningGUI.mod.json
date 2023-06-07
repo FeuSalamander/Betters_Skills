@@ -1,0 +1,97 @@
+{
+  "_fv": 39,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 349,
+    "height": 208,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "skillsfont.png",
+          "use1Xscale": false,
+          "x": 37,
+          "y": 16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "miningbig.png",
+          "use1Xscale": true,
+          "x": 125,
+          "y": 47
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mbar0.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MiningBar0"
+          },
+          "x": 65,
+          "y": 47
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mbar2.png",
+          "use1Xscale": false,
+          "x": 65,
+          "y": 47
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mbar4.png",
+          "use1Xscale": false,
+          "x": 65,
+          "y": 47
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mbar6.png",
+          "use1Xscale": false,
+          "x": 65,
+          "y": 47
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mbar8.png",
+          "use1Xscale": false,
+          "x": 65,
+          "y": 47
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mbar10.png",
+          "use1Xscale": false,
+          "x": 65,
+          "y": 47
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 20,
+      "sy": 15,
+      "ox": 45,
+      "oy": 1,
+      "snapOnGrid": false
+    }
+  }
+}

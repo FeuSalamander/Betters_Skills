@@ -91,19 +91,24 @@ public class SkillsScreen extends AbstractContainerScreen<SkillsMenu> {
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
 		this.font.draw(poseStack,
 
-				MiningLvlProcedure.execute(entity), 43, 118, -12829636);
+				MiningLvlProcedure.execute(entity), 41, 121, -1);
 		this.font.draw(poseStack,
 
-				CombatLvlProcedure.execute(entity), 103, 174, -12829636);
+				CombatLvlProcedure.execute(entity), 106, 121, -1);
 		this.font.draw(poseStack,
 
-				ForagingLvlProcedure.execute(entity), 162, 164, -12829636);
+				ForagingLvlProcedure.execute(entity), 171, 121, -1);
 		this.font.draw(poseStack,
 
-				FarmingLvlProcedure.execute(entity), 220, 158, -12829636);
+				FarmingLvlProcedure.execute(entity), 236, 121, -1);
 		this.font.draw(poseStack,
 
-				FishingLvlProcedure.execute(entity), 282, 159, -12829636);
+				FishingLvlProcedure.execute(entity), 301, 121, -1);
+		this.font.draw(poseStack, Component.translatable("gui.betterskills.skills.label_mining"), 31, 71, -1);
+		this.font.draw(poseStack, Component.translatable("gui.betterskills.skills.label_combat"), 93, 71, -1);
+		this.font.draw(poseStack, Component.translatable("gui.betterskills.skills.label_foraging"), 154, 71, -1);
+		this.font.draw(poseStack, Component.translatable("gui.betterskills.skills.label_farming"), 221, 71, -1);
+		this.font.draw(poseStack, Component.translatable("gui.betterskills.skills.label_fishing"), 287, 71, -1);
 	}
 
 	@Override
@@ -125,6 +130,10 @@ public class SkillsScreen extends AbstractContainerScreen<SkillsMenu> {
 		guistate.put("button:button_ability_config", button_ability_config);
 		this.addRenderableWidget(button_ability_config);
 		imagebutton_mining = new ImageButton(this.leftPos + 20, this.topPos + 82, 48, 48, 0, 0, 48, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_mining.png"), 48, 96, e -> {
+			if (true) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(1, x, y, z));
+				SkillsButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
 		});
 		guistate.put("button:imagebutton_mining", imagebutton_mining);
 		this.addRenderableWidget(imagebutton_mining);
