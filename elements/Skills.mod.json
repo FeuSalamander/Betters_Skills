@@ -61,6 +61,9 @@
           "name": "imagebutton_combat",
           "image": "combat.png",
           "hoveredImage": "scombat.png",
+          "onClick": {
+            "name": "OpenCombat"
+          },
           "x": 124,
           "y": 98
         }
@@ -71,6 +74,9 @@
           "name": "imagebutton_foraging",
           "image": "foraging.png",
           "hoveredImage": "sforaging.png",
+          "onClick": {
+            "name": "OpenForaging"
+          },
           "x": 189,
           "y": 98
         }
@@ -81,6 +87,9 @@
           "name": "imagebutton_farming",
           "image": "farming.png",
           "hoveredImage": "sfarming.png",
+          "onClick": {
+            "name": "OpenFarming"
+          },
           "x": 254,
           "y": 98
         }
@@ -91,6 +100,9 @@
           "name": "imagebutton_fishing",
           "image": "fishing.png",
           "hoveredImage": "sfishing.png",
+          "onClick": {
+            "name": "OpenFishing"
+          },
           "x": 319,
           "y": 98
         }

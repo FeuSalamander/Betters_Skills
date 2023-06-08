@@ -18,7 +18,8 @@
         "data": {
           "name": "label_varintegerxpnumber_xp",
           "text": {
-            "fixedValue": "+<VAR:integer:xpnumber> XP"
+            "fixedValue": "",
+            "name": "Xpnumber"
           },
           "color": {
             "value": -16777216,
@@ -33,7 +34,8 @@
         "data": {
           "name": "label_varxptype",
           "text": {
-            "fixedValue": "<VAR:xptype>"
+            "fixedValue": "",
+            "name": "Xptype"
           },
           "color": {
             "value": -16777216,

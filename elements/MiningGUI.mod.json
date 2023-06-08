@@ -24,7 +24,7 @@
         "data": {
           "image": "miningbig.png",
           "use1Xscale": true,
-          "x": 125,
+          "x": 126,
           "y": 47
         }
       },
@@ -37,7 +37,7 @@
             "name": "MiningBar0"
           },
           "x": 65,
-          "y": 47
+          "y": 55
         }
       },
       {
@@ -45,8 +45,11 @@
         "data": {
           "image": "mbar2.png",
           "use1Xscale": false,
+          "displayCondition": {
+            "name": "MiningBar2"
+          },
           "x": 65,
-          "y": 47
+          "y": 55
         }
       },
       {
@@ -54,8 +57,11 @@
         "data": {
           "image": "mbar4.png",
           "use1Xscale": false,
+          "displayCondition": {
+            "name": "MiningBar4"
+          },
           "x": 65,
-          "y": 47
+          "y": 55
         }
       },
       {
@@ -63,8 +69,11 @@
         "data": {
           "image": "mbar6.png",
           "use1Xscale": false,
+          "displayCondition": {
+            "name": "MiningBar6"
+          },
           "x": 65,
-          "y": 47
+          "y": 55
         }
       },
       {
@@ -72,17 +81,27 @@
         "data": {
           "image": "mbar8.png",
           "use1Xscale": false,
+          "displayCondition": {
+            "name": "MiningBar8"
+          },
           "x": 65,
-          "y": 47
+          "y": 55
         }
       },
       {
-        "type": "image",
+        "type": "label",
         "data": {
-          "image": "mbar10.png",
-          "use1Xscale": false,
-          "x": 65,
-          "y": 47
+          "name": "label_proc_mining_xpvar",
+          "text": {
+            "fixedValue": "",
+            "name": "MiningXpvar"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 66,
+          "y": 188
         }
       }
     ],

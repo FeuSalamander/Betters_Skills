@@ -1,5 +1,7 @@
 package net.feusalamander.betterskills.procedures;
 
+import org.checkerframework.checker.units.qual.min;
+
 import net.minecraft.world.entity.Entity;
 
 import net.feusalamander.betterskills.network.BetterskillsModVariables;
@@ -8,87 +10,95 @@ public class MiningBar0Procedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 0) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 50 < 0.2) {
+		double min = 0;
+		double max = 0;
+		double XP = 0;
+		double Lvl = 0;
+		min = 0;
+		max = 0.2;
+		XP = (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP;
+		Lvl = (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL;
+		if (Lvl == 0) {
+			if (XP / 50 > min && XP / 50 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 1) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 175 < 0.2) {
+		} else if (Lvl == 1) {
+			if (XP / 175 > min && XP / 175 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 2) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 375 < 0.2) {
+		} else if (Lvl == 2) {
+			if (XP / 375 > min && XP / 375 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 3) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 675 < 0.2) {
+		} else if (Lvl == 3) {
+			if (XP / 675 > min && XP / 675 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 4) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 1175 < 0.2) {
+		} else if (Lvl == 4) {
+			if (XP / 1175 > min && XP / 1175 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 5) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 1925 < 0.2) {
+		} else if (Lvl == 5) {
+			if (XP / 1925 > min && XP / 1925 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 6) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 2925 < 0.2) {
+		} else if (Lvl == 6) {
+			if (XP / 2925 > min && XP / 2925 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 7) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 4425 < 0.2) {
+		} else if (Lvl == 7) {
+			if (XP / 4425 > min && XP / 4425 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 8) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 6425 < 0.2) {
+		} else if (Lvl == 8) {
+			if (XP / 6425 > min && XP / 6425 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 9) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 9925 < 0.2) {
+		} else if (Lvl == 9) {
+			if (XP / 9925 > min && XP / 9925 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 10) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 14925 < 0.2) {
+		} else if (Lvl == 10) {
+			if (XP / 14925 > min && XP / 14925 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 11) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 22425 < 0.2) {
+		} else if (Lvl == 11) {
+			if (XP / 22425 > min && XP / 22425 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 12) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 32425 < 0.2) {
+		} else if (Lvl == 12) {
+			if (XP / 32425 > min && XP / 32425 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 13) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 47425 < 0.2) {
+		} else if (Lvl == 13) {
+			if (XP / 47425 > min && XP / 47425 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 14) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 67425 < 0.2) {
+		} else if (Lvl == 14) {
+			if (XP / 67425 > min && XP / 67425 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 15) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 97425 < 0.2) {
+		} else if (Lvl == 15) {
+			if (XP / 97425 > min && XP / 97425 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 16) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 147425 < 0.2) {
+		} else if (Lvl == 16) {
+			if (XP / 147425 > min && XP / 147425 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 17) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 222425 < 0.2) {
+		} else if (Lvl == 17) {
+			if (XP / 222425 > min && XP / 222425 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 18) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 322425 < 0.2) {
+		} else if (Lvl == 18) {
+			if (XP / 322425 > min && XP / 322425 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 19) {
-			if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP / 522425 < 0.2) {
+		} else if (Lvl == 19) {
+			if (XP / 522425 > min && XP / 522425 < max) {
 				return true;
 			}
-		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningLvL == 20) {
+		} else if (Lvl == 20) {
 			return false;
 		}
 		return false;

@@ -9,6 +9,11 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.Minecraft;
 
 import net.feusalamander.betterskills.world.inventory.MiningGUIMenu;
+import net.feusalamander.betterskills.procedures.MiningXpvarProcedure;
+import net.feusalamander.betterskills.procedures.MiningBar8Procedure;
+import net.feusalamander.betterskills.procedures.MiningBar6Procedure;
+import net.feusalamander.betterskills.procedures.MiningBar4Procedure;
+import net.feusalamander.betterskills.procedures.MiningBar2Procedure;
 import net.feusalamander.betterskills.procedures.MiningBar0Procedure;
 
 import java.util.HashMap;
@@ -54,28 +59,28 @@ public class MiningGUIScreen extends AbstractContainerScreen<MiningGUIMenu> {
 		this.blit(ms, this.leftPos + -2, this.topPos + 0, 0, 0, 352, 208, 352, 208);
 
 		RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/miningbig.png"));
-		this.blit(ms, this.leftPos + 86, this.topPos + 31, 0, 0, 175, 147, 175, 147);
+		this.blit(ms, this.leftPos + 87, this.topPos + 31, 0, 0, 175, 147, 175, 147);
 
 		if (MiningBar0Procedure.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/mbar0.png"));
-			this.blit(ms, this.leftPos + 26, this.topPos + 31, 0, 0, 25, 130, 25, 130);
+			this.blit(ms, this.leftPos + 26, this.topPos + 39, 0, 0, 25, 130, 25, 130);
 		}
-
-		RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/mbar2.png"));
-		this.blit(ms, this.leftPos + 26, this.topPos + 31, 0, 0, 25, 130, 25, 130);
-
-		RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/mbar4.png"));
-		this.blit(ms, this.leftPos + 26, this.topPos + 31, 0, 0, 25, 130, 25, 130);
-
-		RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/mbar6.png"));
-		this.blit(ms, this.leftPos + 26, this.topPos + 31, 0, 0, 25, 130, 25, 130);
-
-		RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/mbar8.png"));
-		this.blit(ms, this.leftPos + 26, this.topPos + 31, 0, 0, 25, 130, 25, 130);
-
-		RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/mbar10.png"));
-		this.blit(ms, this.leftPos + 26, this.topPos + 31, 0, 0, 25, 130, 25, 130);
-
+		if (MiningBar2Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/mbar2.png"));
+			this.blit(ms, this.leftPos + 26, this.topPos + 39, 0, 0, 25, 130, 25, 130);
+		}
+		if (MiningBar4Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/mbar4.png"));
+			this.blit(ms, this.leftPos + 26, this.topPos + 39, 0, 0, 25, 130, 25, 130);
+		}
+		if (MiningBar6Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/mbar6.png"));
+			this.blit(ms, this.leftPos + 26, this.topPos + 39, 0, 0, 25, 130, 25, 130);
+		}
+		if (MiningBar8Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/mbar8.png"));
+			this.blit(ms, this.leftPos + 26, this.topPos + 39, 0, 0, 25, 130, 25, 130);
+		}
 		RenderSystem.disableBlend();
 	}
 
@@ -95,6 +100,9 @@ public class MiningGUIScreen extends AbstractContainerScreen<MiningGUIMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
+		this.font.draw(poseStack,
+
+				MiningXpvarProcedure.execute(entity), 27, 172, -16777216);
 	}
 
 	@Override

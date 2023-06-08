@@ -13,6 +13,10 @@ import net.minecraft.core.BlockPos;
 
 import net.feusalamander.betterskills.world.inventory.SkillsMenu;
 import net.feusalamander.betterskills.procedures.OpenMiningGuiProcedure;
+import net.feusalamander.betterskills.procedures.OpenForagingProcedure;
+import net.feusalamander.betterskills.procedures.OpenFishingProcedure;
+import net.feusalamander.betterskills.procedures.OpenFarmingProcedure;
+import net.feusalamander.betterskills.procedures.OpenCombatProcedure;
 import net.feusalamander.betterskills.procedures.AbilityconfigprocProcedure;
 import net.feusalamander.betterskills.BetterskillsMod;
 
@@ -70,6 +74,22 @@ public class SkillsButtonMessage {
 		if (buttonID == 1) {
 
 			OpenMiningGuiProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 2) {
+
+			OpenCombatProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 3) {
+
+			OpenForagingProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 4) {
+
+			OpenFarmingProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 5) {
+
+			OpenFishingProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

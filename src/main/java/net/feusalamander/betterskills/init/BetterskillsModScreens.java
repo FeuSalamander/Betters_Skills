@@ -13,6 +13,10 @@ import net.minecraft.client.gui.screens.MenuScreens;
 
 import net.feusalamander.betterskills.client.gui.SkillsScreen;
 import net.feusalamander.betterskills.client.gui.MiningGUIScreen;
+import net.feusalamander.betterskills.client.gui.ForagingGuiScreen;
+import net.feusalamander.betterskills.client.gui.FishingGuiScreen;
+import net.feusalamander.betterskills.client.gui.FarmingGuiScreen;
+import net.feusalamander.betterskills.client.gui.CombatGuiScreen;
 import net.feusalamander.betterskills.client.gui.AbilityconfigScreen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -23,6 +27,10 @@ public class BetterskillsModScreens {
 			MenuScreens.register(BetterskillsModMenus.SKILLS.get(), SkillsScreen::new);
 			MenuScreens.register(BetterskillsModMenus.ABILITYCONFIG.get(), AbilityconfigScreen::new);
 			MenuScreens.register(BetterskillsModMenus.MINING_GUI.get(), MiningGUIScreen::new);
+			MenuScreens.register(BetterskillsModMenus.COMBAT_GUI.get(), CombatGuiScreen::new);
+			MenuScreens.register(BetterskillsModMenus.FISHING_GUI.get(), FishingGuiScreen::new);
+			MenuScreens.register(BetterskillsModMenus.FARMING_GUI.get(), FarmingGuiScreen::new);
+			MenuScreens.register(BetterskillsModMenus.FORAGING_GUI.get(), ForagingGuiScreen::new);
 		});
 	}
 }

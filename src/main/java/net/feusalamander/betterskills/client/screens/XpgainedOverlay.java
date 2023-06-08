@@ -12,10 +12,11 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.Minecraft;
 
+import net.feusalamander.betterskills.procedures.XptypeProcedure;
+import net.feusalamander.betterskills.procedures.XpnumberProcedure;
 import net.feusalamander.betterskills.procedures.XpgainedOnProcedure;
 import net.feusalamander.betterskills.procedures.MiningOnProcedure;
 import net.feusalamander.betterskills.procedures.ForagingOnProcedure;
@@ -75,8 +76,12 @@ public class XpgainedOverlay {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/wood_hoe.png"));
 				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 281, posY + -124, 0, 0, 32, 32, 32, 32);
 			}
-			Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.betterskills.xpgained.label_varintegerxpnumber_xp"), posX + 216, posY + -101, -16777216);
-			Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.betterskills.xpgained.label_varxptype"), posX + 212, posY + -123, -16777216);
+			Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+					XpnumberProcedure.execute(entity), posX + 216, posY + -101, -16777216);
+			Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+					XptypeProcedure.execute(entity), posX + 212, posY + -123, -16777216);
 		}
 		RenderSystem.depthMask(true);
 		RenderSystem.defaultBlendFunc();

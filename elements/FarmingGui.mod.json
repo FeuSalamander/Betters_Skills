@@ -1,0 +1,116 @@
+{
+  "_fv": 39,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 349,
+    "height": 208,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "skillsfont.png",
+          "use1Xscale": false,
+          "x": 37,
+          "y": 16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "farmingbig.png",
+          "use1Xscale": true,
+          "x": 126,
+          "y": 47
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mbar0.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FarmingBar0"
+          },
+          "x": 65,
+          "y": 55
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fabar2.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FarmingBar2"
+          },
+          "x": 65,
+          "y": 55
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fabar4.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FarmingBAr4"
+          },
+          "x": 65,
+          "y": 55
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fabar6.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FarmingBAr6"
+          },
+          "x": 65,
+          "y": 55
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fabar8.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FarmingBar8"
+          },
+          "x": 65,
+          "y": 55
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_mining_xpvar",
+          "text": {
+            "fixedValue": "",
+            "name": "FarmingXPvar"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 66,
+          "y": 188
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 20,
+      "sy": 15,
+      "ox": 45,
+      "oy": 1,
+      "snapOnGrid": false
+    }
+  }
+}

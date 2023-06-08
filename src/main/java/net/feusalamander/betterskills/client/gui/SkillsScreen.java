@@ -138,18 +138,34 @@ public class SkillsScreen extends AbstractContainerScreen<SkillsMenu> {
 		guistate.put("button:imagebutton_mining", imagebutton_mining);
 		this.addRenderableWidget(imagebutton_mining);
 		imagebutton_combat = new ImageButton(this.leftPos + 85, this.topPos + 82, 48, 48, 0, 0, 48, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_combat.png"), 48, 96, e -> {
+			if (true) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(2, x, y, z));
+				SkillsButtonMessage.handleButtonAction(entity, 2, x, y, z);
+			}
 		});
 		guistate.put("button:imagebutton_combat", imagebutton_combat);
 		this.addRenderableWidget(imagebutton_combat);
 		imagebutton_foraging = new ImageButton(this.leftPos + 150, this.topPos + 82, 48, 48, 0, 0, 48, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_foraging.png"), 48, 96, e -> {
+			if (true) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(3, x, y, z));
+				SkillsButtonMessage.handleButtonAction(entity, 3, x, y, z);
+			}
 		});
 		guistate.put("button:imagebutton_foraging", imagebutton_foraging);
 		this.addRenderableWidget(imagebutton_foraging);
 		imagebutton_farming = new ImageButton(this.leftPos + 215, this.topPos + 82, 48, 48, 0, 0, 48, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_farming.png"), 48, 96, e -> {
+			if (true) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(4, x, y, z));
+				SkillsButtonMessage.handleButtonAction(entity, 4, x, y, z);
+			}
 		});
 		guistate.put("button:imagebutton_farming", imagebutton_farming);
 		this.addRenderableWidget(imagebutton_farming);
 		imagebutton_fishing = new ImageButton(this.leftPos + 280, this.topPos + 82, 48, 48, 0, 0, 48, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_fishing.png"), 48, 96, e -> {
+			if (true) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(5, x, y, z));
+				SkillsButtonMessage.handleButtonAction(entity, 5, x, y, z);
+			}
 		});
 		guistate.put("button:imagebutton_fishing", imagebutton_fishing);
 		this.addRenderableWidget(imagebutton_fishing);

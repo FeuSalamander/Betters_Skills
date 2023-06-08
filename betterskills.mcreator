@@ -2340,7 +2340,8 @@
           "src/main/java/net/feusalamander/betterskills/world/inventory/MiningGUIMenu.java",
           "src/main/java/net/feusalamander/betterskills/client/gui/MiningGUIScreen.java"
         ]
-      }
+      },
+      "path": "~/SkillsGUI"
     },
     {
       "name": "Xptype",
@@ -2417,12 +2418,34 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "MiningBar2",
+      "type": "procedure",
+      "sortid": 174,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mining_bar_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MiningBar2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
     },
     {
       "name": "MiningBar0",
       "type": "procedure",
-      "sortid": 173,
+      "sortid": 175,
       "compiles": true,
       "locked_code": false,
       "registry_name": "mining_bar_0",
@@ -2437,7 +2460,800 @@
             "type": "entity"
           }
         ]
-      }
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "MiningBar4",
+      "type": "procedure",
+      "sortid": 176,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mining_bar_4",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MiningBar4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "MiningBar6",
+      "type": "procedure",
+      "sortid": 177,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mining_bar_6",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MiningBar6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "MiningBar8",
+      "type": "procedure",
+      "sortid": 178,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mining_bar_8",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MiningBar8Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "CombatXpvar",
+      "type": "procedure",
+      "sortid": 179,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combat_xpvar",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/CombatXpvarProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "FarmingXPvar",
+      "type": "procedure",
+      "sortid": 180,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farming_x_pvar",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FarmingXPvarProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "MiningXpvar",
+      "type": "procedure",
+      "sortid": 181,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mining_xpvar",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MiningXpvarProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "ForagingXPvar",
+      "type": "procedure",
+      "sortid": 182,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "foraging_x_pvar",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/ForagingXPvarProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "FishingXpVAr",
+      "type": "procedure",
+      "sortid": 183,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fishing_xp_v_ar",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FishingXpVArProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "CombatGui",
+      "type": "gui",
+      "sortid": 184,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combat_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/world/inventory/CombatGuiMenu.java",
+          "src/main/java/net/feusalamander/betterskills/client/gui/CombatGuiScreen.java"
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "FishingGui",
+      "type": "gui",
+      "sortid": 185,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fishing_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/client/gui/FishingGuiScreen.java",
+          "src/main/java/net/feusalamander/betterskills/world/inventory/FishingGuiMenu.java"
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "FarmingGui",
+      "type": "gui",
+      "sortid": 186,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farming_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/client/gui/FarmingGuiScreen.java",
+          "src/main/java/net/feusalamander/betterskills/world/inventory/FarmingGuiMenu.java"
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "ForagingGui",
+      "type": "gui",
+      "sortid": 187,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "foraging_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/world/inventory/ForagingGuiMenu.java",
+          "src/main/java/net/feusalamander/betterskills/client/gui/ForagingGuiScreen.java"
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "OpenCombat",
+      "type": "procedure",
+      "sortid": 188,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_combat",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/OpenCombatProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "OpenFishing",
+      "type": "procedure",
+      "sortid": 189,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_fishing",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/OpenFishingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "OpenFarming",
+      "type": "procedure",
+      "sortid": 190,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_farming",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/OpenFarmingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "OpenForaging",
+      "type": "procedure",
+      "sortid": 191,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_foraging",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/OpenForagingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "CombatBar2",
+      "type": "procedure",
+      "sortid": 192,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combat_bar_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/CombatBar2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "FarmingBar2",
+      "type": "procedure",
+      "sortid": 193,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farming_bar_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FarmingBar2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "FishingBar2",
+      "type": "procedure",
+      "sortid": 194,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fishing_bar_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FishingBar2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "ForagingBar2",
+      "type": "procedure",
+      "sortid": 195,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "foraging_bar_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/ForagingBar2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "CombatBar0",
+      "type": "procedure",
+      "sortid": 196,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combat_bar_0",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/CombatBar0Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "FarmingBar0",
+      "type": "procedure",
+      "sortid": 197,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farming_bar_0",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FarmingBar0Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "FishingBar0",
+      "type": "procedure",
+      "sortid": 198,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fishing_bar_0",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FishingBar0Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "ForagingBar0",
+      "type": "procedure",
+      "sortid": 199,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "foraging_bar_0",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/ForagingBar0Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "CombatBar4",
+      "type": "procedure",
+      "sortid": 200,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combat_bar_4",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/CombatBar4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "FarmingBAr4",
+      "type": "procedure",
+      "sortid": 201,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farming_b_ar_4",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FarmingBAr4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "FishingBar4",
+      "type": "procedure",
+      "sortid": 202,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fishing_bar_4",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FishingBar4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "ForagingBar4",
+      "type": "procedure",
+      "sortid": 203,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "foraging_bar_4",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/ForagingBar4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "CombatBar6",
+      "type": "procedure",
+      "sortid": 204,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combat_bar_6",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/CombatBar6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "FarmingBAr6",
+      "type": "procedure",
+      "sortid": 205,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farming_b_ar_6",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FarmingBAr6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "FishingBAr6",
+      "type": "procedure",
+      "sortid": 206,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fishing_b_ar_6",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FishingBAr6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "ForagingBAr6",
+      "type": "procedure",
+      "sortid": 207,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "foraging_b_ar_6",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/ForagingBAr6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "CombatBar8",
+      "type": "procedure",
+      "sortid": 208,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combat_bar_8",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/CombatBar8Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "FarmingBar8",
+      "type": "procedure",
+      "sortid": 209,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farming_bar_8",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FarmingBar8Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "FishingBAr8",
+      "type": "procedure",
+      "sortid": 210,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fishing_b_ar_8",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/FishingBAr8Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
+    },
+    {
+      "name": "ForagingBAr8",
+      "type": "procedure",
+      "sortid": 211,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "foraging_b_ar_8",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/ForagingBAr8Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SkillsGUI"
     }
   ],
   "variable_elements": [
@@ -2558,26 +3374,26 @@
       "advancements.combat_15.title": "Combat 15",
       "advancements.foraging_6.descr": "reach 1925 xp",
       "advancements.foraging_16.descr": "Reach 97425 xp",
-      "advancements.farming_8.descr": "reach 4425 xp",
       "advancements.farming_12.descr": "reach 22425 xp",
+      "advancements.farming_8.descr": "reach 4425 xp",
       "advancements.fishing_16.title": "Fishing 16",
       "advancements.mining_19.title": "Mining 19",
       "advancements.foraging_18.title": "Foraging 18",
       "advancements.combat.title": "Combat",
       "advancements.foraging_12.title": "Foraging 12",
-      "advancements.combat_19.descr": "reach 322425 xp",
       "advancements.foraging_10.descr": "reach 9925 xp, grant the instant tree ability",
+      "advancements.combat_19.descr": "reach 322425 xp",
       "advancements.foraging_20.title": "Foraging 20",
       "advancements.fishing_14.descr": "Reach 47425 xp",
       "advancements.combat_3.descr": "reach 375 xp",
       "advancements.mining_6.title": "Mining 6",
       "advancements.farming_9.descr": "reach 9425 xp",
-      "advancements.farming_11.descr": "reach 14925 xp",
-      "advancements.foraging_3.title": "Foraging 3",
       "gui.betterskills.xpgained.label_varxptype": "\u003cVAR:xptype\u003e",
+      "advancements.foraging_3.title": "Foraging 3",
+      "advancements.farming_11.descr": "reach 14925 xp",
       "advancements.farming_18.descr": "reach 222425 xp",
-      "advancements.mining_13.descr": "Reach 32425 xp",
       "advancements.farming_2.descr": "reach 175 xp",
+      "advancements.mining_13.descr": "Reach 32425 xp",
       "advancements.farming_9.title": "Farming 9",
       "advancements.combat_9.descr": "reach 9425 xp",
       "advancements.foraging_13.title": "Foraging 13",
@@ -2822,7 +3638,7 @@
   "workspaceSettings": {
     "modid": "betterskills",
     "modName": "Better Skills",
-    "version": "1.6.1",
+    "version": "1.7.0",
     "description": "add skills to the game",
     "author": "FeuSalamander",
     "websiteURL": "https://www.curseforge.com/minecraft/mc-mods/better-skills",

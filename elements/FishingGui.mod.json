@@ -1,0 +1,116 @@
+{
+  "_fv": 39,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 349,
+    "height": 208,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "skillsfont.png",
+          "use1Xscale": false,
+          "x": 37,
+          "y": 16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fishingbig.png",
+          "use1Xscale": true,
+          "x": 126,
+          "y": 47
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mbar0.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FishingBar0"
+          },
+          "x": 65,
+          "y": 55
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fibar2.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FishingBar2"
+          },
+          "x": 65,
+          "y": 55
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fibar4.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FishingBar4"
+          },
+          "x": 65,
+          "y": 55
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fibar6.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FishingBAr6"
+          },
+          "x": 65,
+          "y": 55
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fibar8.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FishingBAr8"
+          },
+          "x": 65,
+          "y": 55
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_mining_xpvar",
+          "text": {
+            "fixedValue": "",
+            "name": "FishingXpVAr"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 66,
+          "y": 188
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 20,
+      "sy": 15,
+      "ox": 45,
+      "oy": 1,
+      "snapOnGrid": false
+    }
+  }
+}
