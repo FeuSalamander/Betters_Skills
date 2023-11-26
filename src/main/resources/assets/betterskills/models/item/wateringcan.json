@@ -1,7 +1,7 @@
 {
   "parent": "betterskills:custom/watering_can",
   "textures": {
-    "0": "betterskills:blocks/wateringcan",
-    "particle": "betterskills:items/test"
+    "0": "betterskills:block/wateringcan",
+    "particle": "betterskills:item/test"
   }
 }

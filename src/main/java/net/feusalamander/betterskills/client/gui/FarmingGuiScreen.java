@@ -6,10 +6,9 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.Minecraft;
 
 import net.feusalamander.betterskills.world.inventory.FarmingGuiMenu;
-import net.feusalamander.betterskills.procedures.FarmingXPvarProcedure;
+import net.feusalamander.betterskills.procedures.FarmingTooltipProcedure;
 import net.feusalamander.betterskills.procedures.FarmingBar8Procedure;
 import net.feusalamander.betterskills.procedures.FarmingBar2Procedure;
 import net.feusalamander.betterskills.procedures.FarmingBar0Procedure;
@@ -102,18 +101,16 @@ public class FarmingGuiScreen extends AbstractContainerScreen<FarmingGuiMenu> {
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
 		this.font.draw(poseStack,
 
-				FarmingXPvarProcedure.execute(entity), 27, 172, -16777216);
+				FarmingTooltipProcedure.execute(entity), 27, 172, -393472);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 	}
 }

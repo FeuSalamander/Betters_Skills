@@ -31,11 +31,11 @@ public class MoleProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.STONE
-				&& (entity instanceof ServerPlayer _plr && _plr.level instanceof ServerLevel ? _plr.getAdvancements().getOrStartProgress(_plr.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_10"))).isDone() : false)
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.STONE && entity instanceof ServerPlayer _plr2 && _plr2.level instanceof ServerLevel
+				&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_10"))).isDone()
 				&& (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).mole == true) {
-			if ((world.getBlockState(new BlockPos(x + 1, y, z))).getBlock() == Blocks.STONE) {
-				world.destroyBlock(new BlockPos(x + 1, y, z), false);
+			if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.STONE) {
+				world.destroyBlock(BlockPos.containing(x + 1, y, z), false);
 				{
 					double _setval = (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP + 1;
 					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

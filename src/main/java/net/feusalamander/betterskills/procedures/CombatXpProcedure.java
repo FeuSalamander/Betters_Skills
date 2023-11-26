@@ -34,8 +34,6 @@ import net.feusalamander.betterskills.network.BetterskillsModVariables;
 
 import javax.annotation.Nullable;
 
-import java.util.Iterator;
-
 @Mod.EventBusSubscriber
 public class CombatXpProcedure {
 	@SubscribeEvent
@@ -163,9 +161,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_20"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 322425) {
@@ -180,9 +177,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_19"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 222425) {
@@ -197,9 +193,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_18"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 147425) {
@@ -214,9 +209,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_17"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 97425) {
@@ -231,9 +225,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_16"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 67425) {
@@ -248,9 +241,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_15"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 47425) {
@@ -265,9 +257,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_14"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 32425) {
@@ -282,9 +273,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_13"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 22425) {
@@ -299,9 +289,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_12"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 14925) {
@@ -316,9 +305,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_11"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 9925) {
@@ -333,9 +321,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_10"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 6425) {
@@ -350,9 +337,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_9"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 4425) {
@@ -367,9 +353,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_8"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 2925) {
@@ -384,9 +369,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_7"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 1925) {
@@ -401,9 +385,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_6"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 1175) {
@@ -418,9 +401,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_5"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 675) {
@@ -435,9 +417,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_4"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 375) {
@@ -452,9 +433,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_3"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 175) {
@@ -469,9 +449,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat_2"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP >= 50) {
@@ -486,9 +465,8 @@ public class CombatXpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:combat"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((sourceentity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).CombatXP < 50) {

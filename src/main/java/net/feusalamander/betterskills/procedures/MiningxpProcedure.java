@@ -18,8 +18,6 @@ import net.feusalamander.betterskills.network.BetterskillsModVariables;
 
 import javax.annotation.Nullable;
 
-import java.util.Iterator;
-
 @Mod.EventBusSubscriber
 public class MiningxpProcedure {
 	@SubscribeEvent
@@ -35,40 +33,40 @@ public class MiningxpProcedure {
 		if (entity == null)
 			return;
 		double xp = 0;
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.STONE) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.STONE) {
 			xp = 1;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.GRANITE) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.GRANITE) {
 			xp = 1;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIORITE) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.DIORITE) {
 			xp = 1;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.COAL_ORE) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.COAL_ORE) {
 			xp = 3;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.IRON_ORE) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.IRON_ORE) {
 			xp = 5;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.REDSTONE_ORE) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.REDSTONE_ORE) {
 			xp = 5;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.REDSTONE_ORE) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.REDSTONE_ORE) {
 			xp = 5;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.GOLD_ORE) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.GOLD_ORE) {
 			xp = 10;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.LAPIS_ORE) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.LAPIS_ORE) {
 			xp = 10;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.DIAMOND_ORE) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.DIAMOND_ORE) {
 			xp = 25;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.EMERALD_ORE) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.EMERALD_ORE) {
 			xp = 50;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.ANCIENT_DEBRIS) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.ANCIENT_DEBRIS) {
 			xp = 50;
 		}
 		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 522425) {
@@ -83,9 +81,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_20"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 322425) {
@@ -100,9 +97,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_19"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 222425) {
@@ -117,9 +113,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_18"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 147425) {
@@ -134,9 +129,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_17"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 97425) {
@@ -151,9 +145,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_16"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 67425) {
@@ -168,9 +161,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_15"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 47425) {
@@ -185,9 +177,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_14"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 32425) {
@@ -202,9 +193,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_13"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 22425) {
@@ -219,9 +209,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_12"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 14925) {
@@ -236,9 +225,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_11"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 9925) {
@@ -253,9 +241,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_10"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 6425) {
@@ -270,9 +257,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_9"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 4425) {
@@ -287,9 +273,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_8"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 2925) {
@@ -304,9 +289,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_7"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 1925) {
@@ -321,9 +305,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_6"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 1175) {
@@ -338,9 +321,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_5"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 675) {
@@ -355,9 +337,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_4"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 375) {
@@ -372,9 +353,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_3"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 175) {
@@ -389,9 +369,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_2"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP >= 50) {
@@ -406,9 +385,8 @@ public class MiningxpProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:mining_1"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).MiningXP < 50) {

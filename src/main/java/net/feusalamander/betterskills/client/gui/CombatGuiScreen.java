@@ -6,10 +6,9 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.Minecraft;
 
 import net.feusalamander.betterskills.world.inventory.CombatGuiMenu;
-import net.feusalamander.betterskills.procedures.CombatXpvarProcedure;
+import net.feusalamander.betterskills.procedures.CombatTooltipProcedure;
 import net.feusalamander.betterskills.procedures.CombatBar8Procedure;
 import net.feusalamander.betterskills.procedures.CombatBar6Procedure;
 import net.feusalamander.betterskills.procedures.CombatBar4Procedure;
@@ -102,18 +101,16 @@ public class CombatGuiScreen extends AbstractContainerScreen<CombatGuiMenu> {
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
 		this.font.draw(poseStack,
 
-				CombatXpvarProcedure.execute(entity), 27, 172, -16777216);
+				CombatTooltipProcedure.execute(entity), 27, 172, -65536);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 	}
 }

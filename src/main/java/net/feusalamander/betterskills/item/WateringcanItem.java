@@ -7,7 +7,6 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -26,12 +25,12 @@ import com.google.common.collect.ImmutableMultimap;
 
 public class WateringcanItem extends Item {
 	public WateringcanItem() {
-		super(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).durability(10000));
+		super(new Item.Properties().durability(10000));
 	}
 
 	@Override
 	public float getDestroySpeed(ItemStack itemstack, BlockState blockstate) {
-		return List.of().contains(blockstate.getBlock()) ? 0f : 1;
+		return false ? 0f : 1;
 	}
 
 	@Override

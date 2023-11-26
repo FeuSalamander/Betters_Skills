@@ -6,10 +6,9 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.Minecraft;
 
 import net.feusalamander.betterskills.world.inventory.ForagingGuiMenu;
-import net.feusalamander.betterskills.procedures.ForagingXPvarProcedure;
+import net.feusalamander.betterskills.procedures.ForagingTooltipProcedure;
 import net.feusalamander.betterskills.procedures.ForagingBar4Procedure;
 import net.feusalamander.betterskills.procedures.ForagingBar2Procedure;
 import net.feusalamander.betterskills.procedures.ForagingBar0Procedure;
@@ -102,18 +101,16 @@ public class ForagingGuiScreen extends AbstractContainerScreen<ForagingGuiMenu> 
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
 		this.font.draw(poseStack,
 
-				ForagingXPvarProcedure.execute(entity), 27, 172, -16777216);
+				ForagingTooltipProcedure.execute(entity), 27, 172, -13455360);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 	}
 }

@@ -6,10 +6,9 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.Minecraft;
 
 import net.feusalamander.betterskills.world.inventory.MiningGUIMenu;
-import net.feusalamander.betterskills.procedures.MiningXpvarProcedure;
+import net.feusalamander.betterskills.procedures.MiningTooltipProcedure;
 import net.feusalamander.betterskills.procedures.MiningBar8Procedure;
 import net.feusalamander.betterskills.procedures.MiningBar6Procedure;
 import net.feusalamander.betterskills.procedures.MiningBar4Procedure;
@@ -102,18 +101,16 @@ public class MiningGUIScreen extends AbstractContainerScreen<MiningGUIMenu> {
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
 		this.font.draw(poseStack,
 
-				MiningXpvarProcedure.execute(entity), 27, 172, -16777216);
+				MiningTooltipProcedure.execute(entity), 27, 172, -10066330);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 	}
 }

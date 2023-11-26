@@ -1,5 +1,5 @@
 {
-  "_fv": 39,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -94,10 +94,10 @@
           "name": "label_proc_mining_xpvar",
           "text": {
             "fixedValue": "",
-            "name": "FarmingXPvar"
+            "name": "FarmingTooltip"
           },
           "color": {
-            "value": -16777216,
+            "value": -393472,
             "falpha": 0.0
           },
           "x": 66,

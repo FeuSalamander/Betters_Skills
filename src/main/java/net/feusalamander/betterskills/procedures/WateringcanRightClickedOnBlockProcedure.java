@@ -23,12 +23,12 @@ public class WateringcanRightClickedOnBlockProcedure {
 		double RandomX = 0;
 		double Y = 0;
 		double Level = 0;
-		if ((world.getBlockState(new BlockPos(x, y, z))).is(BlockTags.create(new ResourceLocation("minecraft:crops")))) {
-			if ((itemstack).getDamageValue() < 9500) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).is(BlockTags.create(new ResourceLocation("minecraft:crops")))) {
+			if (itemstack.getDamageValue() < 9500) {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.SPLASH, x, y, z, 25, 1, 1, 1, 1);
 				if (world instanceof Level _level) {
-					BlockPos _bp = new BlockPos(x, y, z);
+					BlockPos _bp = BlockPos.containing(x, y, z);
 					if (BoneMealItem.growCrop(new ItemStack(Items.BONE_MEAL), _level, _bp) || BoneMealItem.growWaterPlant(new ItemStack(Items.BONE_MEAL), _level, _bp, null)) {
 						if (!_level.isClientSide())
 							_level.levelEvent(2005, _bp, 0);
@@ -43,7 +43,7 @@ public class WateringcanRightClickedOnBlockProcedure {
 				}
 			} else {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("no more water"), (true));
+					_player.displayClientMessage(Component.literal("no more water"), true);
 			}
 		} else if (entity.isInWaterOrBubble() && entity.isShiftKeyDown()) {
 			{

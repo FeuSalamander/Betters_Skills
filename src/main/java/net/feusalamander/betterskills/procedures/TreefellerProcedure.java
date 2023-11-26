@@ -8,7 +8,6 @@ import net.minecraftforge.event.level.BlockEvent;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -40,14 +39,14 @@ public class TreefellerProcedure {
 		BlockState logtype = Blocks.AIR.defaultBlockState();
 		double number = 0;
 		number = 1;
-		if ((world.getBlockState(new BlockPos(x, y, z))).is(BlockTags.create(new ResourceLocation("minecraft:logs")))
-				&& (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).Instanttree == true
-				&& (entity instanceof ServerPlayer _plr && _plr.level instanceof ServerLevel ? _plr.getAdvancements().getOrStartProgress(_plr.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:foraging_10"))).isDone() : false)
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).is(BlockTags.create(new ResourceLocation("minecraft:logs")))
+				&& (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).Instanttree == true && entity instanceof ServerPlayer _plr2
+				&& _plr2.level instanceof ServerLevel && _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:foraging_10"))).isDone()
 				&& ((entity instanceof Player _plr ? _plr.getFoodData().getSaturationLevel() : 0) >= 3 || (entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) >= 3)) {
-			for (int index0 = 0; index0 < (int) (11); index0++) {
-				logtype = (world.getBlockState(new BlockPos(x, y + number, z)));
+			for (int index0 = 0; index0 < 11; index0++) {
+				logtype = (world.getBlockState(BlockPos.containing(x, y + number, z)));
 				if (logtype.is(BlockTags.create(new ResourceLocation("minecraft:logs")))) {
-					world.destroyBlock(new BlockPos(x, y + number, z), false);
+					world.destroyBlock(BlockPos.containing(x, y + number, z), false);
 					{
 						double _setval = (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP + 5;
 						entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -87,7 +86,7 @@ public class TreefellerProcedure {
 						});
 					}
 					number = number + 1;
-					if (world instanceof Level _level && !_level.isClientSide()) {
+					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, (y + number), z, (new ItemStack(logtype.getBlock())));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);

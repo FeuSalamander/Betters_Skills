@@ -1,5 +1,5 @@
 {
-  "_fv": 39,
+  "_fv": 47,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -260,6 +260,76 @@
           },
           "x": 326,
           "y": 87
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_mininghint",
+          "text": {
+            "fixedValue": "mininghint",
+            "name": "MiningTooltip"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 72,
+          "y": 106
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_combathint",
+          "text": {
+            "fixedValue": "combathint",
+            "name": "CombatTooltip"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 135,
+          "y": 106
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_empty",
+          "text": {
+            "fixedValue": "foraginghint",
+            "name": "ForagingTooltip"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 202,
+          "y": 106
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_farminghint",
+          "text": {
+            "fixedValue": "farminghint",
+            "name": "FarmingTooltip"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 266,
+          "y": 106
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_fishinghint",
+          "text": {
+            "fixedValue": "fishinghint",
+            "name": "FishingTooltip"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 331,
+          "y": 106
         }
       }
     ],

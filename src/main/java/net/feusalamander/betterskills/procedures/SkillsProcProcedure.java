@@ -34,7 +34,7 @@ public class SkillsProcProcedure {
 				}
 			} else {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7cEnter \"set\" or \"add\""), (false));
+					_player.displayClientMessage(Component.literal("\u00A7cEnter \"set\" or \"add\""), false);
 			}
 		} else if ((StringArgumentType.getString(arguments, "skill")).equals("fishing")) {
 			if ((StringArgumentType.getString(arguments, "setadd")).equals("set")) {
@@ -55,7 +55,7 @@ public class SkillsProcProcedure {
 				}
 			} else {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7cEnter \"set\" or \"add\""), (false));
+					_player.displayClientMessage(Component.literal("\u00A7cEnter \"set\" or \"add\""), false);
 			}
 		} else if ((StringArgumentType.getString(arguments, "skill")).equals("mining")) {
 			if ((StringArgumentType.getString(arguments, "setadd")).equals("set")) {
@@ -76,7 +76,7 @@ public class SkillsProcProcedure {
 				}
 			} else {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7cEnter \"set\" or \"add\""), (false));
+					_player.displayClientMessage(Component.literal("\u00A7cEnter \"set\" or \"add\""), false);
 			}
 		} else if ((StringArgumentType.getString(arguments, "skill")).equals("combat")) {
 			if ((StringArgumentType.getString(arguments, "setadd")).equals("set")) {
@@ -97,7 +97,7 @@ public class SkillsProcProcedure {
 				}
 			} else {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7cEnter \"set\" or \"add\""), (false));
+					_player.displayClientMessage(Component.literal("\u00A7cEnter \"set\" or \"add\""), false);
 			}
 		} else if ((StringArgumentType.getString(arguments, "skill")).equals("foraging")) {
 			if ((StringArgumentType.getString(arguments, "setadd")).equals("set")) {
@@ -118,11 +118,11 @@ public class SkillsProcProcedure {
 				}
 			} else {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7cEnter \"set\" or \"add\""), (false));
+					_player.displayClientMessage(Component.literal("\u00A7cEnter \"set\" or \"add\""), false);
 			}
 		} else {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(Component.literal("\u00A7cThis skill don't exist"), (false));
+				_player.displayClientMessage(Component.literal("\u00A7cThis skill don't exist"), false);
 		}
 	}
 }

@@ -6,10 +6,9 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.Minecraft;
 
 import net.feusalamander.betterskills.world.inventory.FishingGuiMenu;
-import net.feusalamander.betterskills.procedures.FishingXpVArProcedure;
+import net.feusalamander.betterskills.procedures.FishingTooltipProcedure;
 import net.feusalamander.betterskills.procedures.FishingBar4Procedure;
 import net.feusalamander.betterskills.procedures.FishingBar2Procedure;
 import net.feusalamander.betterskills.procedures.FishingBar0Procedure;
@@ -102,18 +101,16 @@ public class FishingGuiScreen extends AbstractContainerScreen<FishingGuiMenu> {
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
 		this.font.draw(poseStack,
 
-				FishingXpVArProcedure.execute(entity), 27, 172, -16777216);
+				FishingTooltipProcedure.execute(entity), 27, 172, -16716033);
 	}
 
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 	}
 }

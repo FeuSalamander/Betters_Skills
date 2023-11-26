@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.gui.screens.MenuScreens;
 
 import net.feusalamander.betterskills.client.gui.SkillsScreen;
+import net.feusalamander.betterskills.client.gui.SkillTreeScreen;
 import net.feusalamander.betterskills.client.gui.MiningGUIScreen;
 import net.feusalamander.betterskills.client.gui.ForagingGuiScreen;
 import net.feusalamander.betterskills.client.gui.FishingGuiScreen;
@@ -31,6 +32,7 @@ public class BetterskillsModScreens {
 			MenuScreens.register(BetterskillsModMenus.FISHING_GUI.get(), FishingGuiScreen::new);
 			MenuScreens.register(BetterskillsModMenus.FARMING_GUI.get(), FarmingGuiScreen::new);
 			MenuScreens.register(BetterskillsModMenus.FORAGING_GUI.get(), ForagingGuiScreen::new);
+			MenuScreens.register(BetterskillsModMenus.SKILL_TREE.get(), SkillTreeScreen::new);
 		});
 	}
 }

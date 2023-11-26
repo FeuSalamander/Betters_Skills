@@ -12,6 +12,7 @@ import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraft.world.inventory.MenuType;
 
 import net.feusalamander.betterskills.world.inventory.SkillsMenu;
+import net.feusalamander.betterskills.world.inventory.SkillTreeMenu;
 import net.feusalamander.betterskills.world.inventory.MiningGUIMenu;
 import net.feusalamander.betterskills.world.inventory.ForagingGuiMenu;
 import net.feusalamander.betterskills.world.inventory.FishingGuiMenu;
@@ -29,4 +30,5 @@ public class BetterskillsModMenus {
 	public static final RegistryObject<MenuType<FishingGuiMenu>> FISHING_GUI = REGISTRY.register("fishing_gui", () -> IForgeMenuType.create(FishingGuiMenu::new));
 	public static final RegistryObject<MenuType<FarmingGuiMenu>> FARMING_GUI = REGISTRY.register("farming_gui", () -> IForgeMenuType.create(FarmingGuiMenu::new));
 	public static final RegistryObject<MenuType<ForagingGuiMenu>> FORAGING_GUI = REGISTRY.register("foraging_gui", () -> IForgeMenuType.create(ForagingGuiMenu::new));
+	public static final RegistryObject<MenuType<SkillTreeMenu>> SKILL_TREE = REGISTRY.register("skill_tree", () -> IForgeMenuType.create(SkillTreeMenu::new));
 }

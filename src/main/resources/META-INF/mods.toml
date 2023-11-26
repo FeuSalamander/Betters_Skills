@@ -1,38 +1,24 @@
 modLoader="javafml"
-loaderVersion="[43,)"
+loaderVersion="[45,)"
 license="All Rights Reserved"
 
 [[mods]]
 modId="betterskills"
-version="1.7.0"
+version="1.7.1"
 displayName="Better Skills"
 credits="Made by FeuSalamander"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/better-skills"
 logoFile="logo.png"
 authors="FeuSalamander"
-description='''
-add skills to the game
-'''
+description="add skills to the game"
 
 [[dependencies.betterskills]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2]"
+    versionRange="[1.19.4]"
     ordering="NONE"
     side="BOTH"
 
 
 
-[[dependencies.betterskills]]
-    modId="patchouli"
-    mandatory=false
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.betterskills]]
-    modId="jei"
-    mandatory=false
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
 

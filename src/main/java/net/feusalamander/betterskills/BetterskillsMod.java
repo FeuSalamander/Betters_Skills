@@ -48,7 +48,6 @@ public class BetterskillsMod {
 
 	public BetterskillsMod() {
 		MinecraftForge.EVENT_BUS.register(this);
-
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		BetterskillsModItems.REGISTRY.register(bus);

@@ -8,13 +8,17 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
 
 import net.feusalamander.betterskills.world.inventory.SkillsMenu;
+import net.feusalamander.betterskills.procedures.MiningTooltipProcedure;
 import net.feusalamander.betterskills.procedures.MiningLvlProcedure;
+import net.feusalamander.betterskills.procedures.ForagingTooltipProcedure;
 import net.feusalamander.betterskills.procedures.ForagingLvlProcedure;
+import net.feusalamander.betterskills.procedures.FishingTooltipProcedure;
 import net.feusalamander.betterskills.procedures.FishingLvlProcedure;
+import net.feusalamander.betterskills.procedures.FarmingTooltipProcedure;
 import net.feusalamander.betterskills.procedures.FarmingLvlProcedure;
+import net.feusalamander.betterskills.procedures.CombatTooltipProcedure;
 import net.feusalamander.betterskills.procedures.CombatLvlProcedure;
 import net.feusalamander.betterskills.network.SkillsButtonMessage;
 import net.feusalamander.betterskills.BetterskillsMod;
@@ -54,6 +58,16 @@ public class SkillsScreen extends AbstractContainerScreen<SkillsMenu> {
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
 		this.renderTooltip(ms, mouseX, mouseY);
+		if (mouseX > leftPos + 33 && mouseX < leftPos + 57 && mouseY > topPos + 90 && mouseY < topPos + 114)
+			this.renderTooltip(ms, Component.literal(MiningTooltipProcedure.execute(entity)), mouseX, mouseY);
+		if (mouseX > leftPos + 96 && mouseX < leftPos + 120 && mouseY > topPos + 90 && mouseY < topPos + 114)
+			this.renderTooltip(ms, Component.literal(CombatTooltipProcedure.execute(entity)), mouseX, mouseY);
+		if (mouseX > leftPos + 163 && mouseX < leftPos + 187 && mouseY > topPos + 90 && mouseY < topPos + 114)
+			this.renderTooltip(ms, Component.literal(ForagingTooltipProcedure.execute(entity)), mouseX, mouseY);
+		if (mouseX > leftPos + 227 && mouseX < leftPos + 251 && mouseY > topPos + 90 && mouseY < topPos + 114)
+			this.renderTooltip(ms, Component.literal(FarmingTooltipProcedure.execute(entity)), mouseX, mouseY);
+		if (mouseX > leftPos + 292 && mouseX < leftPos + 316 && mouseY > topPos + 90 && mouseY < topPos + 114)
+			this.renderTooltip(ms, Component.literal(FishingTooltipProcedure.execute(entity)), mouseX, mouseY);
 	}
 
 	@Override
@@ -114,19 +128,17 @@ public class SkillsScreen extends AbstractContainerScreen<SkillsMenu> {
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		button_ability_config = new Button(this.leftPos + 242, this.topPos + 177, 98, 20, Component.translatable("gui.betterskills.skills.button_ability_config"), e -> {
+		button_ability_config = Button.builder(Component.translatable("gui.betterskills.skills.button_ability_config"), e -> {
 			if (true) {
 				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(0, x, y, z));
 				SkillsButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		});
+		}).bounds(this.leftPos + 242, this.topPos + 177, 98, 20).build();
 		guistate.put("button:button_ability_config", button_ability_config);
 		this.addRenderableWidget(button_ability_config);
 		imagebutton_mining = new ImageButton(this.leftPos + 20, this.topPos + 82, 48, 48, 0, 0, 48, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_mining.png"), 48, 96, e -> {

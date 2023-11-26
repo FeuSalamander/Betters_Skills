@@ -7,7 +7,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.Minecraft;
 
 import net.feusalamander.betterskills.world.inventory.AbilityconfigMenu;
 import net.feusalamander.betterskills.procedures.TreeonProcedure;
@@ -116,35 +115,33 @@ public class AbilityconfigScreen extends AbstractContainerScreen<AbilityconfigMe
 	@Override
 	public void onClose() {
 		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		button_toggle = new Button(this.leftPos + 202, this.topPos + 17, 40, 20, Component.translatable("gui.betterskills.abilityconfig.button_toggle"), e -> {
+		button_toggle = Button.builder(Component.translatable("gui.betterskills.abilityconfig.button_toggle"), e -> {
 			if (true) {
 				BetterskillsMod.PACKET_HANDLER.sendToServer(new AbilityconfigButtonMessage(0, x, y, z));
 				AbilityconfigButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		});
+		}).bounds(this.leftPos + 202, this.topPos + 17, 40, 20).build();
 		guistate.put("button:button_toggle", button_toggle);
 		this.addRenderableWidget(button_toggle);
-		button_toggle1 = new Button(this.leftPos + 202, this.topPos + 38, 40, 20, Component.translatable("gui.betterskills.abilityconfig.button_toggle1"), e -> {
+		button_toggle1 = Button.builder(Component.translatable("gui.betterskills.abilityconfig.button_toggle1"), e -> {
 			if (true) {
 				BetterskillsMod.PACKET_HANDLER.sendToServer(new AbilityconfigButtonMessage(1, x, y, z));
 				AbilityconfigButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		});
+		}).bounds(this.leftPos + 202, this.topPos + 38, 40, 20).build();
 		guistate.put("button:button_toggle1", button_toggle1);
 		this.addRenderableWidget(button_toggle1);
-		button_toggle2 = new Button(this.leftPos + 202, this.topPos + 59, 40, 20, Component.translatable("gui.betterskills.abilityconfig.button_toggle2"), e -> {
+		button_toggle2 = Button.builder(Component.translatable("gui.betterskills.abilityconfig.button_toggle2"), e -> {
 			if (true) {
 				BetterskillsMod.PACKET_HANDLER.sendToServer(new AbilityconfigButtonMessage(2, x, y, z));
 				AbilityconfigButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		});
+		}).bounds(this.leftPos + 202, this.topPos + 59, 40, 20).build();
 		guistate.put("button:button_toggle2", button_toggle2);
 		this.addRenderableWidget(button_toggle2);
 	}

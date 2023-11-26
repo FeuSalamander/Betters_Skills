@@ -18,8 +18,6 @@ import net.feusalamander.betterskills.network.BetterskillsModVariables;
 
 import javax.annotation.Nullable;
 
-import java.util.Iterator;
-
 @Mod.EventBusSubscriber
 public class FarmingProcedure {
 	@SubscribeEvent
@@ -35,19 +33,19 @@ public class FarmingProcedure {
 		if (entity == null)
 			return;
 		double xp = 0;
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.WHEAT) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.WHEAT) {
 			xp = 1;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POTATOES) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.POTATOES) {
 			xp = 1.5;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.CARROTS) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.CARROTS) {
 			xp = 1.5;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.SUGAR_CANE) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.SUGAR_CANE) {
 			xp = 1;
 		}
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.NETHER_WART) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.NETHER_WART) {
 			xp = 2;
 		}
 		if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 522425) {
@@ -62,9 +60,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_20"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 322425) {
@@ -79,9 +76,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_19"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 222425) {
@@ -96,9 +92,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_18"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 147425) {
@@ -113,9 +108,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_17"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 97425) {
@@ -130,9 +124,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_16"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 67425) {
@@ -147,9 +140,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_15"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 47425) {
@@ -164,9 +156,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_14"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 32425) {
@@ -181,9 +172,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_13"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 22425) {
@@ -198,9 +188,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_12"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 14925) {
@@ -215,9 +204,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_11"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 9925) {
@@ -232,9 +220,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_10"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 6425) {
@@ -249,9 +236,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_9"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 4425) {
@@ -266,9 +252,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_8"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 2925) {
@@ -283,9 +268,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_7"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 1925) {
@@ -300,9 +284,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_6"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 1175) {
@@ -317,9 +300,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_5"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 675) {
@@ -334,9 +316,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_4"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 375) {
@@ -351,9 +332,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_3"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 175) {
@@ -368,9 +348,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_2"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP >= 50) {
@@ -385,9 +364,8 @@ public class FarmingProcedure {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("betterskills:farming_1"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
-					Iterator _iterator = _ap.getRemainingCriteria().iterator();
-					while (_iterator.hasNext())
-						_player.getAdvancements().award(_adv, (String) _iterator.next());
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
 		} else if ((entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).FarmingXP < 50) {

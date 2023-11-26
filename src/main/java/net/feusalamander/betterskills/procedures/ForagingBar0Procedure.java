@@ -19,7 +19,7 @@ public class ForagingBar0Procedure {
 		XP = (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).ForagingXP;
 		Lvl = (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).ForagingLvl;
 		if (Lvl == 0) {
-			if (XP / 50 > min && XP / 50 < max) {
+			if (XP / 50 >= min && XP / 50 < max) {
 				return true;
 			}
 		} else if (Lvl == 1) {

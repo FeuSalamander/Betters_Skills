@@ -1,7 +1,8 @@
 {
-  "_fv": 39,
+  "_fv": 47,
   "_type": "tool",
   "definition": {
+    "toolType": "Special",
     "renderType": 1,
     "texture": "test",
     "customModelName": "watering_can:default",
@@ -12,7 +13,6 @@
     "creativeTab": {
       "value": "TOOLS"
     },
-    "toolType": "Special",
     "harvestLevel": 1,
     "efficiency": 0.0,
     "attackSpeed": 1.0,
