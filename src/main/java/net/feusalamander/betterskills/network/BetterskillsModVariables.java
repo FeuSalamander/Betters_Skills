@@ -83,6 +83,8 @@ public class BetterskillsModVariables {
 			clone.xptype = original.xptype;
 			clone.xpnumber = original.xpnumber;
 			clone.xptime = original.xptime;
+			clone.points = original.points;
+			clone.miningTree = original.miningTree;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -136,6 +138,8 @@ public class BetterskillsModVariables {
 		public String xptype = "";
 		public double xpnumber = 0;
 		public double xptime = 0;
+		public double points = 0;
+		public String miningTree = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -161,6 +165,8 @@ public class BetterskillsModVariables {
 			nbt.putString("xptype", xptype);
 			nbt.putDouble("xpnumber", xpnumber);
 			nbt.putDouble("xptime", xptime);
+			nbt.putDouble("points", points);
+			nbt.putString("miningTree", miningTree);
 			return nbt;
 		}
 
@@ -183,6 +189,8 @@ public class BetterskillsModVariables {
 			xptype = nbt.getString("xptype");
 			xpnumber = nbt.getDouble("xpnumber");
 			xptime = nbt.getDouble("xptime");
+			points = nbt.getDouble("points");
+			miningTree = nbt.getString("miningTree");
 		}
 	}
 
@@ -224,6 +232,8 @@ public class BetterskillsModVariables {
 					variables.xptype = message.data.xptype;
 					variables.xpnumber = message.data.xpnumber;
 					variables.xptime = message.data.xptime;
+					variables.points = message.data.points;
+					variables.miningTree = message.data.miningTree;
 				}
 			});
 			context.setPacketHandled(true);

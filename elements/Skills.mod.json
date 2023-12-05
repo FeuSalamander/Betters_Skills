@@ -11,20 +11,6 @@
     "doesPauseGame": false,
     "components": [
       {
-        "type": "button",
-        "data": {
-          "name": "button_ability_config",
-          "text": "Ability config",
-          "onClick": {
-            "name": "Abilityconfigproc"
-          },
-          "width": 98,
-          "height": 20,
-          "x": 281,
-          "y": 193
-        }
-      },
-      {
         "type": "image",
         "data": {
           "image": "skillsfont.png",
@@ -330,6 +316,19 @@
           "height": 24,
           "x": 331,
           "y": 106
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_skilltreebuttoni",
+          "image": "skilltreebuttoni.png",
+          "hoveredImage": "skilltreebuttun.png",
+          "onClick": {
+            "name": "OpenMining"
+          },
+          "x": 353,
+          "y": 188
         }
       }
     ],

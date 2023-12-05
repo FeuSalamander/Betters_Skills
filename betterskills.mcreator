@@ -1711,41 +1711,6 @@
       }
     },
     {
-      "name": "Abilityconfigproc",
-      "type": "procedure",
-      "sortid": 141,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "abilityconfigproc",
-      "metadata": {
-        "files": [
-          "src/main/java/net/feusalamander/betterskills/procedures/AbilityconfigprocProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "Treeon",
       "type": "procedure",
       "sortid": 142,
@@ -3256,20 +3221,6 @@
       "path": "~/SkillsGUI"
     },
     {
-      "name": "SkillTree",
-      "type": "gui",
-      "sortid": 212,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "skill_tree",
-      "metadata": {
-        "files": [
-          "src/main/java/net/feusalamander/betterskills/world/inventory/SkillTreeMenu.java",
-          "src/main/java/net/feusalamander/betterskills/client/gui/SkillTreeScreen.java"
-        ]
-      }
-    },
-    {
       "name": "MiningTooltip",
       "type": "procedure",
       "sortid": 213,
@@ -3373,6 +3324,473 @@
         ]
       },
       "path": "~/GuiVar"
+    },
+    {
+      "name": "MiningTree",
+      "type": "gui",
+      "sortid": 218,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mining_tree",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/client/gui/MiningTreeScreen.java",
+          "src/main/java/net/feusalamander/betterskills/world/inventory/MiningTreeMenu.java",
+          "src/main/java/net/feusalamander/betterskills/network/MiningTreeButtonMessage.java"
+        ]
+      },
+      "path": "~/Skill Trees"
+    },
+    {
+      "name": "CombatTree",
+      "type": "gui",
+      "sortid": 219,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combat_tree",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/network/CombatTreeButtonMessage.java",
+          "src/main/java/net/feusalamander/betterskills/client/gui/CombatTreeScreen.java",
+          "src/main/java/net/feusalamander/betterskills/world/inventory/CombatTreeMenu.java"
+        ]
+      },
+      "path": "~/Skill Trees"
+    },
+    {
+      "name": "FarmingTree",
+      "type": "gui",
+      "sortid": 220,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farming_tree",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/world/inventory/FarmingTreeMenu.java",
+          "src/main/java/net/feusalamander/betterskills/network/FarmingTreeButtonMessage.java",
+          "src/main/java/net/feusalamander/betterskills/client/gui/FarmingTreeScreen.java"
+        ]
+      },
+      "path": "~/Skill Trees"
+    },
+    {
+      "name": "FishingTree",
+      "type": "gui",
+      "sortid": 221,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fishing_tree",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/network/FishingTreeButtonMessage.java",
+          "src/main/java/net/feusalamander/betterskills/client/gui/FishingTreeScreen.java",
+          "src/main/java/net/feusalamander/betterskills/world/inventory/FishingTreeMenu.java"
+        ]
+      },
+      "path": "~/Skill Trees"
+    },
+    {
+      "name": "ForagingTree",
+      "type": "gui",
+      "sortid": 222,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "foraging_tree",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/world/inventory/ForagingTreeMenu.java",
+          "src/main/java/net/feusalamander/betterskills/client/gui/ForagingTreeScreen.java",
+          "src/main/java/net/feusalamander/betterskills/network/ForagingTreeButtonMessage.java"
+        ]
+      },
+      "path": "~/Skill Trees"
+    },
+    {
+      "name": "OpenMining",
+      "type": "procedure",
+      "sortid": 223,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_mining",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/OpenMiningProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Skill Trees"
+    },
+    {
+      "name": "OpenCombatTree",
+      "type": "procedure",
+      "sortid": 224,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_combat_tree",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/OpenCombatTreeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Skill Trees"
+    },
+    {
+      "name": "OpenForagingTree",
+      "type": "procedure",
+      "sortid": 225,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_foraging_tree",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/OpenForagingTreeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Skill Trees"
+    },
+    {
+      "name": "OpenFarmingTree",
+      "type": "procedure",
+      "sortid": 226,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_farming_tree",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/OpenFarmingTreeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Skill Trees"
+    },
+    {
+      "name": "OpenFishingTree",
+      "type": "procedure",
+      "sortid": 227,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_fishing_tree",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/OpenFishingTreeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Skill Trees"
+    },
+    {
+      "name": "Points",
+      "type": "procedure",
+      "sortid": 228,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "points",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/PointsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "Message",
+      "type": "procedure",
+      "sortid": 229,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "message",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MessageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "advancement",
+            "type": "advancement"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MTIhaste1",
+      "type": "procedure",
+      "sortid": 230,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mt_ihaste_1",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MTIhaste1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "MThaste1",
+      "type": "procedure",
+      "sortid": 231,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "m_thaste_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MThaste1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "MTIhaste2",
+      "type": "procedure",
+      "sortid": 232,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mt_ihaste_2",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MTIhaste2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "MThaste2",
+      "type": "procedure",
+      "sortid": 233,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "m_thaste_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/MThaste2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GuiVar"
+    },
+    {
+      "name": "BMhaste1",
+      "type": "procedure",
+      "sortid": 234,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "b_mhaste_1",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/BMhaste1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Skill Trees"
+    },
+    {
+      "name": "BMhaste2",
+      "type": "procedure",
+      "sortid": 235,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "b_mhaste_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/BMhaste2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Skill Trees"
+    },
+    {
+      "name": "Haste",
+      "type": "procedure",
+      "sortid": 236,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "haste",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/HasteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -3477,12 +3895,26 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "points",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "miningTree",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
       "advancements.mining_18.descr": "reach 222425 xp",
+      "gui.betterskills.foraging_tree.label_ability_config": "Foraging Tree",
+      "gui.betterskills.fishing_tree.label_ability_config": "Fishing Tree",
       "advancements.fishing_5.title": "Fishing 5",
       "gui.betterskills.abilityconfig.label_mole": "Mole",
       "gui.betterskills.skills.label_varfarmingxp": "\u003cVAR:FarmingXP\u003e",
@@ -3493,27 +3925,27 @@
       "advancements.combat_15.title": "Combat 15",
       "advancements.foraging_6.descr": "reach 1925 xp",
       "advancements.foraging_16.descr": "Reach 97425 xp",
-      "advancements.farming_8.descr": "reach 4425 xp",
       "advancements.farming_12.descr": "reach 22425 xp",
+      "advancements.farming_8.descr": "reach 4425 xp",
       "gui.betterskills.skill_tree.label_instant_tree": "Instant Tree",
       "advancements.fishing_16.title": "Fishing 16",
       "advancements.mining_19.title": "Mining 19",
       "advancements.foraging_18.title": "Foraging 18",
       "advancements.combat.title": "Combat",
       "advancements.foraging_12.title": "Foraging 12",
-      "advancements.combat_19.descr": "reach 322425 xp",
       "advancements.foraging_10.descr": "reach 9925 xp, grant the instant tree ability",
+      "advancements.combat_19.descr": "reach 322425 xp",
       "advancements.foraging_20.title": "Foraging 20",
       "advancements.fishing_14.descr": "Reach 47425 xp",
       "advancements.combat_3.descr": "reach 375 xp",
       "advancements.mining_6.title": "Mining 6",
       "advancements.farming_9.descr": "reach 9425 xp",
-      "advancements.farming_11.descr": "reach 14925 xp",
-      "advancements.foraging_3.title": "Foraging 3",
       "gui.betterskills.xpgained.label_varxptype": "\u003cVAR:xptype\u003e",
+      "advancements.foraging_3.title": "Foraging 3",
+      "advancements.farming_11.descr": "reach 14925 xp",
       "advancements.farming_18.descr": "reach 222425 xp",
-      "advancements.mining_13.descr": "Reach 32425 xp",
       "advancements.farming_2.descr": "reach 175 xp",
+      "advancements.mining_13.descr": "Reach 32425 xp",
       "advancements.farming_9.title": "Farming 9",
       "advancements.combat_9.descr": "reach 9425 xp",
       "advancements.foraging_13.title": "Foraging 13",
@@ -3526,8 +3958,10 @@
       "advancements.mining_12.descr": "reach 22425 xp",
       "advancements.fishing_15.descr": "Reach 67425 xp",
       "advancements.foraging_2.title": "Foraging 2",
+      "gui.betterskills.mining_tree.tooltip_the_root": "The root",
       "advancements.foraging_9.title": "Foraging 9",
       "advancements.combat_10.title": "Combat 10",
+      "gui.betterskills.farming_tree.label_ability_config": "Farming Tree",
       "advancements.mining_5.title": "Mining 5",
       "advancements.farming_3.descr": "reach 375 xp",
       "advancements.farming_17.descr": "reach 147425 xp",
@@ -3560,7 +3994,7 @@
       "advancements.foraging_2.descr": "reach 175 xp",
       "advancements.combat_5.title": "Combat 5",
       "advancements.farming_3.title": "Farming 3",
-      "advancements.mining_5.descr": "reach 1175 xp, haste 1",
+      "advancements.mining_5.descr": "reach 1175 xp",
       "advancements.foraging_7.title": "Foraging 7",
       "advancements.foraging_4.title": "Foraging 4",
       "advancements.farming_1.descr": "reach 50 xp",
@@ -3582,10 +4016,9 @@
       "advancements.mining_13.title": "Mining 13",
       "advancements.fishing_6.title": "Fishing 6",
       "advancements.farming_5.title": "Farming 5",
-      "gui.betterskills.skill_tree.label_ability_config": "Skill Tree",
       "advancements.fishing_18.title": "Fishing 18",
       "gui.betterskills.abilityconfig.label_help_of_the_souls": "Help of the souls",
-      "advancements.mining_10.descr": "reach 9925 xp, haste 2, Mole ability",
+      "advancements.mining_10.descr": "reach 9925 xp",
       "advancements.combat_3.title": "Combat 3",
       "gui.betterskills.skills.label_varminingxp": "\u003cVAR:MiningXP\u003e",
       "advancements.foraging_18.descr": "Reach 222425 xp",
@@ -3608,14 +4041,14 @@
       "advancements.fishing_19.title": "Fishing 19",
       "advancements.foraging_15.title": "Foraging 15",
       "advancements.combat_11.descr": "reach 14925 xp",
-      "advancements.mining_15.descr": "reach 67425 xp, haste 3",
+      "advancements.mining_15.descr": "reach 67425 xp",
       "advancements.combat_18.title": "Combat 18",
       "advancements.foraging_5.title": "Foraging 5",
       "advancements.mining_8.title": "Mining 8",
       "advancements.combat_7.title": "Combat 7",
       "advancements.fishing_1.descr": "reach 50 xp",
       "advancements.mining_1.descr": "reach 50 xp",
-      "gui.betterskills.skills.button_ability_config": "Ability config",
+      "gui.betterskills.skills.button_ability_config": "Skill Tree",
       "advancements.foraging_19.descr": "Reach 322425 xp",
       "advancements.fishing_13.title": "Fishing 13",
       "advancements.fishing_2.title": "Fishing 2",
@@ -3627,6 +4060,7 @@
       "key.betterskills.skills_menu": "Open the Skill Menu",
       "advancements.fishing_17.descr": "Reach 147425 xp",
       "advancements.farming_11.title": "Farming 11",
+      "gui.betterskills.combat_tree.label_ability_config": "Combat Tree",
       "advancements.mining_16.title": "Mining 16",
       "advancements.combat_16.descr": "reach 97425 xp",
       "gui.betterskills.skills.label_farming_varfarminglvl": "Farming \u003cVAR:FarmingLvL\u003e",
@@ -3687,6 +4121,7 @@
       "advancements.combat_17.title": "Combat 17",
       "gui.betterskills.skills.label_varfishingxp": "\u003cVAR:FishingXP\u003e",
       "advancements.farming_18.title": "Farming 18",
+      "gui.betterskills.mining_tree.label_ability_config": "Mining Tree",
       "advancements.mining_4.title": "Mining 4",
       "advancements.mining_14.descr": "Reach 47425 xp",
       "gui.betterskills.xpgained.label_varintegerxpnumber_xp": "+\u003cVAR:integer:xpnumber\u003e XP",
@@ -3694,13 +4129,14 @@
       "advancements.combat_8.title": "Combat 8",
       "advancements.combat_9.title": "Combat 9",
       "advancements.combat_6.descr": "reach 1925 xp",
+      "gui.betterskills.mining_tree.tooltip_gain_haste_1_while_mining_rocks": "Gain Haste 1 while mining rocks",
       "advancements.combat_13.descr": "Reach 32425 xp",
       "advancements.foraging_17.title": "Foraging 17",
       "advancements.mining_16.descr": "reach 97425 xp",
       "advancements.mining_3.title": "Mining 3",
       "advancements.fishing_10.title": "Fishing 10",
       "advancements.fishing_18.descr": "Reach 222425 xp",
-      "advancements.mining_20.descr": "reach 522425 xp, haste 4",
+      "advancements.mining_20.descr": "reach 522425 xp",
       "advancements.farming_5.descr": "reach 1175 xp",
       "advancements.combat_20.descr": "reach 522425 xp",
       "advancements.farming_15.descr": "reach 67425 xp",
@@ -3763,6 +4199,10 @@
       {
         "name": "SkillsGUI",
         "children": []
+      },
+      {
+        "name": "Skill Trees",
+        "children": []
       }
     ]
   },
@@ -3776,7 +4216,7 @@
     "license": "All Rights Reserved",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
-    "modPicture": "betterskills",
+    "modPicture": "betterskills2",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],

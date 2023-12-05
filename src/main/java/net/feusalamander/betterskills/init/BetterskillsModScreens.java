@@ -12,11 +12,15 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.gui.screens.MenuScreens;
 
 import net.feusalamander.betterskills.client.gui.SkillsScreen;
-import net.feusalamander.betterskills.client.gui.SkillTreeScreen;
+import net.feusalamander.betterskills.client.gui.MiningTreeScreen;
 import net.feusalamander.betterskills.client.gui.MiningGUIScreen;
+import net.feusalamander.betterskills.client.gui.ForagingTreeScreen;
 import net.feusalamander.betterskills.client.gui.ForagingGuiScreen;
+import net.feusalamander.betterskills.client.gui.FishingTreeScreen;
 import net.feusalamander.betterskills.client.gui.FishingGuiScreen;
+import net.feusalamander.betterskills.client.gui.FarmingTreeScreen;
 import net.feusalamander.betterskills.client.gui.FarmingGuiScreen;
+import net.feusalamander.betterskills.client.gui.CombatTreeScreen;
 import net.feusalamander.betterskills.client.gui.CombatGuiScreen;
 import net.feusalamander.betterskills.client.gui.AbilityconfigScreen;
 
@@ -32,7 +36,11 @@ public class BetterskillsModScreens {
 			MenuScreens.register(BetterskillsModMenus.FISHING_GUI.get(), FishingGuiScreen::new);
 			MenuScreens.register(BetterskillsModMenus.FARMING_GUI.get(), FarmingGuiScreen::new);
 			MenuScreens.register(BetterskillsModMenus.FORAGING_GUI.get(), ForagingGuiScreen::new);
-			MenuScreens.register(BetterskillsModMenus.SKILL_TREE.get(), SkillTreeScreen::new);
+			MenuScreens.register(BetterskillsModMenus.MINING_TREE.get(), MiningTreeScreen::new);
+			MenuScreens.register(BetterskillsModMenus.COMBAT_TREE.get(), CombatTreeScreen::new);
+			MenuScreens.register(BetterskillsModMenus.FARMING_TREE.get(), FarmingTreeScreen::new);
+			MenuScreens.register(BetterskillsModMenus.FISHING_TREE.get(), FishingTreeScreen::new);
+			MenuScreens.register(BetterskillsModMenus.FORAGING_TREE.get(), ForagingTreeScreen::new);
 		});
 	}
 }

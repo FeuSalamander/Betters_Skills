@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "Mining 20",
-    "achievementDescription": "reach 522425 xp, haste 4",
+    "achievementDescription": "reach 522425 xp",
     "achievementIcon": {
       "value": "Items.DIAMOND_PICKAXE"
     },

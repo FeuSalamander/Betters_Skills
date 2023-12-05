@@ -12,12 +12,12 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.feusalamander.betterskills.world.inventory.SkillsMenu;
+import net.feusalamander.betterskills.procedures.OpenMiningProcedure;
 import net.feusalamander.betterskills.procedures.OpenMiningGuiProcedure;
 import net.feusalamander.betterskills.procedures.OpenForagingProcedure;
 import net.feusalamander.betterskills.procedures.OpenFishingProcedure;
 import net.feusalamander.betterskills.procedures.OpenFarmingProcedure;
 import net.feusalamander.betterskills.procedures.OpenCombatProcedure;
-import net.feusalamander.betterskills.procedures.AbilityconfigprocProcedure;
 import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.function.Supplier;
@@ -69,27 +69,27 @@ public class SkillsButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			AbilityconfigprocProcedure.execute(world, x, y, z, entity);
+			OpenMiningGuiProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			OpenMiningGuiProcedure.execute(world, x, y, z, entity);
+			OpenCombatProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 
-			OpenCombatProcedure.execute(world, x, y, z, entity);
+			OpenForagingProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 3) {
 
-			OpenForagingProcedure.execute(world, x, y, z, entity);
+			OpenFarmingProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 4) {
 
-			OpenFarmingProcedure.execute(world, x, y, z, entity);
+			OpenFishingProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 5) {
 
-			OpenFishingProcedure.execute(world, x, y, z, entity);
+			OpenMiningProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

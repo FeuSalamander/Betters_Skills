@@ -1,0 +1,7 @@
+{
+  "_fv": 47,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"531\" y=\"223\"><field name=\"trigger\">player_completes_advancement</field><next><block type=\"controls_if\"><value name=\"IF0\"><block type=\"advancement_isequalto\"><field name=\"achievement\">CUSTOM:Combat</field></block></value><statement name=\"DO0\"><block type=\"entity_send_chat\"><value name=\"text\"><block type=\"text\"><field name=\"TEXT\">§dBetter Skills: you earned one point</field></block></value><value name=\"entity\"><block type=\"entity_from_deps\"></block></value><value name=\"actbar\"><block type=\"logic_boolean\"><field name=\"BOOL\">FALSE</field></block></value></block></statement></block></next></block></xml>"
+  }
+}

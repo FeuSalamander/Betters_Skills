@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "Mining 5",
-    "achievementDescription": "reach 1175 xp, haste 1",
+    "achievementDescription": "reach 1175 xp",
     "achievementIcon": {
       "value": "Items.STONE_PICKAXE"
     },

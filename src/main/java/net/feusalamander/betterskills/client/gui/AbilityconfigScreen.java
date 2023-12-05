@@ -60,8 +60,8 @@ public class AbilityconfigScreen extends AbstractContainerScreen<AbilityconfigMe
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/skilltree.png"));
-		this.blit(ms, this.leftPos + 0, this.topPos + 0, 0, 0, 252, 140, 252, 140);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/ability.png"));
+		this.blit(ms, this.leftPos + 0, this.topPos + 0, 0, 0, -1, -1, -1, -1);
 
 		if (TreeoffProcedure.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/no.png"));

@@ -1,0 +1,251 @@
+{
+  "_fv": 47,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 252,
+    "height": 140,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "skymining.png",
+          "use1Xscale": false,
+          "x": 86,
+          "y": 49
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ability_config",
+          "text": {
+            "fixedValue": "Mining Tree"
+          },
+          "color": {
+            "value": -10066330,
+            "falpha": 0.0
+          },
+          "x": 95,
+          "y": 55
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_left",
+          "image": "left.png",
+          "hoveredImage": "lefti.png",
+          "onClick": {
+            "name": "OpenFarmingTree"
+          },
+          "x": 96,
+          "y": 112
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_right",
+          "image": "right.png",
+          "hoveredImage": "righti.png",
+          "onClick": {
+            "name": "OpenFishingTree"
+          },
+          "x": 316,
+          "y": 112
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_down",
+          "image": "down.png",
+          "hoveredImage": "downi.png",
+          "onClick": {
+            "name": "OpenForagingTree"
+          },
+          "x": 202,
+          "y": 166
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_up",
+          "image": "up.png",
+          "hoveredImage": "upi.png",
+          "onClick": {
+            "name": "OpenCombatTree"
+          },
+          "x": 202,
+          "y": 68
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "screen2.png",
+          "use1Xscale": false,
+          "x": 88,
+          "y": 50
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "line.png",
+          "use1Xscale": false,
+          "x": 223,
+          "y": 115
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "linei.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MThaste1"
+          },
+          "x": 223,
+          "y": 115
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_points",
+          "text": {
+            "fixedValue": "",
+            "name": "Points"
+          },
+          "color": {
+            "value": -16724788,
+            "falpha": 0.0
+          },
+          "x": 295,
+          "y": 56
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_iconmining",
+          "image": "iconmining.png",
+          "hoveredImage": "iconminingi.png",
+          "x": 203,
+          "y": 113
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_the_root",
+          "text": {
+            "fixedValue": "The root"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 201,
+          "y": 111
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_iconhaste1",
+          "image": "iconhaste1.png",
+          "hoveredImage": "iconhaste1i.png",
+          "onClick": {
+            "name": "BMhaste1"
+          },
+          "x": 238,
+          "y": 113
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_gain_haste_1_while_mining_rocks",
+          "text": {
+            "fixedValue": "Gain Haste 1 while mining rocks",
+            "name": "MTIhaste1"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 236,
+          "y": 111
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_iconhaste2",
+          "image": "iconhaste2.png",
+          "hoveredImage": "iconhaste2i.png",
+          "onClick": {
+            "name": "BMhaste2"
+          },
+          "displayCondition": {
+            "name": "MThaste1"
+          },
+          "x": 238,
+          "y": 148
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_mt_ihaste_2",
+          "text": {
+            "fixedValue": "",
+            "name": "MTIhaste2"
+          },
+          "displayCondition": {
+            "name": "MThaste1"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 236,
+          "y": 146
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "lined.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MThaste1"
+          },
+          "x": 240,
+          "y": 133
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "linedi.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MThaste2"
+          },
+          "x": 240,
+          "y": 133
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 10,
+      "sy": 10,
+      "ox": 14,
+      "oy": 14,
+      "snapOnGrid": false
+    }
+  }
+}

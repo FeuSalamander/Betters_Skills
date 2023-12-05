@@ -7,7 +7,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.ImageButton;
-import net.minecraft.client.gui.components.Button;
 
 import net.feusalamander.betterskills.world.inventory.SkillsMenu;
 import net.feusalamander.betterskills.procedures.MiningTooltipProcedure;
@@ -33,12 +32,12 @@ public class SkillsScreen extends AbstractContainerScreen<SkillsMenu> {
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
-	Button button_ability_config;
 	ImageButton imagebutton_mining;
 	ImageButton imagebutton_combat;
 	ImageButton imagebutton_foraging;
 	ImageButton imagebutton_farming;
 	ImageButton imagebutton_fishing;
+	ImageButton imagebutton_skilltreebuttoni;
 
 	public SkillsScreen(SkillsMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -133,53 +132,53 @@ public class SkillsScreen extends AbstractContainerScreen<SkillsMenu> {
 	@Override
 	public void init() {
 		super.init();
-		button_ability_config = Button.builder(Component.translatable("gui.betterskills.skills.button_ability_config"), e -> {
+		imagebutton_mining = new ImageButton(this.leftPos + 20, this.topPos + 82, 48, 48, 0, 0, 48, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_mining.png"), 48, 96, e -> {
 			if (true) {
 				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(0, x, y, z));
 				SkillsButtonMessage.handleButtonAction(entity, 0, x, y, z);
-			}
-		}).bounds(this.leftPos + 242, this.topPos + 177, 98, 20).build();
-		guistate.put("button:button_ability_config", button_ability_config);
-		this.addRenderableWidget(button_ability_config);
-		imagebutton_mining = new ImageButton(this.leftPos + 20, this.topPos + 82, 48, 48, 0, 0, 48, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_mining.png"), 48, 96, e -> {
-			if (true) {
-				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(1, x, y, z));
-				SkillsButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		});
 		guistate.put("button:imagebutton_mining", imagebutton_mining);
 		this.addRenderableWidget(imagebutton_mining);
 		imagebutton_combat = new ImageButton(this.leftPos + 85, this.topPos + 82, 48, 48, 0, 0, 48, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_combat.png"), 48, 96, e -> {
 			if (true) {
-				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(2, x, y, z));
-				SkillsButtonMessage.handleButtonAction(entity, 2, x, y, z);
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(1, x, y, z));
+				SkillsButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		});
 		guistate.put("button:imagebutton_combat", imagebutton_combat);
 		this.addRenderableWidget(imagebutton_combat);
 		imagebutton_foraging = new ImageButton(this.leftPos + 150, this.topPos + 82, 48, 48, 0, 0, 48, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_foraging.png"), 48, 96, e -> {
 			if (true) {
-				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(3, x, y, z));
-				SkillsButtonMessage.handleButtonAction(entity, 3, x, y, z);
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(2, x, y, z));
+				SkillsButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
 		});
 		guistate.put("button:imagebutton_foraging", imagebutton_foraging);
 		this.addRenderableWidget(imagebutton_foraging);
 		imagebutton_farming = new ImageButton(this.leftPos + 215, this.topPos + 82, 48, 48, 0, 0, 48, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_farming.png"), 48, 96, e -> {
 			if (true) {
-				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(4, x, y, z));
-				SkillsButtonMessage.handleButtonAction(entity, 4, x, y, z);
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(3, x, y, z));
+				SkillsButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
 		});
 		guistate.put("button:imagebutton_farming", imagebutton_farming);
 		this.addRenderableWidget(imagebutton_farming);
 		imagebutton_fishing = new ImageButton(this.leftPos + 280, this.topPos + 82, 48, 48, 0, 0, 48, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_fishing.png"), 48, 96, e -> {
 			if (true) {
-				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(5, x, y, z));
-				SkillsButtonMessage.handleButtonAction(entity, 5, x, y, z);
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(4, x, y, z));
+				SkillsButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
 		});
 		guistate.put("button:imagebutton_fishing", imagebutton_fishing);
 		this.addRenderableWidget(imagebutton_fishing);
+		imagebutton_skilltreebuttoni = new ImageButton(this.leftPos + 314, this.topPos + 172, 25, 25, 0, 0, 25, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_skilltreebuttoni.png"), 25, 50, e -> {
+			if (true) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new SkillsButtonMessage(5, x, y, z));
+				SkillsButtonMessage.handleButtonAction(entity, 5, x, y, z);
+			}
+		});
+		guistate.put("button:imagebutton_skilltreebuttoni", imagebutton_skilltreebuttoni);
+		this.addRenderableWidget(imagebutton_skilltreebuttoni);
 	}
 }

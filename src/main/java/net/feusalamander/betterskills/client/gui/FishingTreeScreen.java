@@ -6,21 +6,26 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 
-import net.feusalamander.betterskills.world.inventory.SkillTreeMenu;
+import net.feusalamander.betterskills.world.inventory.FishingTreeMenu;
+import net.feusalamander.betterskills.procedures.PointsProcedure;
+import net.feusalamander.betterskills.network.FishingTreeButtonMessage;
+import net.feusalamander.betterskills.BetterskillsMod;
 
 import java.util.HashMap;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-public class SkillTreeScreen extends AbstractContainerScreen<SkillTreeMenu> {
-	private final static HashMap<String, Object> guistate = SkillTreeMenu.guistate;
+public class FishingTreeScreen extends AbstractContainerScreen<FishingTreeMenu> {
+	private final static HashMap<String, Object> guistate = FishingTreeMenu.guistate;
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	ImageButton imagebutton_left;
 
-	public SkillTreeScreen(SkillTreeMenu container, Inventory inventory, Component text) {
+	public FishingTreeScreen(FishingTreeMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
@@ -31,7 +36,7 @@ public class SkillTreeScreen extends AbstractContainerScreen<SkillTreeMenu> {
 		this.imageHeight = 140;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("betterskills:textures/screens/skill_tree.png");
+	private static final ResourceLocation texture = new ResourceLocation("betterskills:textures/screens/fishing_tree.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -48,8 +53,11 @@ public class SkillTreeScreen extends AbstractContainerScreen<SkillTreeMenu> {
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/skilltree.png"));
-		this.blit(ms, this.leftPos + 0, this.topPos + 0, 0, 0, 252, 140, 252, 140);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/skyfishing.png"));
+		this.blit(ms, this.leftPos + -1, this.topPos + -1, 0, 0, 254, 141, 254, 141);
+
+		RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/screen2.png"));
+		this.blit(ms, this.leftPos + 0, this.topPos + 0, 0, 0, -1, -1, -1, -1);
 
 		RenderSystem.disableBlend();
 	}
@@ -70,7 +78,10 @@ public class SkillTreeScreen extends AbstractContainerScreen<SkillTreeMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, Component.translatable("gui.betterskills.skill_tree.label_ability_config"), 7, 5, -12829636);
+		this.font.draw(poseStack, Component.translatable("gui.betterskills.fishing_tree.label_ability_config"), 7, 5, -16718337);
+		this.font.draw(poseStack,
+
+				PointsProcedure.execute(entity), 207, 6, -16724788);
 	}
 
 	@Override
@@ -81,5 +92,13 @@ public class SkillTreeScreen extends AbstractContainerScreen<SkillTreeMenu> {
 	@Override
 	public void init() {
 		super.init();
+		imagebutton_left = new ImageButton(this.leftPos + 8, this.topPos + 62, 14, 22, 0, 0, 22, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_left.png"), 14, 44, e -> {
+			if (true) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new FishingTreeButtonMessage(0, x, y, z));
+				FishingTreeButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		});
+		guistate.put("button:imagebutton_left", imagebutton_left);
+		this.addRenderableWidget(imagebutton_left);
 	}
 }

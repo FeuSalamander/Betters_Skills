@@ -1,0 +1,84 @@
+{
+  "_fv": 47,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 252,
+    "height": 140,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "skycombat.png",
+          "use1Xscale": false,
+          "x": 86,
+          "y": 49
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ability_config",
+          "text": {
+            "fixedValue": "Combat Tree"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "x": 95,
+          "y": 55
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_down",
+          "image": "down.png",
+          "hoveredImage": "downi.png",
+          "onClick": {
+            "name": "OpenMining"
+          },
+          "x": 202,
+          "y": 166
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "screen2.png",
+          "use1Xscale": false,
+          "x": 88,
+          "y": 50
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_points",
+          "text": {
+            "fixedValue": "",
+            "name": "Points"
+          },
+          "color": {
+            "value": -16724788,
+            "falpha": 0.0
+          },
+          "x": 295,
+          "y": 56
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 21,
+      "sy": 18,
+      "ox": 2,
+      "oy": 2,
+      "snapOnGrid": false
+    }
+  }
+}

@@ -22,7 +22,7 @@ import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-public class SkillTreeMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
+public class FishingTreeMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
 	public final Level world;
 	public final Player entity;
@@ -35,8 +35,8 @@ public class SkillTreeMenu extends AbstractContainerMenu implements Supplier<Map
 	private Entity boundEntity = null;
 	private BlockEntity boundBlockEntity = null;
 
-	public SkillTreeMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(BetterskillsModMenus.SKILL_TREE.get(), id);
+	public FishingTreeMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+		super(BetterskillsModMenus.FISHING_TREE.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level;
 		this.internal = new ItemStackHandler(0);
