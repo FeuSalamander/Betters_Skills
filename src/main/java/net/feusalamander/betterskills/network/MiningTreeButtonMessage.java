@@ -16,6 +16,12 @@ import net.feusalamander.betterskills.procedures.OpenForagingTreeProcedure;
 import net.feusalamander.betterskills.procedures.OpenFishingTreeProcedure;
 import net.feusalamander.betterskills.procedures.OpenFarmingTreeProcedure;
 import net.feusalamander.betterskills.procedures.OpenCombatTreeProcedure;
+import net.feusalamander.betterskills.procedures.BMmole4Procedure;
+import net.feusalamander.betterskills.procedures.BMmole3Procedure;
+import net.feusalamander.betterskills.procedures.BMmole2Procedure;
+import net.feusalamander.betterskills.procedures.BMmole1Procedure;
+import net.feusalamander.betterskills.procedures.BMhaste4Procedure;
+import net.feusalamander.betterskills.procedures.BMhaste3Procedure;
 import net.feusalamander.betterskills.procedures.BMhaste2Procedure;
 import net.feusalamander.betterskills.procedures.BMhaste1Procedure;
 import net.feusalamander.betterskills.BetterskillsMod;
@@ -90,6 +96,30 @@ public class MiningTreeButtonMessage {
 		if (buttonID == 6) {
 
 			BMhaste2Procedure.execute(entity);
+		}
+		if (buttonID == 7) {
+
+			BMhaste3Procedure.execute(entity);
+		}
+		if (buttonID == 8) {
+
+			BMhaste4Procedure.execute(entity);
+		}
+		if (buttonID == 9) {
+
+			BMmole1Procedure.execute(entity);
+		}
+		if (buttonID == 10) {
+
+			BMmole2Procedure.execute(entity);
+		}
+		if (buttonID == 11) {
+
+			BMmole3Procedure.execute(entity);
+		}
+		if (buttonID == 12) {
+
+			BMmole4Procedure.execute(entity);
 		}
 	}
 

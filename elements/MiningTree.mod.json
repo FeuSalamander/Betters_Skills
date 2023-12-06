@@ -238,6 +238,339 @@
           "x": 240,
           "y": 133
         }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "line.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MThaste2"
+          },
+          "x": 257,
+          "y": 150
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "linei.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MThaste3"
+          },
+          "x": 257,
+          "y": 150
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "line.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MThaste3"
+          },
+          "x": 292,
+          "y": 150
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "linei.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MThaste4"
+          },
+          "x": 292,
+          "y": 150
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_iconhaste3",
+          "image": "iconhaste3.png",
+          "hoveredImage": "iconhaste3i.png",
+          "onClick": {
+            "name": "BMhaste3"
+          },
+          "displayCondition": {
+            "name": "MThaste2"
+          },
+          "x": 273,
+          "y": 148
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_iconhaste4",
+          "image": "iconhaste4.png",
+          "hoveredImage": "iconhaste4i.png",
+          "onClick": {
+            "name": "BMhaste4"
+          },
+          "displayCondition": {
+            "name": "MThaste3"
+          },
+          "x": 308,
+          "y": 148
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_mt_ihaste_3",
+          "text": {
+            "fixedValue": "",
+            "name": "MTIhaste3"
+          },
+          "displayCondition": {
+            "name": "MThaste2"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 271,
+          "y": 146
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_mt_ihaste_4",
+          "text": {
+            "fixedValue": "",
+            "name": "MTIhaste4"
+          },
+          "displayCondition": {
+            "name": "MThaste3"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 306,
+          "y": 146
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_iconmole1",
+          "image": "iconmole1.png",
+          "hoveredImage": "iconmole1i.png",
+          "onClick": {
+            "name": "BMmole1"
+          },
+          "x": 168,
+          "y": 113
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_iconmole2",
+          "image": "iconmole2.png",
+          "hoveredImage": "iconmole2i.png",
+          "onClick": {
+            "name": "BMmole2"
+          },
+          "displayCondition": {
+            "name": "MTmole1"
+          },
+          "x": 168,
+          "y": 78
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_iconmole3",
+          "image": "iconmole3.png",
+          "hoveredImage": "iconmole3i.png",
+          "onClick": {
+            "name": "BMmole3"
+          },
+          "displayCondition": {
+            "name": "MTmole2"
+          },
+          "x": 133,
+          "y": 78
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_iconmole4",
+          "image": "iconmole4.png",
+          "hoveredImage": "iconmole4i.png",
+          "onClick": {
+            "name": "BMmole4"
+          },
+          "displayCondition": {
+            "name": "MTmole3"
+          },
+          "x": 98,
+          "y": 78
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "line.png",
+          "use1Xscale": false,
+          "x": 187,
+          "y": 115
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "line.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MTmole2"
+          },
+          "x": 153,
+          "y": 80
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "line.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MTmole3"
+          },
+          "x": 118,
+          "y": 80
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "lined.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MTmole1"
+          },
+          "x": 170,
+          "y": 98
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "linei.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MTmole1"
+          },
+          "x": 187,
+          "y": 115
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "linedi.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MTmole2"
+          },
+          "x": 170,
+          "y": 98
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "linei.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MTmole3"
+          },
+          "x": 153,
+          "y": 80
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "linei.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "MTmole4"
+          },
+          "x": 118,
+          "y": 80
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_mt_imole_1",
+          "text": {
+            "fixedValue": "",
+            "name": "MTImole1"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 166,
+          "y": 111
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_mt_imole_2",
+          "text": {
+            "fixedValue": "",
+            "name": "MTImole2"
+          },
+          "displayCondition": {
+            "name": "MTmole1"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 166,
+          "y": 76
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_mt_imole_3",
+          "text": {
+            "fixedValue": "",
+            "name": "MTImole3"
+          },
+          "displayCondition": {
+            "name": "MTmole2"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 131,
+          "y": 76
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_mt_imole_4",
+          "text": {
+            "fixedValue": "",
+            "name": "MTImole4"
+          },
+          "displayCondition": {
+            "name": "MTmole3"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 96,
+          "y": 76
+        }
       }
     ],
     "gridSettings": {

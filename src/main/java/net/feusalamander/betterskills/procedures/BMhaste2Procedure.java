@@ -27,7 +27,7 @@ public class BMhaste2Procedure {
 					});
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7aYou succefully bough the haste 2 perk"), false);
+					_player.displayClientMessage(Component.literal("\u00A7aYou succefully bought the haste 2 perk"), false);
 			} else {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("\u00A7cYou don't have enough points"), false);

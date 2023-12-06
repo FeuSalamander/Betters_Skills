@@ -120,6 +120,35 @@ public class SkillsProcProcedure {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal("\u00A7cEnter \"set\" or \"add\""), false);
 			}
+		} else if ((StringArgumentType.getString(arguments, "skill")).equals("points")) {
+			if ((StringArgumentType.getString(arguments, "setadd")).equals("set")) {
+				{
+					double _setval = DoubleArgumentType.getDouble(arguments, "xp");
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.points = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			} else if ((StringArgumentType.getString(arguments, "setadd")).equals("add")) {
+				{
+					double _setval = DoubleArgumentType.getDouble(arguments, "xp") + (entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new BetterskillsModVariables.PlayerVariables())).points;
+					entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.points = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			} else {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7cEnter \"set\" or \"add\""), false);
+			}
+		} else if ((StringArgumentType.getString(arguments, "skill")).equals("reset")) {
+			{
+				String _setval = "";
+				entity.getCapability(BetterskillsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.miningTree = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		} else {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(Component.literal("\u00A7cThis skill don't exist"), false);

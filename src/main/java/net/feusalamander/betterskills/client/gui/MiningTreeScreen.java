@@ -10,8 +10,20 @@ import net.minecraft.client.gui.components.ImageButton;
 
 import net.feusalamander.betterskills.world.inventory.MiningTreeMenu;
 import net.feusalamander.betterskills.procedures.PointsProcedure;
+import net.feusalamander.betterskills.procedures.MTmole4Procedure;
+import net.feusalamander.betterskills.procedures.MTmole3Procedure;
+import net.feusalamander.betterskills.procedures.MTmole2Procedure;
+import net.feusalamander.betterskills.procedures.MTmole1Procedure;
+import net.feusalamander.betterskills.procedures.MThaste4Procedure;
+import net.feusalamander.betterskills.procedures.MThaste3Procedure;
 import net.feusalamander.betterskills.procedures.MThaste2Procedure;
 import net.feusalamander.betterskills.procedures.MThaste1Procedure;
+import net.feusalamander.betterskills.procedures.MTImole4Procedure;
+import net.feusalamander.betterskills.procedures.MTImole3Procedure;
+import net.feusalamander.betterskills.procedures.MTImole2Procedure;
+import net.feusalamander.betterskills.procedures.MTImole1Procedure;
+import net.feusalamander.betterskills.procedures.MTIhaste4Procedure;
+import net.feusalamander.betterskills.procedures.MTIhaste3Procedure;
 import net.feusalamander.betterskills.procedures.MTIhaste2Procedure;
 import net.feusalamander.betterskills.procedures.MTIhaste1Procedure;
 import net.feusalamander.betterskills.network.MiningTreeButtonMessage;
@@ -34,6 +46,12 @@ public class MiningTreeScreen extends AbstractContainerScreen<MiningTreeMenu> {
 	ImageButton imagebutton_iconmining;
 	ImageButton imagebutton_iconhaste1;
 	ImageButton imagebutton_iconhaste2;
+	ImageButton imagebutton_iconhaste3;
+	ImageButton imagebutton_iconhaste4;
+	ImageButton imagebutton_iconmole1;
+	ImageButton imagebutton_iconmole2;
+	ImageButton imagebutton_iconmole3;
+	ImageButton imagebutton_iconmole4;
 
 	public MiningTreeScreen(MiningTreeMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -60,6 +78,23 @@ public class MiningTreeScreen extends AbstractContainerScreen<MiningTreeMenu> {
 		if (MThaste1Procedure.execute(entity))
 			if (mouseX > leftPos + 148 && mouseX < leftPos + 172 && mouseY > topPos + 96 && mouseY < topPos + 120)
 				this.renderTooltip(ms, Component.literal(MTIhaste2Procedure.execute(entity)), mouseX, mouseY);
+		if (MThaste2Procedure.execute(entity))
+			if (mouseX > leftPos + 183 && mouseX < leftPos + 207 && mouseY > topPos + 96 && mouseY < topPos + 120)
+				this.renderTooltip(ms, Component.literal(MTIhaste3Procedure.execute(entity)), mouseX, mouseY);
+		if (MThaste3Procedure.execute(entity))
+			if (mouseX > leftPos + 218 && mouseX < leftPos + 242 && mouseY > topPos + 96 && mouseY < topPos + 120)
+				this.renderTooltip(ms, Component.literal(MTIhaste4Procedure.execute(entity)), mouseX, mouseY);
+		if (mouseX > leftPos + 78 && mouseX < leftPos + 102 && mouseY > topPos + 61 && mouseY < topPos + 85)
+			this.renderTooltip(ms, Component.literal(MTImole1Procedure.execute(entity)), mouseX, mouseY);
+		if (MTmole1Procedure.execute(entity))
+			if (mouseX > leftPos + 78 && mouseX < leftPos + 102 && mouseY > topPos + 26 && mouseY < topPos + 50)
+				this.renderTooltip(ms, Component.literal(MTImole2Procedure.execute(entity)), mouseX, mouseY);
+		if (MTmole2Procedure.execute(entity))
+			if (mouseX > leftPos + 43 && mouseX < leftPos + 67 && mouseY > topPos + 26 && mouseY < topPos + 50)
+				this.renderTooltip(ms, Component.literal(MTImole3Procedure.execute(entity)), mouseX, mouseY);
+		if (MTmole3Procedure.execute(entity))
+			if (mouseX > leftPos + 8 && mouseX < leftPos + 32 && mouseY > topPos + 26 && mouseY < topPos + 50)
+				this.renderTooltip(ms, Component.literal(MTImole4Procedure.execute(entity)), mouseX, mouseY);
 	}
 
 	@Override
@@ -90,6 +125,54 @@ public class MiningTreeScreen extends AbstractContainerScreen<MiningTreeMenu> {
 		if (MThaste2Procedure.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/linedi.png"));
 			this.blit(ms, this.leftPos + 152, this.topPos + 83, 0, 0, 16, 16, 16, 16);
+		}
+		if (MThaste2Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/line.png"));
+			this.blit(ms, this.leftPos + 169, this.topPos + 100, 0, 0, 16, 16, 16, 16);
+		}
+		if (MThaste3Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/linei.png"));
+			this.blit(ms, this.leftPos + 169, this.topPos + 100, 0, 0, 16, 16, 16, 16);
+		}
+		if (MThaste3Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/line.png"));
+			this.blit(ms, this.leftPos + 204, this.topPos + 100, 0, 0, 16, 16, 16, 16);
+		}
+		if (MThaste4Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/linei.png"));
+			this.blit(ms, this.leftPos + 204, this.topPos + 100, 0, 0, 16, 16, 16, 16);
+		}
+
+		RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/line.png"));
+		this.blit(ms, this.leftPos + 99, this.topPos + 65, 0, 0, 16, 16, 16, 16);
+
+		if (MTmole2Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/line.png"));
+			this.blit(ms, this.leftPos + 65, this.topPos + 30, 0, 0, 16, 16, 16, 16);
+		}
+		if (MTmole3Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/line.png"));
+			this.blit(ms, this.leftPos + 30, this.topPos + 30, 0, 0, 16, 16, 16, 16);
+		}
+		if (MTmole1Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/lined.png"));
+			this.blit(ms, this.leftPos + 82, this.topPos + 48, 0, 0, 16, 16, 16, 16);
+		}
+		if (MTmole1Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/linei.png"));
+			this.blit(ms, this.leftPos + 99, this.topPos + 65, 0, 0, 16, 16, 16, 16);
+		}
+		if (MTmole2Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/linedi.png"));
+			this.blit(ms, this.leftPos + 82, this.topPos + 48, 0, 0, 16, 16, 16, 16);
+		}
+		if (MTmole3Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/linei.png"));
+			this.blit(ms, this.leftPos + 65, this.topPos + 30, 0, 0, 16, 16, 16, 16);
+		}
+		if (MTmole4Procedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("betterskills:textures/screens/linei.png"));
+			this.blit(ms, this.leftPos + 30, this.topPos + 30, 0, 0, 16, 16, 16, 16);
 		}
 		RenderSystem.disableBlend();
 	}
@@ -182,5 +265,83 @@ public class MiningTreeScreen extends AbstractContainerScreen<MiningTreeMenu> {
 		};
 		guistate.put("button:imagebutton_iconhaste2", imagebutton_iconhaste2);
 		this.addRenderableWidget(imagebutton_iconhaste2);
+		imagebutton_iconhaste3 = new ImageButton(this.leftPos + 185, this.topPos + 98, 20, 20, 0, 0, 20, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_iconhaste3.png"), 20, 40, e -> {
+			if (MThaste2Procedure.execute(entity)) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new MiningTreeButtonMessage(7, x, y, z));
+				MiningTreeButtonMessage.handleButtonAction(entity, 7, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(PoseStack ms, int gx, int gy, float ticks) {
+				if (MThaste2Procedure.execute(entity))
+					super.render(ms, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_iconhaste3", imagebutton_iconhaste3);
+		this.addRenderableWidget(imagebutton_iconhaste3);
+		imagebutton_iconhaste4 = new ImageButton(this.leftPos + 220, this.topPos + 98, 20, 20, 0, 0, 20, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_iconhaste4.png"), 20, 40, e -> {
+			if (MThaste3Procedure.execute(entity)) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new MiningTreeButtonMessage(8, x, y, z));
+				MiningTreeButtonMessage.handleButtonAction(entity, 8, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(PoseStack ms, int gx, int gy, float ticks) {
+				if (MThaste3Procedure.execute(entity))
+					super.render(ms, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_iconhaste4", imagebutton_iconhaste4);
+		this.addRenderableWidget(imagebutton_iconhaste4);
+		imagebutton_iconmole1 = new ImageButton(this.leftPos + 80, this.topPos + 63, 20, 20, 0, 0, 20, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_iconmole1.png"), 20, 40, e -> {
+			if (true) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new MiningTreeButtonMessage(9, x, y, z));
+				MiningTreeButtonMessage.handleButtonAction(entity, 9, x, y, z);
+			}
+		});
+		guistate.put("button:imagebutton_iconmole1", imagebutton_iconmole1);
+		this.addRenderableWidget(imagebutton_iconmole1);
+		imagebutton_iconmole2 = new ImageButton(this.leftPos + 80, this.topPos + 28, 20, 20, 0, 0, 20, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_iconmole2.png"), 20, 40, e -> {
+			if (MTmole1Procedure.execute(entity)) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new MiningTreeButtonMessage(10, x, y, z));
+				MiningTreeButtonMessage.handleButtonAction(entity, 10, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(PoseStack ms, int gx, int gy, float ticks) {
+				if (MTmole1Procedure.execute(entity))
+					super.render(ms, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_iconmole2", imagebutton_iconmole2);
+		this.addRenderableWidget(imagebutton_iconmole2);
+		imagebutton_iconmole3 = new ImageButton(this.leftPos + 45, this.topPos + 28, 20, 20, 0, 0, 20, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_iconmole3.png"), 20, 40, e -> {
+			if (MTmole2Procedure.execute(entity)) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new MiningTreeButtonMessage(11, x, y, z));
+				MiningTreeButtonMessage.handleButtonAction(entity, 11, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(PoseStack ms, int gx, int gy, float ticks) {
+				if (MTmole2Procedure.execute(entity))
+					super.render(ms, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_iconmole3", imagebutton_iconmole3);
+		this.addRenderableWidget(imagebutton_iconmole3);
+		imagebutton_iconmole4 = new ImageButton(this.leftPos + 10, this.topPos + 28, 20, 20, 0, 0, 20, new ResourceLocation("betterskills:textures/screens/atlas/imagebutton_iconmole4.png"), 20, 40, e -> {
+			if (MTmole3Procedure.execute(entity)) {
+				BetterskillsMod.PACKET_HANDLER.sendToServer(new MiningTreeButtonMessage(12, x, y, z));
+				MiningTreeButtonMessage.handleButtonAction(entity, 12, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(PoseStack ms, int gx, int gy, float ticks) {
+				if (MTmole3Procedure.execute(entity))
+					super.render(ms, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_iconmole4", imagebutton_iconmole4);
+		this.addRenderableWidget(imagebutton_iconmole4);
 	}
 }
