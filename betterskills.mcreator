@@ -36,9 +36,6 @@
       "locked_code": false,
       "registry_name": "miningxp",
       "metadata": {
-        "files": [
-          "src/main/java/net/feusalamander/betterskills/procedures/MiningxpProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4163,6 +4160,49 @@
         ]
       },
       "path": "~/Skill Trees"
+    },
+    {
+      "name": "Mole2",
+      "type": "procedure",
+      "sortid": 255,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mole_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/feusalamander/betterskills/procedures/Mole2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "Xmax",
+            "type": "number"
+          },
+          {
+            "name": "Xmin",
+            "type": "number"
+          },
+          {
+            "name": "Ymax",
+            "type": "number"
+          },
+          {
+            "name": "Ymin",
+            "type": "number"
+          },
+          {
+            "name": "Zmax",
+            "type": "number"
+          },
+          {
+            "name": "Zmin",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
