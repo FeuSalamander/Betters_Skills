@@ -139,7 +139,7 @@ public class BetterskillsModVariables {
 		public double xpnumber = 0;
 		public double xptime = 0;
 		public double points = 0;
-		public String miningTree = "\"\"";
+		public String miningTree = "\"m\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
